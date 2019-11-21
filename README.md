@@ -1,6 +1,11 @@
+# Ad Astra 🌟
 
-# Ad_Astra
+## What is it ? 
+Ad Astra is a project carried by 5 students from MyDigitalSchool. The app aims to support musicians by referencing them more and by linking them with labels and more. 
 
-Test commit for Ced
-Test commit for Mal
->>>>>>> 84da60e9c1eef2205ebb88a4de0c86168887d8c3
+## Members
+- [B Cédric](https://twitter.com/CBardaine) - Developer 
+- B Malvyn - Developer
+- C Florian - Webdesigner
+- C Manon - Webmarketer
+- M Agnès - Webmarketer 
