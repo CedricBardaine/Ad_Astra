@@ -1,5 +1,27 @@
 # AdAstra
 
+# MySQL dev setting up
+```sql
+create database adastra;
+use adastra;
+
+create table testtmp (
+    ->   id INT AUTO_INCREMENT,
+    ->   owner VARCHAR(255) NOT NULL,
+    ->   name VARCHAR(255) NOT NULL,
+    ->   description TEXT,
+    ->   date DATE,
+    ->   PRIMARY KEY (id),
+    ->   INDEX (owner, date)
+    -> );
+
+
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'astroadmin1234';
+GRANT ALL PRIVILEGES ON * . * TO 'admin'@'localhost'
+```
+
+# Angular Information
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
 ## Development server
