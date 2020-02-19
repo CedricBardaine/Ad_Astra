@@ -1,0 +1,24 @@
+{
+  "name": "ad_astra",
+  "version": "1.0.0",
+  "description": "Ad Astra is a project carried by 5 students from MyDigitalSchool. The app aims to support musicians by referencing them more and by linking them with labels and more.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CedricBardaine/Ad_Astra.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  },
+  "bugs": {
+    "url": "https://github.com/CedricBardaine/Ad_Astra/issues"
+  },
+  "homepage": "https://github.com/CedricBardaine/Ad_Astra#readme"
+}
