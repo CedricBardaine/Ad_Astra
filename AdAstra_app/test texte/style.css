@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+ 
+
+ body {
+   font-family: 'Roboto';
+   background-color: #0A1330;
+   color: #FAFAFA;
+   margin-left:10%;
+   margin-right:10%;
+  }
+
+  .lien_logo{
+    height: 40px;
+  }
+
+  #logo{
+    display: inline-block;
+  }
+
+  h1{
+    display: inline-block;
+    font-size: 1.3em;
+    height:40px;
+    padding: 8px 0 0 13px;
+    margin:0;
+    vertical-align: top;
+    color: #FAFAFA;
+  }
+
+  .pourcentage{
+    position: absolute;
+    right:10%; 
+    bottom:5%;
+    margin: auto;
+    
+  }
+
+  .astronaute{
+    width: 33%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:20%;
+    margin: auto;
+  }
+
+
+ .text {
+   width: 100%;
+   text-align: left;
+   height: 40px;
+   line-height: 50px;
+   font-size: 1em;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   margin: auto;
+  }
+
+ .text .content {
+   display: inline;
+  }
+
+ .text .dash {
+   display: inline-block;
+   height: 2px;
+   width: 12px;
+   background-color: #FAFAFA;
+   animation: blink 0.5s infinite linear;
+  }
+
+ @keyframes blink {
+   0% {
+     opacity: 1;
+  }
+   99% {
+     opacity: 0;
+  }
+   100% {
+     opacity: 1;
+  }
+  }
+ 
