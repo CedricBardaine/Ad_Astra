@@ -9,8 +9,12 @@ const app = express();
 
 
 const {getHomePage} = require('./index');
-// TODO: mieux organiser les routes, genre dans un dossier /routes/...
+
+// Table : testtmp
 const {addSomethingPage, addSomething} = require('./actions');
+
+// Table : Random_sentence
+const {insert_RandomSentence, getRandom_RandomSentence, delete_RandomSentence} = require('./actions/random_sentence');
 
 const port = 5000;
 
@@ -49,6 +53,10 @@ app.get('/', getHomePage);
 
 app.get('/add', addSomethingPage);
 app.post('/add', addSomething);
+
+app.post('/insert_RandomSentence', insert_RandomSentence);
+app.post('/delete_RandomSentence', delete_RandomSentence);
+app.get('/getRandom_RandomSentence', getRandom_RandomSentence);
 
 // app.get('/edit/:id', editPlayerPage);
 // app.post('/edit/:id', editPlayer);

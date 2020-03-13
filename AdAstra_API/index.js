@@ -10,8 +10,8 @@ module.exports = {
             if (err) {
                 res.redirect('/');
             }
-            console.log(result) ; 
-            console.log("_______________________") ; 
+            console.log(result); 
+            console.log("_______________________");
             res.sendFile(path.join(__dirname+'/index.html'));
         });
     },
