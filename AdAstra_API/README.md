@@ -14,28 +14,9 @@ GRANT ALL PRIVILEGES ON * . * TO 'admin'@'localhost'
 
 ```sql
 -- Fill-up the DB
+DROP DATABASE IF EXISTS adastra;
+CREATE DATABASE adastra CHARACTER SET utf8;
 USE adastra;
-
-DROP TABLE IF EXISTS Music ;
-DROP TABLE IF EXISTS User_musical_style ;
-DROP TABLE IF EXISTS Artist_Talent ;
-DROP TABLE IF EXISTS Artist_need ;
-DROP TABLE IF EXISTS Artist ;
-DROP TABLE IF EXISTS Bound ;
-DROP TABLE IF EXISTS Pro ;
-DROP TABLE IF EXISTS Artist ;
-DROP TABLE IF EXISTS User ;
-DROP TABLE IF EXISTS Talent ;
-DROP TABLE IF EXISTS Need ;
-DROP TABLE IF EXISTS Contrat ;
-DROP TABLE IF EXISTS Survey ; 
-DROP TABLE IF EXISTS Formation ;
-DROP TABLE IF EXISTS Categorie ;
-DROP TABLE IF EXISTS Musical_style ;
-DROP TABLE IF EXISTS Random_sentence ;
-DROP TABLE IF EXISTS Profession ;
-DROP TABLE IF EXISTS Country ;
-DROP TABLE IF EXISTS testtmp ; 
 
 CREATE TABLE testtmp (
         id INT AUTO_INCREMENT,
@@ -65,11 +46,11 @@ CREATE TABLE Profession (
 )ENGINE=InnoDB; 
 
 CREATE TABLE Random_sentence (
-id INT AUTO_INCREMENT,
-content TEXT UNIQUE NOT NULL,
-xblock BOOLEAN,
+        id INT AUTO_INCREMENT,
+        content TEXT NOT NULL,
+        xblock BOOLEAN,
 
-PRIMARY KEY (id)
+        PRIMARY KEY (id)
 )ENGINE=InnoDB; 
 
 CREATE TABLE Musical_style (
@@ -137,7 +118,7 @@ CREATE TABLE Talent (
         PRIMARY KEY (id)
 )ENGINE=InnoDB;
 
-CREATE TABLE User (
+CREATE TABLE UserStar (
         id INT AUTO_INCREMENT,
         firstname VARCHAR(50) NOT NULL, 
         lastname VARCHAR(50) NOT NULL, 
@@ -161,7 +142,7 @@ CREATE TABLE User (
 
 CREATE TABLE Artist (
         id INT AUTO_INCREMENT,
-        id_user INT,
+        id_userStar INT,
         artiste_name VARCHAR(50),
         suscribed_until DATE, 
         suscribed BOOLEAN,
@@ -170,19 +151,19 @@ CREATE TABLE Artist (
         xblock BOOLEAN,
 
         PRIMARY KEY (id),
-        FOREIGN KEY id_user REFERENCES User(id),
-        FOREIGN KEY id_survey REFERENCES Survey(id) 
+        FOREIGN KEY (id_userStar) REFERENCES UserStar(id),
+        FOREIGN KEY (id_survey) REFERENCES Survey(id) 
 )ENGINE=InnoDB;
 
 CREATE TABLE Pro (
         id INT AUTO_INCREMENT,
-        id_user INT, 
+        id_userStar INT, 
         company_name VARCHAR(255),
         id_contrat INT, 
         xblock BOOLEAN,
 
         PRIMARY KEY (id),
-        FOREIGN KEY (id_user) REFERENCES User(id),
+        FOREIGN KEY (id_userStar) REFERENCES UserStar(id),
         FOREIGN KEY (id_contrat) REFERENCES Contrat(id)
 )ENGINE=InnoDB;
 
@@ -194,15 +175,6 @@ CREATE TABLE Bound (
 
         PRIMARY KEY (id),
         FOREIGN KEY (id_pro) REFERENCES Pro(id),
-        FOREIGN KEY (id_artist) REFERENCES Artist(id)
-)ENGINE=InnoDB;
-
-CREATE TABLE Artist (
-        id INT AUTO_INCREMENT,
-        id_artist INT,
-        xblock BOOLEAN,
-
-        PRIMARY KEY (id),
         FOREIGN KEY (id_artist) REFERENCES Artist(id)
 )ENGINE=InnoDB;
 
@@ -227,14 +199,14 @@ CREATE TABLE Artist_Talent (
         FOREIGN KEY (id_talent) REFERENCES Talent(id)
 )ENGINE=InnoDB; 
 
-CREATE TABLE User_musical_style (
+CREATE TABLE UserStar_musical_style (
         id INT AUTO_INCREMENT,
-        id_user INT NOT NULL, 
+        id_userStar INT NOT NULL, 
         id_musical_style INT NOT NULL,
         xblock BOOLEAN,
 
         PRIMARY KEY (id),
-        FOREIGN KEY (id_user) REFERENCES User(id),
+        FOREIGN KEY (id_userStar) REFERENCES UserStar(id),
         FOREIGN KEY (id_musical_style) REFERENCES Musical_style(id)
 )ENGINE=InnoDB;
 
@@ -243,18 +215,14 @@ CREATE TABLE Music (
         name VARCHAR(50) NOT NULL, 
         contenu INT UNIQUE NOT NULL, 
         publication_date DATE, 
-        id_user INT, 
-        id_musical_style,
+        id_userStar INT, 
+        id_musical_style INT,
         xblock BOOLEAN,
 
         PRIMARY KEY (id),
-        FOREIGN KEY (id_user) REFERENCES User(id),
+        FOREIGN KEY (id_userStar) REFERENCES UserStar(id),
         FOREIGN KEY (id_musical_style) REFERENCES Musical_style(id) 
 )ENGINE=InnoDB;
-
-/* TODO: make in innodb */ 
-/* TODO: set charset to utf8   je pense */
-
 ```
 
 # Set up
@@ -264,5 +232,5 @@ CREATE TABLE Music (
 
 # Run 
 
-1. Run Wamp or a counterpart. 
+1. Run Wamp or a counterpart for database. 
 2. `nodemon app.js`
