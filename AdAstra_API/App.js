@@ -17,6 +17,9 @@ const {addSomething} = require('./actions/testtmp');
 // Table : Random_sentence
 const {insert_RandomSentence, getRandom_RandomSentence, delete_RandomSentence} = require('./actions/random_sentence');
 
+// Table : Artist
+const {insert_Artist , delete_Artist} = require('./actions/artist') ; 
+
 const port = 5000;
 
 
@@ -54,6 +57,9 @@ app.post('/add', addSomething);
 app.post('/insert_RandomSentence', insert_RandomSentence);
 app.post('/delete_RandomSentence', delete_RandomSentence);
 app.get('/getRandom_RandomSentence', getRandom_RandomSentence);
+
+app.post('/insert_artist', insert_Artist); 
+app.post('/delete_Artist', delete_Artist); 
 
 // app.get('/edit/:id', editPlayerPage);
 // app.post('/edit/:id', editPlayer);
