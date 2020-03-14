@@ -1,4 +1,3 @@
-
 const path = require('path');
 
 module.exports = {
@@ -12,7 +11,7 @@ module.exports = {
             }
             console.log(result); 
             console.log("_______________________");
-            res.sendFile(path.join(__dirname+'/index.html'));
+            res.sendFile(path.join(__dirname+'./../index.html'));
         });
     },
 };
