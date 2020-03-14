@@ -7,17 +7,17 @@ const path = require('path');
 const app = express();
 
 
-
-const {getHomePage} = require('./index');
+// pages routes to test forms from browser
+const {getHomePage} = require('./actions/index');
+const {addSomethingPage} = require('./actions/routes');
 
 // Table : testtmp
-const {addSomethingPage, addSomething} = require('./actions');
+const {addSomething} = require('./actions/testtmp'); 
 
 // Table : Random_sentence
 const {insert_RandomSentence, getRandom_RandomSentence, delete_RandomSentence} = require('./actions/random_sentence');
 
 const port = 5000;
-
 
 
 const db = mysql.createConnection ({
@@ -26,7 +26,6 @@ const db = mysql.createConnection ({
     password: 'astroadmin1234',
     database: 'adastra'
 });
-
 
 
 db.connect((err) => {
@@ -38,7 +37,6 @@ db.connect((err) => {
 global.db = db;
 
 
-
 // configure middleware
 app.set('port', process.env.port || port); 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -46,12 +44,11 @@ app.use(bodyParser.json()); // parse form data client
 // app.use(fileUpload()); // configure fileupload
 
 
-
 // routes for the app
 
 app.get('/', getHomePage);
-
 app.get('/add', addSomethingPage);
+
 app.post('/add', addSomething);
 
 app.post('/insert_RandomSentence', insert_RandomSentence);
@@ -62,7 +59,6 @@ app.get('/getRandom_RandomSentence', getRandom_RandomSentence);
 // app.post('/edit/:id', editPlayer);
 
 // app.get('/delete/:id', deletePlayer);
-
 
 
 app.listen(port, () => {
