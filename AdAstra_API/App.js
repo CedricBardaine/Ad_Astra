@@ -32,6 +32,9 @@ const {insert_Bound , delete_Bound} = require('./actions/Bound') ;
 // Table : Talent
 const {insert_Talent , delete_Talent} = require('./actions/Talent') ; 
 
+// Table : Need
+const {insert_Need , delete_Need} = require('./actions/Need') ; 
+
 const port = 5000;
 
 
@@ -84,6 +87,9 @@ app.post('/delete_Bound', delete_Bound);
 
 app.post('/insert_Talent', insert_Talent); 
 app.post('/delete_Talent', delete_Talent); 
+
+app.post('/insert_Need', insert_Need); 
+app.post('/delete_Need', delete_Need); 
 
 // app.get('/edit/:id', editPlayerPage);
 // app.post('/edit/:id', editPlayer);
