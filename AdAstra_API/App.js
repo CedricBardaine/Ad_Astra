@@ -12,22 +12,22 @@ const {getHomePage} = require('./actions/index');
 const {addSomethingPage} = require('./actions/routes');
 
 // Table : testtmp
-const {addSomething} = require('./actions/testtmp'); 
+const {addSomething} = require('./actions/Testtmp'); 
 
 // Table : Random_sentence
-const {insert_RandomSentence, getRandom_RandomSentence, delete_RandomSentence} = require('./actions/random_sentence');
+const {insert_RandomSentence, getRandom_RandomSentence, delete_RandomSentence} = require('./actions/Random_sentence');
 
 // Table : Artist
-const {insert_Artist , delete_Artist} = require('./actions/artist') ; 
+const {insert_Artist , delete_Artist} = require('./actions/Artist') ; 
 
 // Table : Contrat
-const {insert_Contrat , delete_Contrat} = require('./actions/contrat') ; 
+const {insert_Contrat , delete_Contrat} = require('./actions/Contrat') ; 
 
 // Table : Pro
-const {insert_Pro , delete_Pro} = require('./actions/pro') ; 
+const {insert_Pro , delete_Pro} = require('./actions/Pro') ; 
 
 // Table : Bound
-const {insert_Bound , delete_Bound} = require('./actions/bound') ; 
+const {insert_Bound , delete_Bound} = require('./actions/Bound') ; 
 
 const port = 5000;
 
