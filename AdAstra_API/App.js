@@ -39,6 +39,8 @@ const {insert_Country , delete_Country} = require('./actions/Country') ;
 const {insert_Artist_Talent , delete_Artist_Talent} = require('./actions/Artist_Talent') ; 
 // Table : Artist_Need
 const {insert_Artist_Need , delete_Artist_Need} = require('./actions/Artist_Need') ; 
+// Table : Musical_style
+const {insert_Musical_style , delete_Musical_style} = require('./actions/Musical_style') ; 
 
 const port = 5000;
 
@@ -113,6 +115,9 @@ app.post('/delete_Artist_Talent', delete_Artist_Talent);
 
 app.post('/insert_Artist_Need', insert_Artist_Need); 
 app.post('/delete_Artist_Need', delete_Artist_Need); 
+
+app.post('/insert_Musical_style', insert_Musical_style); 
+app.post('/delete_Musical_style', delete_Musical_style); 
 
 // app.get('/edit/:id', editPlayerPage);
 // app.post('/edit/:id', editPlayer);
