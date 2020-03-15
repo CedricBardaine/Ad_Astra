@@ -43,8 +43,10 @@ const {insert_Artist_Need , delete_Artist_Need} = require('./actions/Artist_Need
 const {insert_Musical_style , delete_Musical_style} = require('./actions/Musical_style') ; 
 // Table : Formation
 const {insert_Formation , delete_Formation} = require('./actions/Formation') ; 
-// Table : User_Musical_style
+// Table : UserStar_Musical_style
 const {insert_UserStar_Musical_style , delete_UserStar_Musical_style} = require('./actions/UserStar_Musical_style') ; 
+// Table : UserStar
+const {insert_UserStar , delete_UserStar} = require('./actions/UserStar') ; 
 
 const port = 5000;
 
@@ -128,6 +130,9 @@ app.post('/delete_Formation', delete_Formation);
 
 app.post('/insert_UserStar_Musical_style', insert_UserStar_Musical_style); 
 app.post('/delete_UserStar_Musical_style', delete_UserStar_Musical_style); 
+
+app.post('/insert_UserStar', insert_UserStar); 
+app.post('/delete_UserStar', delete_UserStar); 
 
 // app.get('/edit/:id', editPlayerPage);
 // app.post('/edit/:id', editPlayer);
