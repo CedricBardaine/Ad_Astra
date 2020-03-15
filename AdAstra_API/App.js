@@ -20,6 +20,12 @@ const {insert_RandomSentence, getRandom_RandomSentence, delete_RandomSentence} =
 // Table : Artist
 const {insert_Artist , delete_Artist} = require('./actions/artist') ; 
 
+// Table : Contrat
+const {insert_Contrat , delete_Contrat} = require('./actions/contrat') ; 
+
+// Table : Pro
+const {insert_Pro , delete_Pro} = require('./actions/pro') ; 
+
 const port = 5000;
 
 
@@ -60,6 +66,12 @@ app.get('/getRandom_RandomSentence', getRandom_RandomSentence);
 
 app.post('/insert_artist', insert_Artist); 
 app.post('/delete_Artist', delete_Artist); 
+
+app.post('/insert_Contrat', insert_Contrat); 
+app.post('/delete_Contrat', delete_Contrat); 
+
+app.post('/insert_Pro', insert_Pro); 
+app.post('/delete_Pro', delete_Pro); 
 
 // app.get('/edit/:id', editPlayerPage);
 // app.post('/edit/:id', editPlayer);
