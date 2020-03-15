@@ -26,6 +26,9 @@ const {insert_Contrat , delete_Contrat} = require('./actions/contrat') ;
 // Table : Pro
 const {insert_Pro , delete_Pro} = require('./actions/pro') ; 
 
+// Table : Bound
+const {insert_Bound , delete_Bound} = require('./actions/bound') ; 
+
 const port = 5000;
 
 
@@ -72,6 +75,9 @@ app.post('/delete_Contrat', delete_Contrat);
 
 app.post('/insert_Pro', insert_Pro); 
 app.post('/delete_Pro', delete_Pro); 
+
+app.post('/insert_Bound', insert_Bound); 
+app.post('/delete_Bound', delete_Bound); 
 
 // app.get('/edit/:id', editPlayerPage);
 // app.post('/edit/:id', editPlayer);

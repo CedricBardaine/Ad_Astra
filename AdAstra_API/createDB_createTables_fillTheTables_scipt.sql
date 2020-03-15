@@ -165,6 +165,7 @@ CREATE TABLE Bound (
         id INT AUTO_INCREMENT,
         id_pro INT NOT NULL,
         id_artist INT NOT NULL,
+        blocked BOOLEAN,
         xblock BOOLEAN DEFAULT FALSE,
 
         PRIMARY KEY (id),
