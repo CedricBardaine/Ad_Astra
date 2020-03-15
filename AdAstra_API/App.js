@@ -31,6 +31,10 @@ const {insert_Need , delete_Need} = require('./actions/Need') ;
 const {insert_Survey , delete_Survey} = require('./actions/Survey') ; 
 // Table : Category
 const {insert_Category , delete_Category} = require('./actions/Category') ; 
+// Table : Profession
+const {insert_Profession , delete_Profession} = require('./actions/Profession') ; 
+// Table : Country
+const {insert_Country , delete_Country} = require('./actions/Country') ; 
 
 const port = 5000;
 
@@ -93,6 +97,12 @@ app.post('/delete_Survey', delete_Survey);
 
 app.post('/insert_Category', insert_Category); 
 app.post('/delete_Category', delete_Category); 
+
+app.post('/insert_Profession', insert_Profession); 
+app.post('/delete_Profession', delete_Profession); 
+
+app.post('/insert_Country', insert_Country); 
+app.post('/delete_Country', delete_Country); 
 
 // app.get('/edit/:id', editPlayerPage);
 // app.post('/edit/:id', editPlayer);
