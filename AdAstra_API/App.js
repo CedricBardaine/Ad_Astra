@@ -21,13 +21,13 @@ const {insert_RandomSentence, getRandom_RandomSentence, delete_RandomSentence} =
 const {insert_Artist , delete_Artist} = require('./actions/Artist') ; 
 
 // Table : Contrat
-const {insert_Contrat , delete_Contrat} = require('./actions/Contrat_') ; 
+const {insert_Contrat , delete_Contrat} = require('./actions/Contrat') ; 
 
 // Table : Pro
-const {insert_Pro , delete_Pro} = require('./actions/Pro_') ; 
+const {insert_Pro , delete_Pro} = require('./actions/Pro') ; 
 
 // Table : Bound
-const {insert_Bound , delete_Bound} = require('./actions/Bound_') ; 
+const {insert_Bound , delete_Bound} = require('./actions/Bound') ; 
 
 const port = 5000;
 
