@@ -13,27 +13,22 @@ const {addSomethingPage} = require('./actions/routes');
 
 // Table : testtmp
 const {addSomething} = require('./actions/Testtmp'); 
-
 // Table : Random_sentence
 const {insert_RandomSentence, getRandom_RandomSentence, delete_RandomSentence} = require('./actions/Random_sentence');
-
 // Table : Artist
 const {insert_Artist , delete_Artist} = require('./actions/Artist') ; 
-
 // Table : Contrat
 const {insert_Contrat , delete_Contrat} = require('./actions/Contrat') ; 
-
 // Table : Pro
 const {insert_Pro , delete_Pro} = require('./actions/Pro') ; 
-
 // Table : Bound
 const {insert_Bound , delete_Bound} = require('./actions/Bound') ; 
-
 // Table : Talent
 const {insert_Talent , delete_Talent} = require('./actions/Talent') ; 
-
 // Table : Need
 const {insert_Need , delete_Need} = require('./actions/Need') ; 
+// Table : Survey
+const {insert_Survey , delete_Survey} = require('./actions/Survey') ; 
 
 const port = 5000;
 
@@ -90,6 +85,9 @@ app.post('/delete_Talent', delete_Talent);
 
 app.post('/insert_Need', insert_Need); 
 app.post('/delete_Need', delete_Need); 
+
+app.post('/insert_Survey', insert_Survey); 
+app.post('/delete_Survey', delete_Survey); 
 
 // app.get('/edit/:id', editPlayerPage);
 // app.post('/edit/:id', editPlayer);
