@@ -55,7 +55,7 @@ CREATE TABLE Musical_style (
         PRIMARY KEY (id)        
 )ENGINE=InnoDB; 
 
-CREATE TABLE Categorie (
+CREATE TABLE Category (
         id INT AUTO_INCREMENT,
         name VARCHAR(255) UNIQUE NOT NULL,
         xblock BOOLEAN DEFAULT FALSE,
@@ -70,11 +70,11 @@ CREATE TABLE Formation (
         subtitle VARCHAR(255),
         contenu TEXT,
         publication_date DATE,
-        id_categorie INT,
+        id_category INT,
         xblock BOOLEAN DEFAULT FALSE,
 
         PRIMARY KEY (id),
-        FOREIGN KEY (id_categorie) REFERENCES Categorie(id)
+        FOREIGN KEY (id_category) REFERENCES Category(id)
 )ENGINE=InnoDB;
 
 CREATE TABLE Survey ( 
@@ -230,8 +230,8 @@ INSERT INTO Country (id ) VALUES (777 ) ;
 INSERT INTO Profession (id ) VALUES (777 ) ; 
 INSERT INTO Random_sentence (id ) VALUES (777 ) ; 
 INSERT INTO Musical_style (id ) VALUES (777 ) ; 
-INSERT INTO Categorie (id ) VALUES (777 ) ; 
-INSERT INTO Formation (id , id_categorie ) VALUES (777 , 777 ) ; 
+INSERT INTO Category (id ) VALUES (777 ) ; 
+INSERT INTO Formation (id , id_category ) VALUES (777 , 777 ) ; 
 INSERT INTO Survey (id ) VALUES (777 ) ; 
 INSERT INTO Contrat (id ) VALUES (777 ) ; 
 INSERT INTO Need (id ) VALUES (777 ) ; 

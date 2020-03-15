@@ -29,6 +29,8 @@ const {insert_Talent , delete_Talent} = require('./actions/Talent') ;
 const {insert_Need , delete_Need} = require('./actions/Need') ; 
 // Table : Survey
 const {insert_Survey , delete_Survey} = require('./actions/Survey') ; 
+// Table : Category
+const {insert_Category , delete_Category} = require('./actions/Category') ; 
 
 const port = 5000;
 
@@ -88,6 +90,9 @@ app.post('/delete_Need', delete_Need);
 
 app.post('/insert_Survey', insert_Survey); 
 app.post('/delete_Survey', delete_Survey); 
+
+app.post('/insert_Category', insert_Category); 
+app.post('/delete_Category', delete_Category); 
 
 // app.get('/edit/:id', editPlayerPage);
 // app.post('/edit/:id', editPlayer);
