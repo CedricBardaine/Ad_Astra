@@ -21,18 +21,7 @@ enum FORMSTATE {
   styleUrls: ['./form-register.component.css']
 })
 export class FormRegisterComponent implements OnInit {
-
-  label = "" ; 
-
-  clickMessage = '';
-
-  onClickMe() {
-    this.clickMessage = 'You are my hero!';
-  }
-
-
-
-  
+  debugLabel = "" ; // FIXME: delete before prod
   theFormState: FORMSTATE = FORMSTATE.question_1 ; 
   
   
@@ -44,71 +33,5 @@ export class FormRegisterComponent implements OnInit {
     this.theFormState = FORMSTATE.question_1;
   }
   
-  // /**
-  //  * 
-  //  * @param answ must be a value of the var from the FORMSTATE enum.
-  //  */
-  // answer(answ:number) {
-  //   this.label = "enter fct" ; 
-
-  //   switch (answ) {
-
-      
-
-  //     case FORMSTATE.question_1:
-  //     this.theFormState = FORMSTATE.question_1 ;
-  //     break;
-
-  //     case FORMSTATE.question_1_refus:
-  //     this.theFormState = FORMSTATE.question_1_refus ;
-  //     break;
-
-  //     case FORMSTATE.question_2:
-        
-  //   this.label = "enter q2" ; 
-  //     this.theFormState = FORMSTATE.question_2 ;
-  //     break;
-
-  //     case FORMSTATE.question_2_refus:
-  //     this.theFormState = FORMSTATE.question_2_refus ;
-  //     break;
-
-  //     case FORMSTATE.question_3:
-  //     this.theFormState = FORMSTATE.question_3 ;
-  //     break;
-
-  //     case FORMSTATE.question_3_refus:
-  //     this.theFormState = FORMSTATE.question_3_refus ;
-  //     break;
-
-  //     case FORMSTATE.question_4:
-  //     this.theFormState = FORMSTATE.question_4 ;
-  //     break;
-
-  //     case FORMSTATE.question_4_refus:
-  //     this.theFormState = FORMSTATE.question_4_refus ;
-  //     break;
-
-  //     case FORMSTATE.question_5:
-  //     this.theFormState = FORMSTATE.question_5 ;
-  //     break;
-
-  //     case FORMSTATE.question_6:
-  //     this.theFormState = FORMSTATE.question_6 ;
-  //     break;
-
-  //     case FORMSTATE.question_7:
-  //     this.theFormState = FORMSTATE.question_7 ;
-  //     break;
-
-  //     case FORMSTATE.question_8:
-  //     this.theFormState = FORMSTATE.question_8 ;
-  //     break;
-
-      
-  //     default:
-  //     break;
-  //   }
-  // }
   
 }
