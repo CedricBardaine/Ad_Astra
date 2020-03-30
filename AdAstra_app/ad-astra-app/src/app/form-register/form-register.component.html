@@ -1,0 +1,206 @@
+<div [ngSwitch]="theFormState">
+    
+    
+    <div *ngSwitchCase="1">
+        Nous allons vous accompagner dans le développement de votre projet musical, ça vous tente ?
+        <br><button (click)="theFormState=2">Oui</button>
+        <br><button (click)="theFormState=-1">Non</button>
+    </div>
+    <div *ngSwitchCase="-1">
+        Vous êtes vraiment un maître Jedi. Que la force soit avec vous. Notre mission s’arrête ici.
+        <!-- TODO: insérez une animation d’une fusée qui part au loin puis disparaît -->
+    </div> 
+    
+    
+    <div *ngSwitchCase="2">
+        Bon, reprenons les bases alors. Possédez-vous un projet musical ?
+        <br><button (click)="theFormState=3">Oui</button>
+        <br><button (click)="theFormState=-2">Non</button>
+    </div>
+    <div *ngSwitchCase="-2">
+        Vous êtes une petite étoile perdue dans l’univers d’Ad Astra. 
+        Nos astronautes ne peuvent rien pour vous, mais revenez nous voir dans quelques années lumière si vous vous lancez dans un projet musical !
+        <!-- TODO: insérez une animation d’une fusée qui part au loin puis disparaît -->
+    </div>
+    
+    
+    <div *ngSwitchCase="3">
+        Les passagers doivent avoir un certain âge pour pouvoir monter à bord de notre fusée, avez-vous 16 ans ou plus ?
+        <!-- TODO: reformulation, demande de date de naissance et non d’age -->
+        <br><button (click)="theFormState=4">Oui</button>
+        <br><button (click)="theFormState=-3">Non</button>
+    </div>
+    <div *ngSwitchCase="-3">
+        Vous êtes une petite étoile perdue dans l’univers d’Ad Astra. 
+        Nos astronautes ne peuvent rien pour vous, mais revenez nous voir dans quelques années lumière si vous vous lancez dans un projet musical !
+        <!-- TODO: insérez une animation d’une fusée qui part au loin puis disparaît -->
+    </div>
+    
+    
+    <div *ngSwitchCase="4">
+        Notre station spatiale ne capte pour l’instant que les ondes françaises, habitez-vous en France ?
+        <br><button (click)="theFormState=5">Oui</button>
+        <br><button (click)="theFormState=-4">Non</button>
+    </div>
+    <div *ngSwitchCase="-4">
+        Allô ? Allô… ? [Fin du signal]
+        <!-- TODO: insérez une animation d’une fusée qui part au loin puis disparaît -->
+    </div>
+    
+    
+    <div *ngSwitchCase="5"> <!-- <div *ngSwitchCase="theFormState === '5' || theFormState === '6' || theFormState === '7' || theFormState === '8'"> -->
+        <ng-container *ngTemplateOutlet="talents"></ng-container>
+    </div>
+    
+    
+    <div *ngSwitchCase="6">
+        <ng-container *ngTemplateOutlet="talents"></ng-container>
+        <ng-container *ngTemplateOutlet="galaxies"></ng-container>
+    </div>
+    
+    
+    <div *ngSwitchCase="7">
+        <ng-container *ngTemplateOutlet="talents"></ng-container>
+        <ng-container *ngTemplateOutlet="galaxies"></ng-container>
+        <ng-container *ngTemplateOutlet="services"></ng-container>
+    </div>
+    
+    <div *ngSwitchCase="8">
+        <ng-container *ngTemplateOutlet="talents"></ng-container>
+        <ng-container *ngTemplateOutlet="galaxies"></ng-container>
+        <ng-container *ngTemplateOutlet="services"></ng-container>
+        <ng-container *ngTemplateOutlet="relations"></ng-container>
+    </div>
+    
+    <div *ngSwitchDefault>ERREUR NO FORM CORRESPONDING</div>
+    
+    
+    
+    
+    <ng-template #talents> <!-- Q5 -->
+        Future étoile que vous êtes, quel talent vous permettra-t-il de briller dans la galaxie ?
+        <br>
+        <input type="checkbox" id="CKB_Compositeur" (click)="theFormState=6">
+        <label for="CKB_Compositeur">Compositeur</label> <br>
+        
+        <input type="checkbox" id="CKB_Parolier" (click)="theFormState=6">
+        <label for="CKB_Parolier">Parolier</label> <br>
+        
+        <input type="checkbox" id="CKB_Arrangeur" (click)="theFormState=6">
+        <label for="CKB_Arrangeur">Arrangeur</label> <br>
+        
+        <input type="checkbox" id="CKB_Auteur" (click)="theFormState=6">
+        <label for="CKB_Auteur">Auteur de chansons</label> <br>
+        
+        <input type="checkbox" id="CKB_Chanteur" (click)="theFormState=6">
+        <label for="CKB_Chanteur">Chanteur</label> <br>
+        
+        <input type="checkbox" id="CKB_MusicienDeScene" (click)="theFormState=6">
+        <label for="CKB_MusicienDeScene">Musicien de scène</label> <br>
+        
+        <input type="checkbox" id="CKB_MusicienDeStudio" (click)="theFormState=6">
+        <label for="CKB_MusicienDeStudio">Musicien de studio</label> <br>
+        
+        <input type="checkbox" id="CKB_DJ" (click)="theFormState=6">
+        <label for="CKB_DJ">DJ</label> <br>
+    </ng-template>
+    
+    <ng-template #galaxies> <!-- Q6 -->
+        Dans quelle(s) galaxie(s) musicale(s) vous trouvez-vous ?
+        <br>
+        <input type="checkbox" id="CKB_Blues" (click)="theFormState=7">
+        <label for="CKB_Blues">Blues</label> <br>
+        
+        <input type="checkbox" id="CKB_Funk" (click)="theFormState=7">
+        <label for="CKB_Funk">Funk</label> <br>
+        
+        <input type="checkbox" id="CKB_Jazz" (click)="theFormState=7">
+        <label for="CKB_Jazz">Jazz</label> <br>
+        
+        <input type="checkbox" id="CKB_Metal" (click)="theFormState=7">
+        <label for="CKB_Metal">Metal</label> <br>
+        
+        <input type="checkbox" id="CKB_Pop" (click)="theFormState=7">
+        <label for="CKB_Pop">Pop</label> <br>
+        
+        <input type="checkbox" id="CKB_Punk" (click)="theFormState=7">
+        <label for="CKB_Punk">Punk</label> <br>
+        
+        <input type="checkbox" id="CKB_Rap" (click)="theFormState=7">
+        <label for="CKB_Rap">Rap</label> <br>
+        
+        <input type="checkbox" id="CKB_RockNRoll" (click)="theFormState=7">
+        <label for="CKB_RockNRoll">Rock'n'roll</label> <br>
+    </ng-template>
+    
+    <ng-template #services> <!-- Q7 -->
+        Êtes-vous prêt pour un grand voyage vers les étoiles ? 
+        Nous sommes les astronautes de votre fusée, à votre service. 
+        De quoi auriez-vous besoin ?
+        <br>
+        <input type="checkbox" id="CKB_Aide" (click)="theFormState=8">
+        <label for="CKB_Aide">Aide au management de votre projet musical</label> <br>
+        
+        <input type="checkbox" id="CKB_Gestion" (click)="theFormState=8">
+        <label for="CKB_Gestion">Gestion de votre droit d’auteur</label> <br>
+        
+        <input type="checkbox" id="CKB_Visible" (click)="theFormState=8">
+        <label for="CKB_Visible">Obtenir de la visibilité en tant qu’artiste</label> <br>
+        
+        <input type="checkbox" id="CKB_Deve" (click)="theFormState=8">
+        <label for="CKB_Deve">Devenir intermittent du spectacle</label> <br>
+        
+        <input type="checkbox" id="CKB_Mieux" (click)="theFormState=8">
+        <label for="CKB_Mieux">Mieux connaître l’industrie de la musique</label> <br>
+        
+        <input type="checkbox" id="CKB_Chercher" (click)="theFormState=8">
+        <label for="CKB_Chercher">Chercher des subventions</label> <br>
+        
+        <input type="checkbox" id="CKB_Reseau" (click)="theFormState=8">
+        <label for="CKB_Reseau">Se faire du réseau</label> <br>
+    </ng-template>
+    
+    <ng-template #relations> <!-- Q7 -->
+        Déjà en orbite autour de la terre ? 
+        C’est le moment de faire de nouvelles rencontres ! 
+        Sur Ad Astra, vous allez pouvoir entrer en relation avec des professionnels du monde de la musique. 
+        Qui souhaitez-vous rencontrer ?
+        <br>
+        <input type="checkbox" id="CKB_Managers" (click)="Step2=true">
+        <label for="CKB_Managers">Managers</label> <br>
+        
+        <input type="checkbox" id="CKB_Tourneurs" (click)="Step2=true">
+        <label for="CKB_Tourneurs">Tourneurs</label> <br>
+        
+        <input type="checkbox" id="CKB_Labels" (click)="Step2=true">
+        <label for="CKB_Labels">Labels</label> <br>
+        
+        <input type="checkbox" id="CKB_Editers" (click)="Step2=true">
+        <label for="CKB_Editers">Editeurs</label> <br>
+    </ng-template>
+    
+    
+    <br>
+    <!-- <form (ngSubmit)="onSubmit()" #form="ngForm" *ngIf="Step2"> -->
+        <form (ngSubmit)="onSubmit()"  *ngIf="Step2">
+            FORMULAIRE...
+            <!-- TODO: FORM -->
+        </form>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <br><br><br>
+    <hr>
+    <small>Variables de dev...</small><br>
+    <small>{{debugLabel}}</small><br>
+    <small>{{theFormState}}</small><br>
+    <!-- FIXME: delete before prod -->
