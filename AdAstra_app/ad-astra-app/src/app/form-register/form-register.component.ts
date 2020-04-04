@@ -109,7 +109,8 @@ export class FormRegisterComponent implements OnInit {
     this.http.post(url, postData).toPromise().then(data => {
       this.debugLabel = "Nouveau user enregistré ! " + JSON.stringify(data) ; 
       this.theStep2 = false ; 
-      // TODO: go to the switchcase 9 created to mark the end of fin voila, la fin takompris
+      this.theFormState = 9 ; 
+      // TODO: add a case when there is a problem
       // FIXME: bind and add row to the good tables in the DB, in order to have a clean user 
     });
   }

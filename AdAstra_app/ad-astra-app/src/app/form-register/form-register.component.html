@@ -70,6 +70,15 @@
         <ng-container *ngTemplateOutlet="services"></ng-container>
         <ng-container *ngTemplateOutlet="relations"></ng-container>
     </div>
+
+    <div *ngSwitchCase="9">
+       [icon d'Ad Astra]
+       <h2>Bienvenue à bord</h2>
+       Nous espérons que votre embarquement s'est bien déroulé. Nous sommes heureux de vous acceuillir. 
+       <br>
+        <button>Voir mon profil</button>
+    </div>
+
     
     <div *ngSwitchDefault>ERREUR NO FORM CORRESPONDING</div>
 
@@ -200,7 +209,7 @@
             <br>
             <label for="idTxtEmail">Email *</label> <br>
             <input [(ngModel)]="theNewUser.infos.email" type="email" id="idTxtEmail" name="idTxtEmail" required> <br>
-            // FIXME: verify email pattern
+            <!-- FIXME: verify email pattern -->
 
             <br>
             <label for="idTxtMotDePasse">Mot de passe *</label> <br>
