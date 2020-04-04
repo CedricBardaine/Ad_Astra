@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
 
@@ -75,6 +76,11 @@ app.set('port', process.env.port || port);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); // parse form data client
 // app.use(fileUpload()); // configure fileupload
+
+
+// for cross origin to enable request from localhost 
+// FIXME: get rid of it before prod 
+app.use(cors());
 
 
 // routes for the app
