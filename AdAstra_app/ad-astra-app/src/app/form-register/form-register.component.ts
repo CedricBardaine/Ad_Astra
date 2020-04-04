@@ -1,4 +1,5 @@
 import { Component, OnInit, NgModule } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 enum FORMSTATE {
   question_1 = 1,
@@ -72,11 +73,12 @@ export interface NewUser {
 export class FormRegisterComponent implements OnInit {
   debugLabel = "" ; // FIXME: delete before prod
   theFormState: FORMSTATE ; 
+  theStep2 = false ;
   
   theNewUser: NewUser ;
   
-  
-  constructor() {
+  // injects dependencies
+  constructor(private http: HttpClient) {
     // this.theFormState = FORMSTATE.question_1;
   }
   
@@ -88,7 +90,28 @@ export class FormRegisterComponent implements OnInit {
     this.theNewUser.services = {} ; 
     this.theNewUser.relationsVoulues = {} ; 
     this.theNewUser.infos = {} ; 
+  }  
+  
+  
+  onSubmit() {
+    let postData = 
+    {
+      id_userStar: 777,
+      artist_name:this.theNewUser.infos.nomArtiste,
+      suscribed_until:"2020-07-25",
+      suscribed:false,
+      id_survey:777,
+      checked:false
+    };
+    let url = 'http://localhost:5000/insert_artist';
+    // let url = "http://httpbin.org/post"; // !!!! test url that returns the post datas
+    
+    this.http.post(url, postData).toPromise().then(data => {
+      this.debugLabel = "Nouveau user enregistré ! " + JSON.stringify(data) ; 
+      this.theStep2 = false ; 
+      // TODO: go to the switchcase 9 created to mark the end of fin voila, la fin takompris
+      // FIXME: bind and add row to the good tables in the DB, in order to have a clean user 
+    });
   }
-  
-  
+
 }

@@ -166,23 +166,23 @@
         Sur Ad Astra, vous allez pouvoir entrer en relation avec des professionnels du monde de la musique. 
         Qui souhaitez-vous rencontrer ?
         <br>
-        <input type="checkbox" [checked]="theNewUser.relationsVoulues.managers" id="CKB_Managers" (click)="Step2=true ; theNewUser.relationsVoulues.managers = !theNewUser.relationsVoulues.managers">
+        <input type="checkbox" [checked]="theNewUser.relationsVoulues.managers" id="CKB_Managers" (click)="theStep2=true ; theNewUser.relationsVoulues.managers = !theNewUser.relationsVoulues.managers">
         <label for="CKB_Managers">Managers</label> <br>
         
-        <input type="checkbox" [checked]="theNewUser.relationsVoulues.tourneurs" id="CKB_Tourneurs" (click)="Step2=true ; theNewUser.relationsVoulues.tourneurs = !theNewUser.relationsVoulues.tourneurs">
+        <input type="checkbox" [checked]="theNewUser.relationsVoulues.tourneurs" id="CKB_Tourneurs" (click)="theStep2=true ; theNewUser.relationsVoulues.tourneurs = !theNewUser.relationsVoulues.tourneurs">
         <label for="CKB_Tourneurs">Tourneurs</label> <br>
         
-        <input type="checkbox" [checked]="theNewUser.relationsVoulues.labels" id="CKB_Labels" (click)="Step2=true ; theNewUser.relationsVoulues.labels = !theNewUser.relationsVoulues.labels">
+        <input type="checkbox" [checked]="theNewUser.relationsVoulues.labels" id="CKB_Labels" (click)="theStep2=true ; theNewUser.relationsVoulues.labels = !theNewUser.relationsVoulues.labels">
         <label for="CKB_Labels">Labels</label> <br>
         
-        <input type="checkbox" [checked]="theNewUser.relationsVoulues.editeurs" id="CKB_Editers" (click)="Step2=true ; theNewUser.relationsVoulues.editeurs = !theNewUser.relationsVoulues.editeurs">
+        <input type="checkbox" [checked]="theNewUser.relationsVoulues.editeurs" id="CKB_Editers" (click)="theStep2=true ; theNewUser.relationsVoulues.editeurs = !theNewUser.relationsVoulues.editeurs">
         <label for="CKB_Editers">Editeurs</label> <br>
     </ng-template>
     
     
     <br>
-    <!-- <form (ngSubmit)="onSubmit()" #form="ngForm" *ngIf="Step2"> -->
-        <form (ngSubmit)="onSubmit()"  *ngIf="Step2">
+    <!-- <form (ngSubmit)="onSubmit()" #form="ngForm" *ngIf="theStep2"> -->
+        <form (ngSubmit)="onSubmit()"  *ngIf="theStep2">
             Nous aurions besoin de quelques informations supplémentaires pour vous accueillir à bord
 
             <br>
@@ -200,6 +200,7 @@
             <br>
             <label for="idTxtEmail">Email *</label> <br>
             <input [(ngModel)]="theNewUser.infos.email" type="email" id="idTxtEmail" name="idTxtEmail" required> <br>
+            // FIXME: verify email pattern
 
             <br>
             <label for="idTxtMotDePasse">Mot de passe *</label> <br>
@@ -210,10 +211,10 @@
             <input type="password" id="idTxtConfirmMotDePasse" name="idTxtConfirmMotDePasse" required> <br>
 
             <!-- <button type="submit" [disabled]="!form.form.valid"> -->
-            <button type="submit" [disabled]="">
+            <button type="submit" >
                 Décollage
             </button>
-            <button (click)="theFormState=1 ; Step2=false"> 
+            <button (click)="theFormState=1 ; theStep2=false"> 
                 Etape précédente
             </button>
         </form>
@@ -231,8 +232,8 @@
     
     <br><br><br>
     <hr>
-    <small>Variables de dev...</small><br>
-    <small>debugLabel : {{debugLabel}}</small><br>
-    <small>theFormState : {{theFormState}}</small><br>
-    <small>theNewUser : {{theNewUser | json}}</small><br>
+    <small>Variables de dev...</small><br><br>
+    <small>debugLabel : {{debugLabel}}</small><br><br>
+    <small>theFormState : {{theFormState}}</small><br><br>
+    <small>theNewUser : {{theNewUser | json}}</small><br><br>
     <!-- FIXME: delete before prod -->
