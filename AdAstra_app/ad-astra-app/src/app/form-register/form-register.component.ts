@@ -98,6 +98,7 @@ export class FormRegisterComponent implements OnInit {
   * Send the form data to the API, adding rows in the good tables and binding them. 
   * // TODO: add a case when there is a problem
   * // FIXME: bind and add row to the good tables in the DB, in order to have a clean user 
+  * // TODO: clean this shitty code 😡 
   */
   onSubmit() {
     let dateSuscribe = this.getcurrentDate("yyyy","mm","dd", "-"); 
