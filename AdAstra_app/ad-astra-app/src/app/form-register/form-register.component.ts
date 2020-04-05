@@ -166,10 +166,10 @@ export class FormRegisterComponent implements OnInit {
                 this.debugLabel = this.postDataToArtistTalent(returnOfToArtist.insertId) ; 
                 this.debugLabel += this.postDataToArtisteNeed(returnOfToArtist.insertId) ; 
               }
-              
+
               //TODO: continuer en bindant avec le userstar musical style 
               
-              // FIXME: terminer :  en fin d'insertion de tout on  vérifie :   tout est bon ? on désafiche le form : on annule (delete) tout et on affiche une erreur 
+              // FIXME: terminer :  en fin d'insertion de tout on  vérifie :   tout est bon ? on désafiche le form : on annule (delete) tout et on affiche une erreur  parceque le mettre ici c'est un peu borderline niveau propreté de code.....
               if ( returnOfToArtist.insertId ) {
                 this.debugLabel = "Nouveau user enregistré ! " + JSON.stringify(dataArtist) ; 
                 this.theStep2 = false ; 
@@ -179,17 +179,12 @@ export class FormRegisterComponent implements OnInit {
           }
           
         });
+
+        this.postDataToUserStar_MusicalStyle(returnOfToUserStar.insertId) ; 
         
       }
     });
     
-    
-    
-    // this.http.post(urlToArtist, postDataArtist).toPromise().then(data => {
-    //   this.debugLabel = "Nouveau user enregistré ! " + JSON.stringify(data) ; 
-    //   this.theStep2 = false ; 
-    //   this.theFormState = 9 ; 
-    // });
   }
   
   /**
@@ -269,7 +264,7 @@ export class FormRegisterComponent implements OnInit {
   }
   
   /**
-  * Send post request to add rows in Artist_Talent table for each talents of this.theNewUser .
+  * Send post request to add rows in Artist_Need table for each services of this.theNewUser .
   * @param idArtist 
   * @return all the responses of API
   */
@@ -326,6 +321,94 @@ export class FormRegisterComponent implements OnInit {
       case "faireReseau" :
       postDataArtistNeed.id_need = 7 ;
       this.http.post( urlToArtistTalent , postDataArtistNeed).toPromise().then(data => {
+        ret += data + ","; 
+      }); 
+      break;
+      default :
+      this.debugLabel = "ERROR! in posting ArtistTalent"; 
+      break;
+    }
+    ret += "}" ; // FIXME: return ce string ; "{}}" donc voir si ça peut s'arranger avec   JSON.stringify(data)  par ex. 
+  }
+  
+  return ret ; 
+}
+
+
+// blues?: boolean,
+// funk?: boolean,
+// jazz?: boolean,
+// metal?: boolean,
+// pop?: boolean,
+// punk?: boolean,
+// rap?: boolean,
+// rockNRoll?: boolean
+
+
+
+  /**
+  * Send post request to add rows in UserStar_MusicalStyle table for each genres of this.theNewUser .
+  * @param idArtist 
+  * @return all the responses of API
+  */
+ postDataToUserStar_MusicalStyle(idArtist) {
+  let postData_USMS = 
+  {
+    id_userStar:0,
+    id_Musical_style:0
+  };
+  let url_USMS = "http://localhost:5000/insert_UserStar_Musical_style";
+  let ret = "{" ;
+
+  postData_USMS.id_userStar = idArtist ; 
+  let genres = this.theNewUser.genres ; 
+  for ( var key in genres) {
+    switch (key) {
+      case "blues" :
+      postData_USMS.id_Musical_style = 1 ;
+      this.http.post( url_USMS , postData_USMS).toPromise().then(data => {
+        ret += data + ","; 
+      }); 
+      break;
+      case "funk" :
+      postData_USMS.id_Musical_style = 2 ;
+      this.http.post( url_USMS , postData_USMS).toPromise().then(data => {
+        ret += data + ","; 
+      }); 
+      break;
+      case "jazz" :
+      postData_USMS.id_Musical_style = 3 ;
+      this.http.post( url_USMS , postData_USMS).toPromise().then(data => {
+        ret += data + ","; 
+      }); 
+      break;
+      case "metal" :
+      postData_USMS.id_Musical_style = 4 ;
+      this.http.post( url_USMS , postData_USMS).toPromise().then(data => {
+        ret += data + ","; 
+      }); 
+      break;
+      case "pop" :
+      postData_USMS.id_Musical_style = 5 ;
+      this.http.post( url_USMS , postData_USMS).toPromise().then(data => {
+        ret += data + ","; 
+      }); 
+      break;
+      case "punk" :
+      postData_USMS.id_Musical_style = 6 ;
+      this.http.post( url_USMS , postData_USMS).toPromise().then(data => {
+        ret += data + ","; 
+      }); 
+      break;
+      case "rap" :
+      postData_USMS.id_Musical_style = 7 ;
+      this.http.post( url_USMS , postData_USMS).toPromise().then(data => {
+        ret += data + ","; 
+      }); 
+      break;
+      case "rockNRoll" :
+      postData_USMS.id_Musical_style = 8 ;
+      this.http.post( url_USMS , postData_USMS).toPromise().then(data => {
         ret += data + ","; 
       }); 
       break;
