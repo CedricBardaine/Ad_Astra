@@ -248,6 +248,7 @@ INSERT INTO Music (id , id_userStar , id_musical_style ) VALUES (777 , 777 , 777
 
 
 -- Fill tables : for essential rows
+-- -- à ne pas modifier !! certians fct de l'app Ad Astra reposent sur ces ids
 
 INSERT INTO Country (id, name) VALUES (1, "France") ; 
 INSERT INTO Profession (id, name) VALUES (1, "Artiste") ; 
