@@ -57,6 +57,7 @@ export interface NewUser {
   };
   infos?:
   {
+    date?:Date,
     nom?: string,
     prenom?: string,
     nomArtiste?: string,
@@ -93,6 +94,38 @@ export class FormRegisterComponent implements OnInit {
     this.theNewUser.relationsVoulues = {} ; 
     this.theNewUser.infos = {} ; 
   }  
+
+  /**
+   * Verify if the NewUser is older than 16. 
+   * If yes : the form continue.
+   * If no : the registration stops. 
+   */
+  birthDateValidation() {
+    let uBDate = new Date ( this.theNewUser.infos.date ) ;
+    let tooYoung:boolean;
+    let today = new Date();
+    let minYear = today.getFullYear()-16;
+    let minMonth = today.getMonth();
+    let minDay = today.getDate();
+
+    if ( uBDate.getFullYear() < minYear ) tooYoung = false; 
+    else if (uBDate.getFullYear() > minYear) tooYoung = true; 
+    else if (uBDate.getFullYear() == minYear) {
+      if (uBDate.getMonth() < minMonth) tooYoung = false;
+      else if (uBDate.getMonth() > minMonth ) tooYoung = true;
+      else if (uBDate.getMonth() == minMonth) {
+        if ( uBDate.getDate() < minDay ) tooYoung = false; 
+        else if ( uBDate.getDate() > minDay ) tooYoung = true; 
+        else if ( uBDate.getDate() == minDay ) {
+          // !!!! souhaiter un bon anniverssaire ? ^^'
+          tooYoung = false;
+        }
+      }
+    }
+
+    if (tooYoung) this.theFormState = -3 ; 
+    else this.theFormState = 4 ; 
+  }
   
   /**
   * Send the form data to the API, adding rows in the good tables and binding them. 
@@ -100,6 +133,7 @@ export class FormRegisterComponent implements OnInit {
   * // FIXME: bind and add row to the good tables in the DB, in order to have a clean user 
   */
   onSubmit() {
+    //TODO:  this.customFormValidation() ; 
     let dateSuscribe = this.getcurrentDate("yyyy","mm","dd", "-"); 
     
     let postDataUserStar = 
@@ -173,6 +207,10 @@ export class FormRegisterComponent implements OnInit {
       }
     });
     
+  }
+
+  customFormValidation() {
+    throw new Error("Method not implemented.");
   }
   
   /**
