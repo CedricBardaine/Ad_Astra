@@ -71,7 +71,7 @@ export interface NewUser {
   styleUrls: ['./form-register.component.css']
 })
 export class FormRegisterComponent implements OnInit {
-  debugLabel = "" ; // FIXME: delete before prod
+  debugLabel = "" ; // FIXME: FM7 delete before prod
   theFormState: FORMSTATE ; 
   theStep2 = false ;
   
@@ -98,7 +98,6 @@ export class FormRegisterComponent implements OnInit {
   * Send the form data to the API, adding rows in the good tables and binding them. 
   * // TODO: add a case when there is a problem
   * // FIXME: bind and add row to the good tables in the DB, in order to have a clean user 
-  * // TODO: clean this shitty code 😡 
   */
   onSubmit() {
     let dateSuscribe = this.getcurrentDate("yyyy","mm","dd", "-"); 
@@ -111,13 +110,8 @@ export class FormRegisterComponent implements OnInit {
       mail:this.theNewUser.infos.email, 
       password:this.theNewUser.infos.mdp, // FIXME: find a way to have it encrypted
       sign_in_date:dateSuscribe,
-      // photo:42
-      // name_spotify:
-      // name_deezer:
-      // name_youtube:
-      // name_bandcamp:
-      id_profession:1, // 1 : "Artiste"
-      id_country:1 // 1 : "France"
+      id_profession:1,  // 1 : "Artiste"
+      id_country:1      // 1 : "France"
     };
     let postDataSurvey = 
     {
@@ -133,15 +127,9 @@ export class FormRegisterComponent implements OnInit {
       checked:false
     };
     
-    // let urlToCountry = "http://localhost:5000/insert_Country";
-    // let urlToProfession = "http://localhost:5000/insert_Profession";
-    // !!!! ils sont déjà de base faut juste binder dans la table UserStar 
     let urlToUserStar = 'http://localhost:5000/insert_UserStar';
     let urlToSurvey = 'http://localhost:5000/insert_Survey';
     let urlToArtist = 'http://localhost:5000/insert_artist';
-    // let urlToArtistTalent = "http://localhost:5000/insert_Artist_Talent";
-    let urlToArtistNeed = "http://localhost:5000/insert_Artist_Need";
-    // let url = "http://httpbin.org/post"; // !!!! test url that returns the post datas
     
     let returnOfToUserStar ;
     let returnOfToSurvey ;
@@ -167,10 +155,9 @@ export class FormRegisterComponent implements OnInit {
                 this.debugLabel = this.postDataToArtistTalent(returnOfToArtist.insertId) ; 
                 this.debugLabel += this.postDataToArtisteNeed(returnOfToArtist.insertId) ; 
               }
-
-              //TODO: continuer en bindant avec le userstar musical style 
               
               // FIXME: terminer :  en fin d'insertion de tout on  vérifie :   tout est bon ? on désafiche le form : on annule (delete) tout et on affiche une erreur  parceque le mettre ici c'est un peu borderline niveau propreté de code.....
+              // Utiliser pour cela les returnOfToUserStar et supprimer les dernières insertions correspondantes
               if ( returnOfToArtist.insertId ) {
                 this.debugLabel = "Nouveau user enregistré ! " + JSON.stringify(dataArtist) ; 
                 this.theStep2 = false ; 
@@ -258,7 +245,7 @@ export class FormRegisterComponent implements OnInit {
         this.debugLabel = "ERROR! in posting ArtistTalent"; 
         break;
       }
-      ret += "}" ; // FIXME: return ce string ; "{}}" donc voir si ça peut s'arranger avec   JSON.stringify(data)  par ex. 
+      ret += "}" ; // FIXME: FM306 return ce string ; "{}}" donc voir si ça peut s'arranger avec   JSON.stringify(data)  par ex. 
     }
     
     return ret ; 
@@ -329,23 +316,11 @@ export class FormRegisterComponent implements OnInit {
       this.debugLabel = "ERROR! in posting ArtistTalent"; 
       break;
     }
-    ret += "}" ; // FIXME: return ce string ; "{}}" donc voir si ça peut s'arranger avec   JSON.stringify(data)  par ex. 
+    ret += "}" ; // FIXME: FM306 
   }
   
   return ret ; 
 }
-
-
-// blues?: boolean,
-// funk?: boolean,
-// jazz?: boolean,
-// metal?: boolean,
-// pop?: boolean,
-// punk?: boolean,
-// rap?: boolean,
-// rockNRoll?: boolean
-
-
 
   /**
   * Send post request to add rows in UserStar_MusicalStyle table for each genres of this.theNewUser .
@@ -417,14 +392,12 @@ export class FormRegisterComponent implements OnInit {
       this.debugLabel = "ERROR! in posting ArtistTalent"; 
       break;
     }
-    ret += "}" ; // FIXME: return ce string ; "{}}" donc voir si ça peut s'arranger avec   JSON.stringify(data)  par ex. 
+    ret += "}" ; // FIXME: FM306
   }
   
   return ret ; 
 }
 
-  
-  
   
   
   
@@ -486,8 +459,4 @@ export class FormRegisterComponent implements OnInit {
     
     return ret ; 
   }
-  
-  
-  
-  
 }

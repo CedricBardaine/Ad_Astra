@@ -7,7 +7,7 @@
     </div>
     <div *ngSwitchCase="-1">
         Vous êtes vraiment un maître Jedi. Que la force soit avec vous. Notre mission s’arrête ici.
-        <!-- TODO: insérez une animation d’une fusée qui part au loin puis disparaît -->
+        <!-- TODO: #TD207 insérez une animation d’une fusée qui part au loin puis disparaît -->
     </div> 
     
     
@@ -19,7 +19,7 @@
     <div *ngSwitchCase="-2">
         Vous êtes une petite étoile perdue dans l’univers d’Ad Astra. 
         Nos astronautes ne peuvent rien pour vous, mais revenez nous voir dans quelques années lumière si vous vous lancez dans un projet musical !
-        <!-- TODO: insérez une animation d’une fusée qui part au loin puis disparaît -->
+        <!-- TODO: #TD207 -->
     </div>
     
     
@@ -32,7 +32,7 @@
     <div *ngSwitchCase="-3">
         Vous êtes une petite étoile perdue dans l’univers d’Ad Astra. 
         Nos astronautes ne peuvent rien pour vous, mais revenez nous voir dans quelques années lumière si vous vous lancez dans un projet musical !
-        <!-- TODO: insérez une animation d’une fusée qui part au loin puis disparaît -->
+        <!-- TODO: #TD207 -->
     </div>
     
     
@@ -43,7 +43,7 @@
     </div>
     <div *ngSwitchCase="-4">
         Allô ? Allô… ? [Fin du signal]
-        <!-- TODO: insérez une animation d’une fusée qui part au loin puis disparaît -->
+        <!-- TODO: #TD207 -->
     </div>
     
     
@@ -223,7 +223,7 @@
             <button type="submit" >
                 Décollage
             </button>
-            // FIXME: et si l'utilisateur décoche tout avant d'envoyer ? hum hum ?
+             <!-- FIXME: et si l'utilisateur décoche tout avant d'envoyer ? hum hum ? -->
             <button (click)="theFormState=1 ; theStep2=false"> 
                 Etape précédente
             </button>
@@ -246,4 +246,4 @@
     <small>debugLabel : {{debugLabel}}</small><br><br>
     <small>theFormState : {{theFormState}}</small><br><br>
     <small>theNewUser : {{theNewUser | json}}</small><br><br>
-    <!-- FIXME: delete before prod -->
+    <!-- FIXME: FM7 delete before prod -->
