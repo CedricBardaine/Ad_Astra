@@ -220,16 +220,20 @@
 
             <br>
             <label for="idTxtConfirmMotDePasse">Confirmation du mot de passe *</label> <br>
-            <input type="password" id="idTxtConfirmMotDePasse" name="idTxtConfirmMotDePasse" required> <br>
+            <input [(ngModel)]="confirmPassWord" type="password" id="idTxtConfirmMotDePasse" name="idTxtConfirmMotDePasse" required> <br>
 
             <!-- <button type="submit" [disabled]="!form.form.valid"> -->
-            <button type="submit" [disabled]="!form.form.valid" >
+            <button type="submit" >
                 Décollage
             </button>
              <!-- FIXME: et si l'utilisateur décoche tout avant d'envoyer ? hum hum ? -->
             <button (click)="theFormState=1 ; theStep2=false"> 
                 Etape précédente
             </button>
+
+            <div >
+                <p>{{errorInRegisterForm}}</p>
+            </div>
         </form>
         
     </div>
