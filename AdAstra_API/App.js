@@ -47,7 +47,7 @@ const {insert_Formation , delete_Formation} = require('./actions/Formation') ;
 // Table : UserStar_Musical_style
 const {insert_UserStar_Musical_style , delete_UserStar_Musical_style} = require('./actions/UserStar_Musical_style') ; 
 // Table : UserStar
-const {insert_UserStar , delete_UserStar} = require('./actions/UserStar') ; 
+const {insert_UserStar , getMdp_UserStar , delete_UserStar} = require('./actions/UserStar') ; 
 // Table : Music
 const {insert_Music , delete_Music} = require('./actions/Music') ; 
 
@@ -141,6 +141,7 @@ app.post('/delete_UserStar_Musical_style', delete_UserStar_Musical_style);
 
 app.post('/insert_UserStar', insert_UserStar); 
 app.post('/delete_UserStar', delete_UserStar); 
+app.get('/testGetMdps' , getMdp_UserStar); // FIXME: FM7 delete before prod !!! 
 
 app.post('/insert_Music', insert_Music); 
 app.post('/delete_Music', delete_Music); 
