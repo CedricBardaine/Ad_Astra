@@ -244,3 +244,37 @@ INSERT INTO Artist_need (id , id_artist , id_need ) VALUES (777 , 777 , 777 ) ;
 INSERT INTO Artist_Talent (id , id_artist , id_talent ) VALUES (777 , 777 , 777 ) ; 
 INSERT INTO UserStar_musical_style (id , id_userStar , id_musical_style ) VALUES (777 , 777 , 777 ) ; 
 INSERT INTO Music (id , id_userStar , id_musical_style ) VALUES (777 , 777 , 777 ) ; 
+
+
+
+-- Fill tables : for essential rows
+-- -- à ne pas modifier !! certaines fct de l'app Ad Astra reposent sur ces ids
+
+INSERT INTO Country (id, name) VALUES (1, "France") ; 
+INSERT INTO Profession (id, name) VALUES (1, "Artiste") ; 
+INSERT INTO Talent (id , name) VALUES
+(1 ,  "Compositeur"),
+(2 ,  "Parolier"),
+(3 ,  "Arrangeur"),
+(4 ,  "Auteur de chansons"),
+(5 ,  "Chanteur"),
+(6 ,  "Musicien de scène"),
+(7 ,  "Musicien de studio"),
+(8 ,  "DJ") ;
+INSERT INTO Musical_style (id , name) VALUES
+(1 ,  "Blues"),
+(2 ,  "Funk"),
+(3 ,  "Jazz"),
+(4 ,  "Metal"),
+(5 ,  "Pop"),
+(6 ,  "Punk"),
+(7 ,  "Rap"),
+(8 ,  "Rock'n'roll") ;
+INSERT INTO Need (id , name) VALUES
+(1 ,  "Aide au management"),
+(2 ,  "Gestion des droits d’auteur"),
+(3 ,  "Obtenir de la visibilité"),
+(4 ,  "Devenir intermittent du spectacle"),
+(5 ,  "Mieux connaître l’industrie de la musique"),
+(6 ,  "Chercher des subventions"),
+(7 ,  "Se faire du réseau") ;
