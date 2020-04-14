@@ -132,7 +132,6 @@ export class FormRegisterComponent implements OnInit {
   /**
   * Send the form data to the API, adding rows in the good tables and binding them. 
   * // TODO: add a case when there is a problem
-  * // FIXME: bind and add row to the good tables in the DB, in order to have a clean user 
   */
   onSubmit() {
     if ( this.customFormValidation() ) {
@@ -145,7 +144,7 @@ export class FormRegisterComponent implements OnInit {
         lastname:this.theNewUser.infos.nom,
         // birth:2020-03-13 // FIXME: obtain actual date of the new user, not only a yes no
         mail:this.theNewUser.infos.email, 
-        password:this.theNewUser.infos.mdp, // FIXME: find a way to have it encrypted
+        password:this.theNewUser.infos.mdp, 
         sign_in_date:dateSuscribe,
         id_profession:1,  // 1 : "Artiste"
         id_country:1      // 1 : "France"
