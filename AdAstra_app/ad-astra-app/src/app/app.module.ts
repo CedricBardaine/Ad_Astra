@@ -8,6 +8,15 @@ import { FormRegisterComponent } from './form-register/form-register.component';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpClientModule }    from '@angular/common/http';
 
+import { RouterModule , Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: 'register', component: FormRegisterComponent },
+  // { path: '404', component: lecomposant404 },
+  { path: '', component: FormRegisterComponent },
+  // { path: '**', component: lecomposant404 },
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +26,11 @@ import { HttpClientModule }    from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(
+      appRoutes,
+      {enableTracing: true} // FIXME: FM7 debugging purposes only
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent]
