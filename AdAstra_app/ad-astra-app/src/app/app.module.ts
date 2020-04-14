@@ -9,18 +9,20 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpClientModule }    from '@angular/common/http';
 
 import { RouterModule , Routes } from '@angular/router';
+import { Page404Component } from './page404/page404.component';
 
 const appRoutes: Routes = [
   { path: 'register', component: FormRegisterComponent },
-  // { path: '404', component: lecomposant404 },
+  { path: '404', component: Page404Component },
   { path: '', component: FormRegisterComponent },
-  // { path: '**', component: lecomposant404 },
+  { path: '**', component: Page404Component },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormRegisterComponent
+    FormRegisterComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
