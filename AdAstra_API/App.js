@@ -17,7 +17,7 @@ const {addSomething} = require('./actions/Testtmp');
 // Table : Random_sentence
 const {insert_RandomSentence, getRandom_RandomSentence, delete_RandomSentence} = require('./actions/Random_sentence');
 // Table : Artist
-const {insert_Artist , delete_Artist} = require('./actions/Artist') ; 
+const {insert_Artist , delete_Artist, get_Artist_infos} = require('./actions/Artist') ; 
 // Table : Contrat
 const {insert_Contrat , delete_Contrat} = require('./actions/Contrat') ; 
 // Table : Pro
@@ -96,6 +96,7 @@ app.get('/getRandom_RandomSentence', getRandom_RandomSentence);
 
 app.post('/insert_artist', insert_Artist); 
 app.post('/delete_Artist', delete_Artist); 
+app.get('/get_infos_Artist', get_Artist_infos); 
 
 app.post('/insert_Contrat', insert_Contrat); 
 app.post('/delete_Contrat', delete_Contrat); 
