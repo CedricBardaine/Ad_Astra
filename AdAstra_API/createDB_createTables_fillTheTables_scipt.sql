@@ -121,6 +121,7 @@ CREATE TABLE UserStar (
         password BLOB NOT NULL, /* TODO: encrypt it !! */
         sign_in_date DATE NOT NULL, 
         photo INT,
+        bio TEXT,
         name_spotify VARCHAR(50),
         name_deezer VARCHAR(50),
         name_youtube VARCHAR(50),
@@ -278,3 +279,19 @@ INSERT INTO Need (id , name) VALUES
 (5 ,  "Mieux connaître l’industrie de la musique"),
 (6 ,  "Chercher des subventions"),
 (7 ,  "Se faire du réseau") ;
+
+
+
+-- Fill tables : for additional exemples
+
+INSERT INTO UserStar 
+(id, firstname, lastname, birth, mail, photo, bio, name_spotify, id_profession, id_country) 
+VALUES
+(778, 'Jean', 'Jacques', '1985-02-27', 'JJBoomer@gmail.com', 1, 'Bonjour, je fais de la musique jolie.', 'JBoom', 1, 1),
+(779, 'Christophe', 'Marée', '1975-10-16', 'ilestou@gmail.com', 1, 'Ça fait mal de vivre sans toi, elle a mal et tu ne t’imagines même pas comme ça fait mal de rire sans toi.', 'ChristTop', 1, 1)
+;
+INSERT INTO Artist
+(id, id_userStar, artist_name, suscribed, checked)
+VALUES
+(778, 779, 'Christophe Marée', true, true)
+; 
