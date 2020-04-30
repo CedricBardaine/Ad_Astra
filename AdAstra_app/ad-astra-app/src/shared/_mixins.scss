@@ -1,0 +1,31 @@
+/****************************/
+/****** MEDIA QUERIES *******/
+/****************************/
+
+// small devices
+@mixin sm {
+	@media (max-width: #{$screen-sm}) {
+		@content;
+	}
+}
+
+// medium devices
+@mixin md {
+	@media (max-width: #{$screen-md}) {
+		@content;
+	}
+}
+
+// large devices
+@mixin lg {
+	@media (max-width: #{$screen-lg}) {
+		@content;
+	}
+}
+
+// extra large devices
+@mixin xl {
+	@media (max-width: #{$screen-xl}) {
+		@content;
+	}
+}

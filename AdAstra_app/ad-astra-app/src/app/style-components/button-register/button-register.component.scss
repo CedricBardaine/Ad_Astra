@@ -1,0 +1,44 @@
+@import "../../../shared/shared";
+
+:host {
+	button {
+		padding: 12px 56px;
+		color: $primary;
+		font-size: $f-cta;
+		background: $white;
+		font-weight: bold;
+		border: 2px solid $white;
+		border-radius: 6px;
+		transition: all $duration $ease;
+		margin-top: 0.8rem;
+		&:hover {
+			background: darken($color: $white, $amount: 15%);
+			border-color: darken($color: $white, $amount: 15%);
+			color: $primary;
+			cursor: pointer;
+		}
+	}
+
+	&.btn__register--secondary {
+		button {
+			color: $white;
+			background: transparent;
+			&:hover {
+				background: $white;
+				color: $primary;
+			}
+		}
+	}
+
+	&.btn__register--red {
+		button {
+			background: transparent;
+			color: $accent;
+			border-color: $accent;
+			&:hover {
+				background-color: $accent;
+				color: $white;
+			}
+		}
+	}
+}

@@ -1,2 +1,58 @@
 <p>page-artist works!!</p>
 <p>artist  : {{ artisteId }}</p>
+
+
+
+<hr>
+
+
+
+<aa-header-loggedOut></aa-header-loggedOut>
+<aa-header-loggedIn></aa-header-loggedIn>
+<div class="wrapper content">
+	<h1 class="is-uppercase is-centered">Ad Astra UI Kit</h1>
+	<section class="buttons">
+		<h2>Buttons</h2>
+		<div class="buttons__container">
+			<aa-button class="mt-1" btnText="Primary button" btnLink="/"></aa-button>
+			<aa-button
+				class="mt-1"
+				btnText="Large button"
+				btnLink="/"
+				isLarge="true"
+			></aa-button>
+			<aa-button
+				class="mt-1"
+				btnText="Secondary button"
+				btnLink="/"
+				isSecondary="true"
+			></aa-button>
+			<aa-button
+				class="mt-1"
+				btnText="secondary button disabled"
+				btnLink="/"
+				isDisabled="true"
+				isSecondary="true"
+			></aa-button>
+		</div>
+	</section>
+	<section class="buttons__register">
+		<h2>Buttons register / Buttons home</h2>
+		<div class="buttons__container">
+			<aa-button-register
+				btnText="Primary button"
+				btnLink="/"
+			></aa-button-register>
+			<aa-button-register
+				btnText="Secondary button"
+				btnLink="/"
+				isSecondary="true"
+			></aa-button-register>
+			<aa-button-register
+				btnText="Secondary red button"
+				btnLink="/"
+				isRed="true"
+			></aa-button-register>
+		</div>
+	</section>
+</div>

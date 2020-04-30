@@ -1,0 +1,35 @@
+<header class="wrapper">
+	<a class="logo" routerlink="/">
+		<img
+			class="logo__image"
+			src="../../assets/icons/Logo_Inverted.svg"
+			alt="Logo Ad Astra"
+		/>
+		<p class="logo__text">Ad Astra</p>
+	</a>
+	<div class="menu">
+		<a class="menu__link" routerLink="/" routerLinkActive="menu__link--active"
+			>Accueil</a
+		>
+		<a
+			class="menu__link"
+			routerLink="/decouvrir"
+			routerLinkActive="menu__link--active"
+			>Découvrir</a
+		>
+		<a
+			class="menu__link"
+			routerLink="/profile"
+			routerLinkActive="menu__link--active"
+			>Mon Profil</a
+		>
+		<a
+			class="menu__link--notification"
+			[ngClass]="isOpen ? 'is-opened' : 'is-closed'"
+			routerlink="#"
+			(click)="handleNotification()"
+		>
+			<img src="../../assets/icons/bell.svg" alt="Bell Icon" />
+		</a>
+	</div>
+</header>
