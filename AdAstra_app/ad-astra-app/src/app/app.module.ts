@@ -10,10 +10,14 @@ import { HttpClientModule }    from '@angular/common/http';
 
 import { RouterModule , Routes } from '@angular/router';
 import { Page404Component } from './page404/page404.component';
+import { PageArtistComponent } from './page-artist/page-artist.component';
 
 const appRoutes: Routes = [
   { path: 'register', component: FormRegisterComponent },
   { path: '404', component: Page404Component },
+  { path: 'artist', component: PageArtistComponent },
+  { path: 'artist/:id', component: PageArtistComponent },
+
   { path: '', component: FormRegisterComponent },
   { path: '**', component: Page404Component },
 ];
@@ -22,7 +26,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     FormRegisterComponent,
-    Page404Component
+    Page404Component,
+    PageArtistComponent
   ],
   imports: [
     BrowserModule,
