@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-page-artist',
   templateUrl: './page-artist.component.html',
-  styleUrls: ['./page-artist.component.css']
+  styleUrls: ['./page-artist.component.scss']
 })
 export class PageArtistComponent implements OnInit {
   artisteId: any;

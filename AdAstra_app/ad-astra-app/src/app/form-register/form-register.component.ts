@@ -69,7 +69,7 @@ export interface NewUser {
 @Component({
   selector: 'app-form-register',
   templateUrl: './form-register.component.html',
-  styleUrls: ['./form-register.component.css']
+  styleUrls: ['./form-register.component.scss']
 })
 export class FormRegisterComponent implements OnInit {
   debugLabel = "" ; // FIXME: FM7 delete before prod
