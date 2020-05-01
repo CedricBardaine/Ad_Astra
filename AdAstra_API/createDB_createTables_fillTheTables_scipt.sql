@@ -285,13 +285,18 @@ INSERT INTO Need (id , name) VALUES
 -- Fill tables : for additional exemples
 
 INSERT INTO UserStar 
+(id, firstname, lastname, birth, mail, bio, name_spotify, id_profession, id_country) 
+VALUES
+(778, 'Jean', 'Jacques', '1985-02-27', 'JJBoomer@gmail.com', 'Bonjour, je fais de la musique jolie.', 'JBoom', 1, 1)
+;
+INSERT INTO UserStar 
 (id, firstname, lastname, birth, mail, photo, bio, name_spotify, id_profession, id_country) 
 VALUES
-(778, 'Jean', 'Jacques', '1985-02-27', 'JJBoomer@gmail.com', 1, 'Bonjour, je fais de la musique jolie.', 'JBoom', 1, 1),
-(779, 'Christophe', 'Marée', '1975-10-16', 'ilestou@gmail.com', 1, 'Ça fait mal de vivre sans toi, elle a mal et tu ne t’imagines même pas comme ça fait mal de rire sans toi.', 'ChristTop', 1, 1)
+(779, 'Christophe', 'Marée', '1975-10-16', 'ilestou@gmail.com', 1, 'Ça fait mal de vivre sans toi.', 'ChristTop', 1, 1)
 ;
 INSERT INTO Artist
 (id, id_userStar, artist_name, suscribed, checked)
 VALUES
-(778, 779, 'Christophe Marée', true, true)
+(778, 778, 'JeanJ', true, false),
+(779, 779, 'Christophe Marée', true, true)
 ; 

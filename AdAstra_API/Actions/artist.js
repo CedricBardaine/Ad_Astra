@@ -1,3 +1,5 @@
+const paths = require('../utils');
+
 module.exports = {
     insert_Artist: (req, res) => {
         // let id = req.body.id; 
@@ -40,6 +42,7 @@ module.exports = {
             let ret = {
                 id:null,
                 name:null,
+                pict:null,
                 nbFollowers:null,
                 nbFollowing:null,
                 bio:null,
@@ -49,7 +52,7 @@ module.exports = {
             
             let query = 
             // "SELECT json_object( 'id',artist.id , 'name',artist_name , 'bio',bio ) AS 'data'"+ 
-            "SELECT artist.id, artist_name, bio "+ 
+            "SELECT artist.id, artist_name, userstar.photo, bio "+ 
             "FROM adastra.artist, adastra.userstar "+
             "WHERE artist.id=userstar.id AND artist.id="+lid+" "+
             "";
@@ -69,6 +72,15 @@ module.exports = {
 
                 ret.id = result.id ; 
                 ret.name = result.artist_name;
+
+                /**
+                 * Si l'utilisateur n'a pas encore de photo, renvoie la photo par defaut
+                 */
+                if (result.photo) 
+                    ret.pict = paths.pathPicts+ result.photo +'.jpg' ;
+                else 
+                    ret.pict = paths.pathPicts+ '0' +'.jpg';
+
                 ret.bio = result.bio;
                 
                 res.send(ret) ; 

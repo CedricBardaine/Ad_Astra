@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 interface Artist {
   id: number;
   name: string;
+  pict: string;
   nbFollowers: number; 
   nbFollowing: number;
   bio: string;
@@ -20,6 +21,7 @@ export class PageArtistComponent implements OnInit {
   artist: Artist = {
     id:null,
     name:null,
+    pict:null,
     nbFollowers:null,
     nbFollowing:null,
     bio:null,
@@ -40,6 +42,7 @@ export class PageArtistComponent implements OnInit {
         console.log(fetched)
         this.artist.id = fetched.id ; 
         this.artist.name = fetched.name ; 
+        this.artist.pict = fetched.pict ; 
         this.artist.bio = fetched.bio ; 
       })
       .catch(error => {
