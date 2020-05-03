@@ -1,0 +1,67 @@
+/****************************/
+/********** COLORS **********/
+/****************************/
+$primary: #0a1330;
+$secondary: #18213e;
+$accent: #f64740;
+$accentHover: #a22d28;
+$white: #fafafa;
+$success: #40f671;
+$danger: $accent;
+$warning: #f6cc40;
+
+/****************************/
+/******** TYPOGRAPHY ********/
+/****************************/
+$fontStack: "Montserrat", Helvetica, Arial;
+
+// sizes
+$f-h1: 5.6rem;
+$f-h1--tablet: 4.8rem;
+$f-h1--mobile: 4rem;
+
+$f-h2: 3.6rem;
+$f-h2--tablet: 3.2rem;
+$f-h2--mobile: 2.4rem;
+
+$f-h3: 2.8rem;
+$f-h3--tablet: 2.2rem;
+$f-h3--mobile: 2rem;
+
+$f-h4: 1.8rem;
+$f-h4--tablet: 1.8rem;
+$f-h4--mobile: 1.8rem;
+
+$f-body: 1.6rem;
+
+$f-cta: 1.4rem;
+$f-cta--large: 1.8rem;
+
+$f-label: 1.2rem;
+
+$f-logo: 3.6rem;
+$f-logo--tablet: 2.4rem;
+$f-logo--mobile: 2rem;
+
+/****************************/
+/*********** WIDTH **********/
+/****************************/
+$wrapperWidth: 90%;
+$wrapperWidthMobile: 95%;
+$postWrapperWidth: 60%;
+
+/****************************/
+/******** BREAKPOINTS********/
+/****************************/
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+/****************************/
+/********** OTHER ***********/
+/****************************/
+$radius: 10px;
+$radiusButton: 50px;
+$duration: 0.5s;
+$ease: cubic-bezier(0.68, 0.15, 0.31, 1.05);
