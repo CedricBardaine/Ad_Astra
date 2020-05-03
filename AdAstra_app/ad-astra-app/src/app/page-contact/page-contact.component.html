@@ -1,29 +1,33 @@
 <aa-header-loggedOut></aa-header-loggedOut>
 
-<h1>Ici la tour de contrôle, veuillez décrire votre situation</h1>
+<h1 class="contactPageTitle">Ici la tour de contrôle, veuillez décrire votre situation</h1>
 <small>Tous les champs sont obligatoires</small>
 <br>
 <br>
 
-<label for="inputNom">Nom complet</label><br>
+<label class="contactPageLabel" for="inputNom">Nom complet</label><br>
 <input type="text" name="Nom" id="inputNom">
 <br>
 
-<label for="inputSujet">Sujet de la demande</label><br>
+<label class="contactPageLabel" for="inputSujet">Sujet de la demande</label><br>
 <input type="text" name="Sujet" id="inputSujet">
 <br>
 
-<label for="choiceStatut">Vous êtes</label><br>
+<label class="contactPageLabel" for="choiceStatut">Vous êtes</label><br>
 <div id="choiceStatut">    
-    <input type="radio" name="Statut" id="inputStatutPro" value="pro">
-    <label for="inputStatutPro">Un professionnel</label>
-    <input type="radio" name="Statut" id="inputStatutArtiste" value="artiste">
-    <label for="inputStatutArtiste">Un artiste</label>
+    <input class="contactPageRadioBtn" type="radio" name="Statut" id="inputStatutPro" value="pro">
+    <label class="contactPageLabel" for="inputStatutPro">Un professionnel</label>
+    <input class="contactPageRadioBtn" type="radio" name="Statut" id="inputStatutArtiste" value="artiste">
+    <label class="contactPageLabel" for="inputStatutArtiste">Un artiste</label>
 </div>
 <br>
 
-<label for="inputMessage">Votre message</label><br>
-<input type="textarea" name="Message" id="inputMessage">
+<label class="contactPageLabel" for="inputMessage">Votre message</label><br>
+<input class="contactPageTextarea" type="textarea" name="Message" id="inputMessage">
 <br>
+
+<div class="contactPageImage">
+    <img src="../../assets/picts/sunyu-kim-NNkmhogy6NM-unsplash.png" alt="">
+</div>
 
 <aa-button btnText="Envoyer"></aa-button>
