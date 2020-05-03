@@ -1,15 +1,21 @@
-<header class="wrapper">
-  <a class="logo" routerlink="/">
+<header class="aa-header">
+  <a class="aa-header-logo -left" routerlink="/">
     <img
-      class="logo__image"
+      class="aa-header-logo-image"
       src="../../assets/icons/Logo_Inverted.svg"
       alt="Logo Ad Astra"
     />
-    <p class="logo__text">Ad Astra</p>
+    <p class="aa-header-logo-text">Ad Astra</p>
   </a>
-  <div class="menu">
-    <a class="menu__link" routerLink="/about">Qui sommes nous ?</a>
-    <a class="menu__link" routerLink="/contact">Contact</a>
-    <a class="menu__link" routerLink="/connect">Se connecter</a>
+  <div class="aa-header-menu -right">
+    <a class="aa-header-menu-link" routerLink="/about">Qui sommes nous ?</a>
+    <a class="aa-header-menu-link" routerLink="/contact">Contact</a>
+    <aa-btn-register
+      btnText="Se connecter"
+      btnLink="/connect"
+      isSecondary="true"
+      isSmall="true"
+      isConnect="true"
+    ></aa-btn-register>
   </div>
 </header>

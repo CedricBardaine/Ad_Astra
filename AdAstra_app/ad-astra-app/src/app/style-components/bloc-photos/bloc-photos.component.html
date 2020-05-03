@@ -1,0 +1,21 @@
+<div class="aa-bloc aa-bloc-photos">
+  <h3 class="aa-bloc-photos-title">Photos</h3>
+  <div class="aa-bloc-photos-body">
+    <div
+      *ngFor="let item of arrayToDisplay; let i = index"
+      [ngClass]="'aa-bloc-photos-image-container container-' + (i + 1)"
+    >
+      <a routerLink="#"
+        ><img
+          class="aa-bloc-photos-image"
+          src="{{ imagePaths[i] }}"
+          *ngIf="imagePaths[i]"
+      /></a>
+    </div>
+  </div>
+  <aa-btn
+    class="aa-bloc-photos-more mt-2"
+    btnText="Plus de photos"
+    btnLink="/"
+  ></aa-btn>
+</div>

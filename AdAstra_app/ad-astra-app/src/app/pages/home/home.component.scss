@@ -1,0 +1,113 @@
+@import "../../../shared/shared";
+.-home {
+  display: flex;
+  flex-direction: column;
+  .aa-hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+    &-container {
+      max-width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+    }
+    &-body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .-left {
+        display: flex;
+        flex-direction: column;
+
+        .-title {
+          margin-bottom: 24px;
+        }
+        .-subtitle.-bounded {
+          width: 80%;
+          margin-bottom: 24px;
+        }
+        aa-btn-register {
+          margin-bottom: 24px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .-right {
+        .img-hero {
+          width: 525px;
+          height: auto;
+          border-radius: $radius;
+        }
+      }
+    }
+    &-scroll-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 150px;
+
+      &-logo {
+        margin-bottom: 8px;
+        animation: upAndDown 2s $ease infinite;
+      }
+      &-text {
+        font-weight: 600;
+      }
+
+      @keyframes upAndDown {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    }
+  }
+  .aa-pricing {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin-top: -150px;
+    &-container {
+      width: 85%;
+
+      .title2 {
+        margin-bottom: 114px;
+      }
+    }
+    &-body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .-left {
+        width: 525px;
+        height: 400px;
+        .img-pricing {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: $radius;
+        }
+      }
+    }
+  }
+  .aa-copyright {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+
+    .heart img {
+      width: 16px;
+      height: auto;
+      display: inline-block;
+      margin: 0 5px;
+    }
+  }
+}

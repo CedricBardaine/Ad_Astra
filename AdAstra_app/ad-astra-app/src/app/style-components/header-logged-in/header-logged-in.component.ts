@@ -6,13 +6,15 @@ import { Component, OnInit, HostBinding, Renderer2 } from '@angular/core';
 	styleUrls: ['./header-logged-in.component.scss'],
 })
 export class HeaderLoggedInComponent implements OnInit {
-	@HostBinding('class.header__logged--in') readonly rootClass = true;
+	@HostBinding('class.aa-header-loggedIn') readonly rootClass = true;
 	isOpen: boolean = false;
+	hasNotification: boolean = true;
 	constructor() {}
 
 	ngOnInit(): void {}
 
 	handleNotification() {
 		this.isOpen = !this.isOpen;
+		this.hasNotification = false;
 	}
 }

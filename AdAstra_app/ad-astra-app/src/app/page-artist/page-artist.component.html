@@ -1,22 +1,23 @@
 <aa-header-loggedOut></aa-header-loggedOut>
 
-<p>artist  : {{ artist.id }}</p>
-<p>pict  : 
-	<img src="../../assets/picts/{{artist.pict}}"  alt="" style="max-width: 10rem;"> 
-	<small style="font-size: xx-small;">{{artist.pict}}</small> 
+<p>artist : {{ artist.id }}</p>
+<p>
+  pict :
+  <img
+    src="../../assets/picts/{{ artist.pict }}"
+    alt=""
+    style="max-width: 10rem;"
+  />
+  <small style="font-size: xx-small;">{{ artist.pict }}</small>
 </p>
-<p>name  : {{ artist.name }}</p>
-<p>nbFollowers  : {{ artist.nbFollowers }}</p>
-<p>nbFollowing  : {{ artist.nbFollowing }}</p>
-<p>bio  : {{ artist.bio }}</p>
-<p>idsHeadMusics  : {{ artist.idsHeadMusics }}</p>
-<p>idsHeadPhotos  : {{ artist.idsHeadPhotos }}</p>
+<p>name : {{ artist.name }}</p>
+<p>nbFollowers : {{ artist.nbFollowers }}</p>
+<p>nbFollowing : {{ artist.nbFollowing }}</p>
+<p>bio : {{ artist.bio }}</p>
+<p>idsHeadMusics : {{ artist.idsHeadMusics }}</p>
+<p>idsHeadPhotos : {{ artist.idsHeadPhotos }}</p>
 
-
-
-<hr>
-
-
+<hr />
 
 <!-- 
 <div class="wrapper content">
@@ -24,7 +25,7 @@
 	<section class="buttons">
 		<h2>Buttons</h2>
 		<div class="buttons__container">
-			<aa-button class="mt-1" btnText="Primary button" btnLink="/"></aa-button>
+			<aa-btn class="mt-1" btnText="Primary button" btnLink="/"></aa-btn>
 			<aa-button
 				class="mt-1"
 				btnText="Large button"

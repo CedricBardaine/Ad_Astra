@@ -1,3 +1,15 @@
-<button routerLink="{{ btnLink }}">
-	{{ btnText }}
+<button
+  class="aa-btn-register"
+  [ngClass]="{
+    '-small': isSmall,
+    '-sign': isConnect,
+    '-red': isRed,
+    '-secondary': isSecondary,
+    '-large': isLarge
+  }"
+  routerLink="{{ btnLink }}"
+>
+  <div class="aa-btn-register-container">
+    <span [attr.data-text]="btnText">{{ btnText }}</span>
+  </div>
 </button>

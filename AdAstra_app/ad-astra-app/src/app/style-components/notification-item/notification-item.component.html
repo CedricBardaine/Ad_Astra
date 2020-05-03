@@ -1,0 +1,32 @@
+<a
+	class="aa-notification-item mb-3"
+	routerLink="{{ postLink }}"
+	(click)="setNewToFalse()"
+>
+	<div class="aa-notification-item-icon-container">
+		<div
+			class="aa-notification-item-icon"
+			[ngClass]="{
+				'icon-like': isLike,
+				'icon-comment': isComment,
+				'icon-follow': isFollow
+			}"
+		></div>
+	</div>
+	<div class="aa-notification-item-content ml-4">
+		<div class="aa-notification-item-action-container">
+			<span class="aa-notification-item-name">{{ personName }}</span>
+			<span class="aa-notification-item-action -like" *ngIf="isLike">
+				à aimé votre post</span
+			>
+			<span class="aa-notification-item-action -comment" *ngIf="isComment">
+				à commenté votre post</span
+			>
+			<span class="aa-notification-item-action -follow" *ngIf="isFollow">
+				vous suit</span
+			>
+		</div>
+		<span class="aa-notification-item-time">{{ time }}</span>
+	</div>
+	<div class="aa-notification-item-new" *ngIf="isNew"></div>
+</a>

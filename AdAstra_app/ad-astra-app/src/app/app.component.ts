@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import * as AOS from "aos";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
-export class AppComponent {
-  title = 'ad-astra-app';
-  
+export class AppComponent implements OnInit {
+  title = "ad-astra-app";
+
   constructor() {}
+
+  ngOnInit() {
+    AOS.init();
+  }
 }

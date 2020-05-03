@@ -5,86 +5,96 @@ h1,
 h2,
 h3,
 h4 {
-	margin-top: 0;
+  margin: 0;
 }
 
 h1 {
-	font-size: $f-h1;
-	font-weight: 800;
-	line-height: calc(#{$f-h1} * 1.5);
+  font-size: $f-h1;
+  font-weight: 600;
+  line-height: calc(#{$f-h1} * 1.5);
 
-	@include md {
-		font-size: $f-h1--tablet;
-		line-height: calc(#{$f-h1--tablet} * 1.5);
-	}
+  @include md {
+    font-size: $f-h1--tablet;
+    line-height: calc(#{$f-h1--tablet} * 1.5);
+  }
 
-	@include sm {
-		font-size: $f-h1--mobile;
-		line-height: calc(#{$f-h1--mobile} * 1.5);
-	}
+  @include sm {
+    font-size: $f-h1--mobile;
+    line-height: calc(#{$f-h1--mobile} * 1.5);
+  }
 }
 
 h2 {
-	font-size: $f-h2;
-	font-weight: 800;
-	line-height: calc(#{$f-h2} * 1.5);
+  font-size: $f-h2;
+  font-weight: 600;
+  line-height: calc(#{$f-h2} * 1.5);
 
-	@include md {
-		font-size: $f-h2--tablet;
-		line-height: calc(#{$f-h2--tablet} * 1.5);
-	}
+  @include md {
+    font-size: $f-h2--tablet;
+    line-height: calc(#{$f-h2--tablet} * 1.5);
+  }
 
-	@include sm {
-		font-size: $f-h2--mobile;
-		line-height: calc(#{$f-h2--mobile} * 1.5);
-	}
+  @include sm {
+    font-size: $f-h2--mobile;
+    line-height: calc(#{$f-h2--mobile} * 1.5);
+  }
 }
 
 h3 {
-	font-size: $f-h3;
-	font-weight: 800;
-	line-height: calc(#{$f-h3} * 1.5);
+  font-size: $f-h3;
+  font-weight: 600;
+  line-height: calc(#{$f-h3} * 1.5);
 
-	@include md {
-		font-size: $f-h3--tablet;
-		line-height: calc(#{$f-h3--tablet} * 1.5);
-	}
+  @include md {
+    font-size: $f-h3--tablet;
+    line-height: calc(#{$f-h3--tablet} * 1.5);
+  }
 
-	@include sm {
-		font-size: $f-h3--mobile;
-		line-height: calc(#{$f-h3--mobile} * 1.5);
-	}
+  @include sm {
+    font-size: $f-h3--mobile;
+    line-height: calc(#{$f-h3--mobile} * 1.5);
+  }
 }
 
 h4 {
-	font-size: $f-h4;
-	font-weight: 800;
-	line-height: calc(#{$f-h4} * 1.5);
+  font-size: $f-h4;
+  font-weight: 600;
+  line-height: calc(#{$f-h4} * 1.5);
 
-	@include md {
-		font-size: $f-h4--tablet;
-		line-height: calc(#{$f-h4--tablet} * 1.5);
-	}
+  @include md {
+    font-size: $f-h4--tablet;
+    line-height: calc(#{$f-h4--tablet} * 1.5);
+  }
 
-	@include sm {
-		font-size: $f-h4--mobile;
-		line-height: calc(#{$f-h4--mobile} * 1.5);
-	}
+  @include sm {
+    font-size: $f-h4--mobile;
+    line-height: calc(#{$f-h4--mobile} * 1.5);
+  }
 }
 
 a {
-	color: $white;
-	text-decoration: none;
+  color: $white;
+  text-decoration: none;
 }
 
-.is-uppercase {
-	text-transform: uppercase;
+p {
+  margin: 0;
+  line-height: calc(#{$f-body} * 1.5);
 }
 
-.is-centered {
-	text-align: center;
+.-uppercase {
+  text-transform: uppercase;
+}
 
-	@include sm {
-		text-align: left;
-	}
+.-centered {
+  text-align: center;
+
+  @include sm {
+    text-align: left;
+  }
+}
+
+.-subtitle {
+  font-size: $f-h4;
+  font-weight: 600;
 }

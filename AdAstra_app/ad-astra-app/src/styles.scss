@@ -2,50 +2,61 @@
 @import "shared/shared";
 
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
 
-	body {
-		color: $white;
-		font-family: $fontStack;
-		width: 100%;
-		overflow-x: hidden;
-		height: 100vh;
-		margin: 0;
-		padding: 0;
-		font-size: $f-body;
-		background: $primary linear-gradient(180deg, #0a133000 0%, #000000d5 100%)
-			0% 0% no-repeat padding-box;
+  body {
+    color: $white;
+    font-family: $fontStack;
+    width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: $f-body;
+    background: $primary linear-gradient(180deg, #0a133000 0%, #000000d5 100%)
+      0% 0% no-repeat padding-box;
 
-		.wrapper {
-			margin: 0 auto;
-			width: $wrapperWidth;
+    .aa-wrapper {
+      margin: 0 auto;
+      width: $wrapperWidth;
 
-			@include md {
-				width: $wrapperWidthMobile;
-			}
-		}
+      @include md {
+        width: $wrapperWidthMobile;
+      }
+    }
 
-		.postWrapper {
-			margin: auto;
-			width: $postWrapperWidth;
+    .aa-postWrapper {
+      margin: auto;
+      width: $postWrapperWidth;
 
-			@include md {
-				width: $wrapperWidthMobile;
-			}
-		}
+      @include md {
+        width: $wrapperWidthMobile;
+      }
+    }
 
-		.is-fullWidth {
-			width: 100vw;
-			position: relative;
-			left: 50%;
-			right: 50%;
-			margin-left: -50vw;
-			margin-right: -50vw;
-		}
-		input,
-		textarea,
-		button {
-			font-family: inherit;
-		}
-	}
+    .-fullWidth {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+
+    .-primary {
+      color: $primary;
+    }
+    .-secondary {
+      color: $secondary;
+    }
+    .-accent {
+      color: $accent;
+    }
+
+    input,
+    textarea,
+    button {
+      font-family: inherit;
+    }
+  }
 }

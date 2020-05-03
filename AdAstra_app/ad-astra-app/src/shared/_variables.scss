@@ -9,6 +9,7 @@ $white: #fafafa;
 $success: #40f671;
 $danger: $accent;
 $warning: #f6cc40;
+$shadowOnPrimary: 4px 4px 16px #00000080;
 
 /****************************/
 /******** TYPOGRAPHY ********/
@@ -16,32 +17,32 @@ $warning: #f6cc40;
 $fontStack: "Montserrat", Helvetica, Arial;
 
 // sizes
-$f-h1: 5.6rem;
-$f-h1--tablet: 4.8rem;
-$f-h1--mobile: 4rem;
+$f-h1: 56px;
+$f-h1--tablet: 48px;
+$f-h1--mobile: 40px;
 
-$f-h2: 3.6rem;
-$f-h2--tablet: 3.2rem;
-$f-h2--mobile: 2.4rem;
+$f-h2: 36px;
+$f-h2--tablet: 32px;
+$f-h2--mobile: 24px;
 
-$f-h3: 2.8rem;
-$f-h3--tablet: 2.2rem;
-$f-h3--mobile: 2rem;
+$f-h3: 28px;
+$f-h3--tablet: 22px;
+$f-h3--mobile: 20px;
 
-$f-h4: 1.8rem;
-$f-h4--tablet: 1.8rem;
-$f-h4--mobile: 1.8rem;
+$f-h4: 18px;
+$f-h4--tablet: 18px;
+$f-h4--mobile: 18px;
 
-$f-body: 1.6rem;
+$f-body: 16px;
 
-$f-cta: 1.4rem;
-$f-cta--large: 1.8rem;
+$f-cta: 14px;
+$f-cta--large: 18px;
 
-$f-label: 1.2rem;
+$f-label: 12px;
 
-$f-logo: 3.6rem;
-$f-logo--tablet: 2.4rem;
-$f-logo--mobile: 2rem;
+$f-logo: 36px;
+$f-logo--tablet: 24px;
+$f-logo--mobile: 20px;
 
 /****************************/
 /*********** WIDTH **********/
@@ -64,4 +65,4 @@ $screen-xl: 1200px;
 $radius: 10px;
 $radiusButton: 50px;
 $duration: 0.5s;
-$ease: cubic-bezier(0.68, 0.15, 0.31, 1.05);
+$ease: cubic-bezier(0.44, 0.15, 0.2, 1);
