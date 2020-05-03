@@ -1,0 +1,29 @@
+<aa-header-loggedOut></aa-header-loggedOut>
+
+<h1>Ici la tour de contrôle, veuillez décrire votre situation</h1>
+<small>Tous les champs sont obligatoires</small>
+<br>
+<br>
+
+<label for="inputNom">Nom complet</label><br>
+<input type="text" name="Nom" id="inputNom">
+<br>
+
+<label for="inputSujet">Sujet de la demande</label><br>
+<input type="text" name="Sujet" id="inputSujet">
+<br>
+
+<label for="choiceStatut">Vous êtes</label><br>
+<div id="choiceStatut">    
+    <input type="radio" name="Statut" id="inputStatutPro" value="pro">
+    <label for="inputStatutPro">Un professionnel</label>
+    <input type="radio" name="Statut" id="inputStatutArtiste" value="artiste">
+    <label for="inputStatutArtiste">Un artiste</label>
+</div>
+<br>
+
+<label for="inputMessage">Votre message</label><br>
+<input type="textarea" name="Message" id="inputMessage">
+<br>
+
+<aa-button btnText="Envoyer"></aa-button>
