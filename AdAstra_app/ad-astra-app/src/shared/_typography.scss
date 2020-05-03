@@ -88,10 +88,6 @@ p {
 
 .-centered {
   text-align: center;
-
-  @include sm {
-    text-align: left;
-  }
 }
 
 .-subtitle {

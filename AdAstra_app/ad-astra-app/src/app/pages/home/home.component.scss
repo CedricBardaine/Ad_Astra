@@ -12,6 +12,10 @@
       display: flex;
       flex-direction: column;
       align-content: center;
+
+      @include sm {
+        max-width: 100%;
+      }
     }
     &-body {
       display: flex;
@@ -27,11 +31,19 @@
         .-subtitle.-bounded {
           width: 80%;
           margin-bottom: 24px;
+
+          @include sm {
+            width: 100%;
+          }
         }
         aa-btn-register {
           margin-bottom: 24px;
           &:last-child {
             margin-bottom: 0;
+          }
+
+          @include sm {
+            align-self: center;
           }
         }
       }
@@ -41,6 +53,12 @@
           height: auto;
           border-radius: $radius;
         }
+        @include sm {
+          display: none;
+        }
+      }
+      @include sm {
+        justify-content: center;
       }
     }
     &-scroll-body {
@@ -69,6 +87,10 @@
         }
       }
     }
+
+    @include sm {
+      padding-top: 60px;
+    }
   }
   .aa-pricing {
     height: 100vh;
@@ -77,9 +99,16 @@
     margin-top: -150px;
     &-container {
       width: 85%;
-
       .title2 {
         margin-bottom: 114px;
+
+        @include sm {
+          margin-bottom: 114px;
+        }
+      }
+
+      @include sm {
+        width: 100%;
       }
     }
     &-body {
@@ -95,6 +124,14 @@
           object-fit: cover;
           border-radius: $radius;
         }
+
+        @include sm {
+          display: none;
+        }
+      }
+
+      @include sm {
+        justify-content: center;
       }
     }
   }
