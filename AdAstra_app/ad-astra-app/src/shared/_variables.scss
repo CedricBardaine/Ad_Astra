@@ -1,4 +1,5 @@
-:root {
+:root,
+[data-theme="dark"] {
   /****************************/
   /********** COLORS **********/
   /****************************/
@@ -58,4 +59,11 @@
   --radiusButton: 50px;
   --duration: 0.5s;
   --ease: cubic-bezier(0.44, 0.15, 0.2, 1);
+}
+
+[data-theme="light"] {
+  //if one day it has light mode
+  --primary: var(--white);
+  --white: var(--primary);
+  --secondary: var(--white-darken);
 }

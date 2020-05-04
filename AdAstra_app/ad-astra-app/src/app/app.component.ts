@@ -19,5 +19,8 @@ export class AppComponent implements OnInit {
       once: true,
       easing: "aa-easing",
     });
+
+    // dark mode per default
+    document.body.setAttribute("data-theme", "dark");
   }
 }
