@@ -5,15 +5,15 @@
   justify-content: flex-start;
   position: relative;
   align-items: center;
-  border-radius: $radius;
+  border-radius: var(--radius);
   padding: 1.6rem;
-  transition: all $duration $ease;
+  transition: all var(--duration) var(--ease);
   &:hover {
-    background-color: $primary;
+    background-color: var(--primary);
   }
 
   &-icon-container {
-    background-color: $accent;
+    background-color: var(--accent);
     width: 4.1rem;
     height: 4.1rem;
     border-radius: 50%;
@@ -46,7 +46,7 @@
     font-weight: 600;
   }
   &-time {
-    font-size: $f-label;
+    font-size: var(--f-label);
     font-style: italic;
     display: block;
     margin-top: 0.8rem;
@@ -54,7 +54,7 @@
   &-new {
     width: 0.9rem;
     height: 0.9rem;
-    background: $accent;
+    background: var(--accent);
     border-radius: 50%;
     position: absolute;
     top: 50%;

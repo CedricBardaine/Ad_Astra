@@ -2,17 +2,18 @@
 
 .aa-btn-register {
   padding: 12px 56px;
-  color: $primary;
-  font-size: $f-cta;
-  background: $white;
+  color: var(--primary);
+  font-size: var(--f-cta);
+  background: var(--white);
   font-weight: 600;
-  border: 2px solid $white;
+  border: 2px solid var(--white);
   border-radius: 6px;
-  transition: color $duration $ease, background-color $duration $ease;
+  transition: color var(--duration) var(--ease),
+    background-color var(--duration) var(--ease);
   &:hover {
-    background: darken($color: $white, $amount: 15%);
-    border-color: darken($color: $white, $amount: 15%);
-    color: $primary;
+    background: var(--white-darken);
+    border-color: var(--white-darken);
+    color: var(--primary);
     cursor: pointer;
   }
 
@@ -21,21 +22,21 @@
   }
 
   &.-secondary {
-    color: $white;
+    color: var(--white);
     background: transparent;
     &:hover {
-      background: $white;
-      color: $primary;
+      background: var(--white);
+      color: var(--primary);
     }
   }
 
   &.-red {
     background: transparent;
-    color: $accent;
-    border-color: $accent;
+    color: var(--accent);
+    border-color: var(--accent);
     &:hover {
-      background-color: $accent;
-      color: $white;
+      background-color: var(--accent);
+      color: var(--white);
     }
   }
 
@@ -56,7 +57,7 @@
       display: inline-block;
       will-change: transform;
       transform: translateZ(0);
-      transition: transform 0.5s $ease;
+      transition: transform 0.5s var(--ease);
       &:after {
         content: attr(data-text);
         display: block;

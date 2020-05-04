@@ -1,13 +1,13 @@
 @import "../../../shared/shared";
 
 .aa-price-card {
-  background: $white;
+  background: var(--white);
   display: flex;
   flex-direction: column;
   padding: 32px 32px 32px 38px;
   width: 280px;
   height: 325px;
-  border-radius: $radius;
+  border-radius: var(--radius);
   &-upper {
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
     }
     .aa-price-card-legend {
       .-legend {
-        font-size: $f-label;
+        font-size: var(--f-label);
       }
     }
   }
@@ -49,12 +49,12 @@
         height: 10px;
         min-height: 10px;
         border-radius: 50%;
-        background: $primary;
+        background: var(--primary);
         margin-top: 3px;
       }
       .item-text {
-        font-size: $f-body;
-        line-height: calc(#{$f-body * 1.5});
+        font-size: var(--f-body);
+        line-height: calc(var(--f-body) * 1.5);
         font-weight: 600;
         display: inline-block;
         margin-left: 10px;

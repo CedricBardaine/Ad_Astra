@@ -2,42 +2,42 @@
 
 .aa-btn {
   padding: 6px 15px;
-  color: $white;
-  font-size: $f-cta;
-  background: $accent;
+  color: var(--white);
+  font-size: var(--f-cta);
+  background: var(--accent);
   font-weight: 600;
-  border: 2px solid $accent;
-  border-radius: $radiusButton;
-  transition: all $duration $ease;
-  color: $white;
+  border: 2px solid var(--accent);
+  border-radius: var(--radiusButton);
+  transition: all var(--duration) var(--ease);
+  color: var(--white);
   &:hover {
-    background-color: $accentHover;
-    border-color: $accentHover;
+    background-color: var(--accentHover);
+    border-color: var(--accentHover);
     cursor: pointer;
   }
 
   &.-secondary {
     background: transparent;
-    border-color: $white;
+    border-color: var(--white);
     &:hover {
-      background-color: $white;
-      color: $primary;
+      background-color: var(--white);
+      color: var(--primary);
     }
   }
 
   &.-large {
     padding: 11px 51px;
     border-radius: 50px;
-    font-size: $f-cta--large;
+    font-size: var(--f-cta--large);
   }
 
   &.-disabled {
-    border-color: darken($color: $white, $amount: 60%);
-    color: darken($color: $white, $amount: 60%);
+    border-color: var(--white-darken);
+    color: var(--white-darken);
     &:hover {
       cursor: not-allowed;
-      border-color: darken($color: $white, $amount: 60%);
-      color: darken($color: $white, $amount: 60%);
+      border-color: var(--white-darken);
+      color: var(--white-darken);
       background: transparent;
     }
   }

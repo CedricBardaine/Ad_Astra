@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'aa-button-upload',
-  templateUrl: './button-upload.component.html',
-  styleUrls: ['./button-upload.component.scss']
+  selector: "aa-btn-upload",
+  templateUrl: "./button-upload.component.html",
+  styleUrls: ["./button-upload.component.scss"],
 })
 export class ButtonUploadComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

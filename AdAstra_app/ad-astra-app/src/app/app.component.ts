@@ -14,6 +14,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     AOS.init({
       duration: 1000,
+      useClassNames: false,
+      offset: 200,
       once: true,
       easing: "aa-easing",
     });

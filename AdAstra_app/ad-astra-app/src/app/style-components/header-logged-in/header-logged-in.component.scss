@@ -20,15 +20,15 @@
     }
     &-text {
       font-weight: 600;
-      font-size: $f-logo;
+      font-size: var(--f-logo);
       margin: 0;
       margin-left: 2rem;
 
       @include md {
-        font-size: $f-logo--tablet;
+        font-size: var(--f-logo--tablet);
       }
       @include sm {
-        font-size: $f-logo--mobile;
+        font-size: var(--f-logo--mobile);
       }
     }
   }
@@ -38,7 +38,7 @@
     &-link {
       margin-right: 6rem;
       font-weight: 600;
-      font-size: $f-cta;
+      font-size: var(--f-cta);
 
       @include sm {
         margin-right: 3rem;
@@ -50,8 +50,8 @@
         width: 50%;
         height: 3px;
         margin-top: 2px;
-        background: $accent;
-        border-radius: $radiusButton;
+        background: var(--accent);
+        border-radius: var(--radiusButton);
       }
 
       &.-notification {
@@ -65,8 +65,8 @@
   }
   &-notifications-container {
     padding: 1.6rem 4rem 2.4rem 4rem;
-    border-radius: $radius;
-    background-color: $secondary;
+    border-radius: var(--radius);
+    background-color: var(--secondary);
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -75,9 +75,9 @@
     will-change: transform, opacity;
     opacity: 0;
     transition-property: transform, opacity;
-    transition-duration: $duration;
-    transition-timing-function: $ease;
-    box-shadow: $shadowOnPrimary;
+    transition-duration: var(--duration);
+    transition-timing-function: var(--ease);
+    box-shadow: var(--shadowOnPrimary);
 
     &.-opened {
       transform: translateY(0px);

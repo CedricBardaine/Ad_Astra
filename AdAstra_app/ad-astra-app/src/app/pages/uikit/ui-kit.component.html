@@ -1,0 +1,56 @@
+<main class="aa-content -uikit">
+  <h1 class="title -uppercase -centered">Ad Astra UI Kit</h1>
+  <section class="aa-header">
+    <aa-header-loggedOut></aa-header-loggedOut>
+    <aa-header-loggedIn></aa-header-loggedIn>
+  </section>
+  <section class="aa-buttons">
+    <h2>Buttons</h2>
+    <div class="aa-buttons-container">
+      <aa-btn class="mt-1" btnText="Primary button" btnLink="/"></aa-btn>
+      <aa-btn
+        class="mt-1"
+        btnText="Large button"
+        btnLink="/"
+        isLarge="true"
+      ></aa-btn>
+      <aa-btn
+        class="mt-1"
+        btnText="Secondary button"
+        btnLink="/"
+        isSecondary="true"
+      ></aa-btn>
+      <aa-btn
+        class="mt-1"
+        btnText="secondary button disabled"
+        btnLink="/"
+        isDisabled="true"
+        isSecondary="true"
+      ></aa-btn>
+      <aa-btn-upload></aa-btn-upload>
+    </div>
+  </section>
+  <section class="aa-buttons-register">
+    <h2>Buttons register / Buttons home</h2>
+    <div class="aa-buttons-container">
+      <aa-btn-register btnText="Primary button" btnLink="/"></aa-btn-register>
+      <aa-btn-register
+        btnText="Secondary button"
+        btnLink="/"
+        isSecondary="true"
+      ></aa-btn-register>
+      <aa-btn-register
+        btnText="Secondary red button"
+        btnLink="/"
+        isRed="true"
+      ></aa-btn-register>
+    </div>
+  </section>
+  <section class="aa-cards">
+    <h2>Cards</h2>
+    <div class="aa-cards-container">
+      <aa-bloc-photos class="mb-2"></aa-bloc-photos>
+      <aa-bloc-similar-artists class="mt-2"></aa-bloc-similar-artists>
+    </div>
+  </section>
+</main>

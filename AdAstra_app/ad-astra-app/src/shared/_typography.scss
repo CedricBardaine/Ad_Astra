@@ -9,77 +9,103 @@ h4 {
 }
 
 h1 {
-  font-size: $f-h1;
+  font-size: var(--f-h1);
   font-weight: 600;
-  line-height: calc(#{$f-h1} * 1.5);
+  line-height: calc(var(--f-h1) * 1.5);
 
   @include md {
-    font-size: $f-h1--tablet;
-    line-height: calc(#{$f-h1--tablet} * 1.5);
+    font-size: var(--f-h1--tablet);
+    line-height: calc(var(--f-h1--tablet) * 1.5);
   }
 
   @include sm {
-    font-size: $f-h1--mobile;
-    line-height: calc(#{$f-h1--mobile} * 1.5);
+    font-size: var(--f-h1--mobile);
+    line-height: calc(var(--f-h1--mobile) * 1.5);
   }
 }
 
 h2 {
-  font-size: $f-h2;
+  font-size: var(--f-h2);
   font-weight: 600;
-  line-height: calc(#{$f-h2} * 1.5);
+  line-height: calc(var(--f-h2) * 1.5);
 
   @include md {
-    font-size: $f-h2--tablet;
-    line-height: calc(#{$f-h2--tablet} * 1.5);
+    font-size: var(--f-h2--tablet);
+    line-height: calc(var(--f-h2--tablet) * 1.5);
   }
 
   @include sm {
-    font-size: $f-h2--mobile;
-    line-height: calc(#{$f-h2--mobile} * 1.5);
+    font-size: var(--f-h2--mobile);
+    line-height: calc(var(--f-h2--mobile) * 1.5);
   }
 }
 
 h3 {
-  font-size: $f-h3;
+  font-size: var(--f-h3);
   font-weight: 600;
-  line-height: calc(#{$f-h3} * 1.5);
+  line-height: calc(var(--f-h3) * 1.5);
+
+  &.-underline {
+    width: fit-content;
+    &:after {
+      content: "";
+      display: block;
+      width: 50%;
+      height: 3px;
+      margin-top: 2px;
+      background: var(--accent);
+      border-radius: var(--radiusButton);
+    }
+  }
 
   @include md {
-    font-size: $f-h3--tablet;
-    line-height: calc(#{$f-h3--tablet} * 1.5);
+    font-size: var(--f-h3--tablet);
+    line-height: calc(var(--f-h3--tablet) * 1.5);
   }
 
   @include sm {
-    font-size: $f-h3--mobile;
-    line-height: calc(#{$f-h3--mobile} * 1.5);
+    font-size: var(--f-h3--mobile);
+    line-height: calc(var(--f-h3--mobile) * 1.5);
   }
 }
 
 h4 {
-  font-size: $f-h4;
+  font-size: var(--f-h4);
   font-weight: 600;
-  line-height: calc(#{$f-h4} * 1.5);
+  line-height: calc(var(--f-h4) * 1.5);
+
+  &.-underline {
+    width: fit-content;
+    &:after {
+      content: "";
+      display: block;
+      width: 50%;
+      height: 3px;
+      margin-top: 2px;
+      background: var(--accent);
+      border-radius: var(--radiusButton);
+    }
+  }
 
   @include md {
-    font-size: $f-h4--tablet;
-    line-height: calc(#{$f-h4--tablet} * 1.5);
+    font-size: var(--f-h4--tablet);
+    line-height: calc(var(--f-h4--tablet) * 1.5);
   }
 
   @include sm {
-    font-size: $f-h4--mobile;
-    line-height: calc(#{$f-h4--mobile} * 1.5);
+    font-size: var(--f-h4--mobile);
+    line-height: calc(var(--f-h4--mobile) * 1.5);
   }
 }
 
 a {
-  color: $white;
+  color: var(--white);
   text-decoration: none;
 }
 
 p {
   margin: 0;
-  line-height: calc(#{$f-body} * 1.5);
+  line-height: calc(var(--f-body) * 1.5);
 }
 
 .-uppercase {
@@ -91,6 +117,16 @@ p {
 }
 
 .-subtitle {
-  font-size: $f-h4;
+  font-size: var(--f-h4);
   font-weight: 600;
+
+  @include md {
+    font-size: var(--f-h4--tablet);
+    line-height: calc(var(--f-h4--tablet) * 1.5);
+  }
+
+  @include sm {
+    font-size: var(--f-h4--mobile);
+    line-height: calc(var(--f-h4--mobile) * 1.5);
+  }
 }

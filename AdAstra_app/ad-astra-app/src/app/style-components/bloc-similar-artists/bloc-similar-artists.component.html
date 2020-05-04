@@ -1,0 +1,24 @@
+<div class="aa-bloc aa-bloc-similar-artists">
+  <h4 class="aa-bloc-similar-artists-title -underline">Artistes similaires</h4>
+  <div class="aa-bloc-similar-artists-body">
+    <div
+      *ngFor="let item of arrayToDisplay; let i = index"
+      [ngClass]="'aa-bloc-similar-artists-image-container container-' + (i + 1)"
+    >
+      <a routerLink="#"
+        ><img
+          class="aa-bloc-similar-artists-image"
+          src="{{ imagePaths[i] }}"
+          *ngIf="imagePaths[i]"
+        />
+        <div
+          class="aa-bloc-similar-artists-overlay"
+          *ngIf="imagePaths[i]"
+        ></div>
+        <p class="aa-bloc-similar-artists-name" *ngIf="names[i]">
+          {{ names[i] }}
+        </p>
+      </a>
+    </div>
+  </div>
+</div>

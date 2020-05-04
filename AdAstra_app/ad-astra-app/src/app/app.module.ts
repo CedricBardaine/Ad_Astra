@@ -16,6 +16,7 @@ import { Page404Component } from "./page404/page404.component";
 import { PageArtistComponent } from "./page-artist/page-artist.component";
 import { PageContactComponent } from "./page-contact/page-contact.component";
 import { HomeComponent } from "./pages/home/home.component";
+import { UiKitComponent } from "./pages/uikit/ui-kit.component";
 
 // styles compoents from F
 import { ButtonComponent } from "./style-components/button/button.component";
@@ -25,7 +26,8 @@ import { HeaderLoggedInComponent } from "./style-components/header-logged-in/hea
 import { BlocPhotosComponent } from "./style-components/bloc-photos/bloc-photos.component";
 import { ButtonUploadComponent } from "./style-components/button-upload/button-upload.component";
 import { NotificationItemComponent } from "./style-components/notification-item/notification-item.component";
-import { PriceCardComponent } from './style-components/price-card/price-card.component';
+import { PriceCardComponent } from "./style-components/price-card/price-card.component";
+import { BlocSimilarArtistsComponent } from './style-components/bloc-similar-artists/bloc-similar-artists.component';
 
 const appRoutes: Routes = [
   { path: "register", component: FormRegisterComponent },
@@ -34,6 +36,7 @@ const appRoutes: Routes = [
   { path: "artist/:id", component: PageArtistComponent },
   { path: "contact", component: PageContactComponent },
   { path: "home", component: HomeComponent },
+  { path: "uikit", component: UiKitComponent },
   { path: "", component: FormRegisterComponent },
   { path: "**", component: Page404Component },
 ];
@@ -45,6 +48,7 @@ const appRoutes: Routes = [
     Page404Component,
     PageArtistComponent,
     HomeComponent,
+    UiKitComponent,
     BlocPhotosComponent,
     ButtonUploadComponent,
     NotificationItemComponent,
@@ -54,6 +58,7 @@ const appRoutes: Routes = [
     HeaderLoggedInComponent,
     PageContactComponent,
     PriceCardComponent,
+    BlocSimilarArtistsComponent,
   ],
   imports: [
     BrowserModule,
