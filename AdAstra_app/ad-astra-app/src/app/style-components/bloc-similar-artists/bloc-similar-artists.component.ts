@@ -6,13 +6,11 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./bloc-similar-artists.component.scss"],
 })
 export class BlocSimilarArtistsComponent implements OnInit {
-  imagePaths: any[] = [
-    "../../../assets/img/SG-Lewis.jpg",
-    "../../../assets/img/Jai Wolf.jpg",
-    "../../../assets/img/Shallou.jpg",
+  similarArtists: any[] = [
+    { image: "../../../assets/img/SG-Lewis.jpg", name: "SG Lewis" },
+    { image: "../../../assets/img/Jai Wolf.jpg", name: "Jai Wolf" },
+    { image: "../../../assets/img/Shallou.jpg", name: "Shallou" },
   ].slice(0, 5);
-
-  names: any[] = ["SG Lewis", "Jai Wolf", "Shallou"].slice(0, 5);
 
   arrayToDisplay: any[] = new Array(4);
 

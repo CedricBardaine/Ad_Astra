@@ -5,20 +5,20 @@
       *ngFor="let item of arrayToDisplay; let i = index"
       [ngClass]="'aa-bloc-similar-artists-image-container container-' + (i + 1)"
     >
-      <a routerLink="#"
-        ><img
+      <div routerLink="#">
+        <img
           class="aa-bloc-similar-artists-image"
-          src="{{ imagePaths[i] }}"
-          *ngIf="imagePaths[i]"
+          src="{{ similarArtists[i]?.image }}"
+          *ngIf="similarArtists[i]?.image"
         />
         <div
           class="aa-bloc-similar-artists-overlay"
-          *ngIf="imagePaths[i]"
+          *ngIf="similarArtists[i]?.image"
         ></div>
-        <p class="aa-bloc-similar-artists-name" *ngIf="names[i]">
-          {{ names[i] }}
+        <p class="aa-bloc-similar-artists-name" *ngIf="similarArtists[i]?.name">
+          {{ similarArtists[i]?.name }}
         </p>
-      </a>
+      </div>
     </div>
   </div>
 </div>

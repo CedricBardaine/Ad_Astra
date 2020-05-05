@@ -34,7 +34,7 @@
     object-fit: cover;
   }
 
-  &-overlay:after {
+  &-overlay {
     content: "";
     position: absolute;
     top: 0;
