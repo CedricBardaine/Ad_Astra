@@ -6,24 +6,24 @@
 <br>
 
 <label class="contactPageLabel" for="inputNom">Nom complet</label><br>
-<input type="text" name="Nom" id="inputNom">
+<input [(ngModel)]="name" type="text" name="Nom" id="inputNom">
 <br>
 
 <label class="contactPageLabel" for="inputSujet">Sujet de la demande</label><br>
-<input type="text" name="Sujet" id="inputSujet">
+<input [(ngModel)]="subject" type="text" name="Sujet" id="inputSujet">
 <br>
 
 <label class="contactPageLabel" for="choiceStatut">Vous êtes</label><br>
 <div id="choiceStatut">    
-    <input class="contactPageRadioBtn" type="radio" name="Statut" id="inputStatutPro" value="pro">
+    <input  class="contactPageRadioBtn" type="radio" name="Statut" id="inputStatutPro" value="pro" (change)="isPro=true" >
     <label class="contactPageLabel" for="inputStatutPro">Un professionnel</label>
-    <input class="contactPageRadioBtn" type="radio" name="Statut" id="inputStatutArtiste" value="artiste">
+    <input  class="contactPageRadioBtn" type="radio" name="Statut" id="inputStatutArtiste" value="artiste" (change)="isPro=false" >
     <label class="contactPageLabel" for="inputStatutArtiste">Un artiste</label>
 </div>
 <br>
 
 <label class="contactPageLabel" for="inputMessage">Votre message</label><br>
-<input class="contactPageTextarea" type="textarea" name="Message" id="inputMessage">
+<input [(ngModel)]="message" class="contactPageTextarea" type="textarea" name="Message" id="inputMessage">
 <br>
 
 <div class="contactPageImage">
@@ -31,3 +31,11 @@
 </div>
 
 <aa-button btnText="Envoyer"></aa-button>
+
+<!-- <hr>
+<h1>Mail content : </h1>
+<p>Nom complet : {{name}}</p>
+<p>Sujet : {{subject}}</p>
+<p>Professsionel ? {{isPro}}</p>
+<p>Message : {{message}}</p>
+<hr> -->
