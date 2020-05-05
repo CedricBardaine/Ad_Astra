@@ -30,7 +30,12 @@
     <img src="../../assets/picts/sunyu-kim-NNkmhogy6NM-unsplash.png" alt="">
 </div>
 
-<aa-button btnText="Envoyer"></aa-button>
+<div>
+    <aa-button btnText="Envoyer" (click)='onSubmitContactForm() ; $event.stopPropagation()'></aa-button> 
+    <!-- //FIXME: un clic, et on change de page... du coup impossibe de binder une fct :(  -->
+    <button type="submit" (click)='onSubmitContactForm()'>test</button>
+    <p>{{stateInfo}}</p>
+</div>
 
 <!-- <hr>
 <h1>Mail content : </h1>
