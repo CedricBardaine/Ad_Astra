@@ -7,6 +7,8 @@
     />
     <p class="aa-header-logo-text">Ad Astra</p>
   </a>
+
+  <!-- DESKTOP MENU -->
   <div class="aa-header-menu -right">
     <a
       class="aa-header-menu-link"
@@ -59,5 +61,16 @@
       ></aa-notification-item>
       <aa-btn btnText="Charger plus" btnLink="#"></aa-btn>
     </div>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div
+    class="aa-header-menu-mobile -right"
+    [ngClass]="isBurgerClicked ? '-opened' : '-closed'"
+    (click)="burgerClick()"
+  >
+    <span class="line-1"></span>
+    <span class="line-2"></span>
+    <span class="line-3"></span>
   </div>
 </header>

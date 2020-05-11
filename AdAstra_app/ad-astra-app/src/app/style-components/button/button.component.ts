@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostBinding } from "@angular/core";
+import { Component, OnInit, Input, HostBinding, Host } from "@angular/core";
 
 @Component({
   selector: "aa-btn",

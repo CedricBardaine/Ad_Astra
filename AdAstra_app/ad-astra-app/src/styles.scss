@@ -54,6 +54,11 @@ html {
       color: var(--accent);
     }
 
+    &.-no-scroll {
+      height: 100%;
+      overflow: hidden;
+    }
+
     input,
     textarea,
     button {

@@ -27,7 +27,9 @@ import { BlocPhotosComponent } from "./style-components/bloc-photos/bloc-photos.
 import { ButtonUploadComponent } from "./style-components/button-upload/button-upload.component";
 import { NotificationItemComponent } from "./style-components/notification-item/notification-item.component";
 import { PriceCardComponent } from "./style-components/price-card/price-card.component";
-import { BlocSimilarArtistsComponent } from './style-components/bloc-similar-artists/bloc-similar-artists.component';
+import { BlocSimilarArtistsComponent } from "./style-components/bloc-similar-artists/bloc-similar-artists.component";
+import { MusicPlayerComponent } from "./style-components/music-player/music-player.component";
+import { ButtonNoLinkComponent } from './style-components/button-no-link/button-no-link.component';
 
 const appRoutes: Routes = [
   { path: "register", component: FormRegisterComponent },
@@ -59,6 +61,8 @@ const appRoutes: Routes = [
     PageContactComponent,
     PriceCardComponent,
     BlocSimilarArtistsComponent,
+    MusicPlayerComponent,
+    ButtonNoLinkComponent,
   ],
   imports: [
     BrowserModule,
