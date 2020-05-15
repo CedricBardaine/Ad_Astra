@@ -221,6 +221,81 @@ CREATE TABLE Music (
 )ENGINE=InnoDB;
 
 
+-- ajouts V3.0 & V3.1
+
+CREATE TABLE `Picture` (
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `id_userStar` INT,
+  `xblock` BOOLEAN DEFAULT FALSE,
+
+  FOREIGN KEY (id_userStar) REFERENCES UserStar(id)
+)ENGINE=InnoDB;
+
+CREATE TABLE `Video` (
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `id_userStar` INT,
+  `xblock` BOOLEAN DEFAULT FALSE,
+  
+  FOREIGN KEY (id_userStar) REFERENCES UserStar(id)
+)ENGINE=InnoDB;
+
+CREATE TABLE `Audio` (
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `id_userStar` INT,
+  `xblock` BOOLEAN DEFAULT FALSE,
+  
+  FOREIGN KEY (id_userStar) REFERENCES UserStar(id)
+)ENGINE=InnoDB;
+
+CREATE TABLE `Publication` (
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `kind` TEXT, -- AUDIO ||VIDEO || PICTURE
+  `nbLikes` INT,
+  `id_userStar` INT,
+  `id_picture` INT,
+  `id_video` INT,
+  `id_audio` INT,
+  `xblock` BOOLEAN DEFAULT FALSE,
+  
+  FOREIGN KEY (id_userStar) REFERENCES UserStar(id),
+  FOREIGN KEY (id_picture) REFERENCES Picture(id),
+  FOREIGN KEY (id_video) REFERENCES Video(id),
+  FOREIGN KEY (id_audio) REFERENCES Audio(id)
+)ENGINE=InnoDB;
+
+CREATE TABLE `Reply` (
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `text` TEXT,
+  `id_publication` INT,
+  `id_userStar` INT,
+  `xblock` BOOLEAN DEFAULT FALSE,
+  
+  FOREIGN KEY (id_publication) REFERENCES Publication(id),
+  FOREIGN KEY (id_userStar) REFERENCES UserStar(id)
+)ENGINE=InnoDB;
+
+CREATE TABLE `UserStar_Liked_Publication` (
+  `id_userStar` INT,
+  `id_publication` INT,
+
+  PRIMARY KEY (`id_userStar`, `id_publication`),
+  FOREIGN KEY (id_userStar) REFERENCES UserStar(id),
+  FOREIGN KEY (id_publication) REFERENCES Publication(id)
+)ENGINE=InnoDB;
+
+CREATE TABLE `UserStar_Following_UserStar` (
+  `id_userStar_following` INT,
+  `id_userStar_followed` INT,
+
+  PRIMARY KEY (`id_userStar_following`, `id_userStar_followed`),
+  FOREIGN KEY (id_userStar_following) REFERENCES UserStar(id),
+  FOREIGN KEY (id_userStar_followed) REFERENCES UserStar(id),
+
+  CONSTRAINT `followingItself_chk` CHECK (id_userStar_following != id_userStar_followed)
+)ENGINE=InnoDB;
+
+
+
 
 -- Fill tables : for PKs and FKs
 
@@ -245,6 +320,14 @@ INSERT INTO Artist_need (id , id_artist , id_need ) VALUES (777 , 777 , 777 ) ;
 INSERT INTO Artist_Talent (id , id_artist , id_talent ) VALUES (777 , 777 , 777 ) ; 
 INSERT INTO UserStar_musical_style (id , id_userStar , id_musical_style ) VALUES (777 , 777 , 777 ) ; 
 INSERT INTO Music (id , id_userStar , id_musical_style ) VALUES (777 , 777 , 777 ) ; 
+INSERT INTO Picture (id , id_userStar) VALUES (777 , 777 ) ; 
+INSERT INTO Audio (id , id_userStar) VALUES (777 , 777 ) ; 
+INSERT INTO Video (id , id_userStar) VALUES (777 , 777 ) ; 
+INSERT INTO Publication (id , id_userStar, id_picture, id_video, id_audio) VALUES (777 , 777 , 777 , 777 , 777 ) ; 
+INSERT INTO Reply (id , id_publication, id_userStar ) VALUES (777 , 777 , 777 ) ; 
+INSERT INTO UserStar_Liked_Publication (id_userStar, id_publication) VALUES (777, 777 ) ;
+-- INSERT INTO UserStar_Following_UserStar (id_userStar_following, id_userStar_followed) VALUES 
+
 
 
 
