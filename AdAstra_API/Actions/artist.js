@@ -77,9 +77,9 @@ module.exports = {
                  * Si l'utilisateur n'a pas encore de photo, renvoie la photo par defaut
                  */
                 if (result.photo) 
-                    ret.pict = paths.pathPicts+ result.photo +'.jpg' ;
+                    ret.pict = paths.pathArtistProfilPicts+ result.photo +'.jpg' ;
                 else 
-                    ret.pict = paths.pathPicts+ '0' +'.jpg';
+                    ret.pict = paths.pathArtistProfilPicts+ '0' +'.jpg';
 
                 ret.bio = result.bio;
                 
