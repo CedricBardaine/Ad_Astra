@@ -50,6 +50,8 @@ const {insert_UserStar_Musical_style , delete_UserStar_Musical_style} = require(
 const {insert_UserStar , getMdp_UserStar , delete_UserStar} = require('./actions/UserStar') ; 
 // Table : Music
 const {insert_Music , delete_Music} = require('./actions/Music') ; 
+// Table : Picture
+const {insert_Picture} = require('./actions/Picture') ; 
 
 const port = 5000;
 
@@ -146,6 +148,8 @@ app.get('/testGetMdps' , getMdp_UserStar); // FIXME: FM7 delete before prod !!!
 
 app.post('/insert_Music', insert_Music); 
 app.post('/delete_Music', delete_Music); 
+
+app.post('/insert_Picture', insert_Picture);
 
 
 // app.get('/edit/:id', editPlayerPage);

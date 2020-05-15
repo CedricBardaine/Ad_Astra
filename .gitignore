@@ -1,0 +1,5 @@
+# keep structure in Medias folder
+/Medias/*/*
+
+# ignore all including the structure
+/Medias
