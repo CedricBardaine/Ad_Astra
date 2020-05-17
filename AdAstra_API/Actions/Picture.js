@@ -10,6 +10,7 @@ module.exports = {
     * Insert picture in the directory of picts and insert the correpsonding row in table 
     * Method with the "formidable" library. 
     * TODO: verify file type 
+    * TODO: change wait methode to let the upload. Make it synchronous ? 
     */
     insert_Picture: (req, res) => {
         const TAG_insertPict = "insertPicture: "
@@ -53,13 +54,20 @@ module.exports = {
                         fs.rename(file.path, imagePathAndName, function( error ){} );
                     });
                     
-                    form.parse(req, (err, fields, files) => {
-                        // res.writeHead(200, { 'content-type': 'application/json' });
-                        // console.log(TAG_insertPict+ JSON.stringify({ fields, files }, null, 2));
-                        console.log(TAG_insertPict+ "saved picture to : "+imagePathAndName);
-                    });
+                  
+
+                    setTimeout(function() {
+                        form.parse(req, (err, fields, files) => {
+                            // res.writeHead(200, { 'content-type': 'application/json' });
+                            // console.log(TAG_insertPict+ JSON.stringify({ fields, files }, null, 2));
+                            console.log(TAG_insertPict+ "saved picture to : "+imagePathAndName);
+                        });
+                        
+                        res.send(result) ;            
+                    }, 1000);  
+
+
                     
-                    res.send(result) ;            
                     // res.end("Value has been inserted.") ; 
                 });
             }

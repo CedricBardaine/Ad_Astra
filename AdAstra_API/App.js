@@ -54,6 +54,8 @@ const {insert_Music , delete_Music} = require('./actions/Music') ;
 const {insert_Picture} = require('./actions/Picture') ; 
 // Table : Video
 const {insert_Video} = require('./actions/Video') ; 
+// Table : Audio
+const {insert_Audio} = require('./actions/Audio') ; 
 
 const port = 5000;
 
@@ -153,6 +155,7 @@ app.post('/delete_Music', delete_Music);
 
 app.post('/insert_Picture', insert_Picture);
 app.post('/insert_Video', insert_Video);
+app.post('/insert_Audio', insert_Audio);
 
 
 // app.get('/edit/:id', editPlayerPage);
