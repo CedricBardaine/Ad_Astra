@@ -81,9 +81,9 @@ module.exports = {
     
     //     let pict = req.body.pict ; 
     
-    //     console.log(insertPict+ req.body) ; 
+    //     console.log(TAG_insertPict+ req.body) ; 
     
-    //     console.log(insertPict+ id_userStar + " + "+ pict) ;  
+    //     console.log(TAG_insertPict+ id_userStar + " + "+ pict) ;  
     
     //     let query = "INSERT INTO `Picture` (id_userStar) VALUES ('" +
     //     id_userStar +"')";
@@ -96,7 +96,7 @@ module.exports = {
     //         fs.appendFile(imgpathandname, pict, (err) => {
     //             if (err) throw err;
     //             else {
-    //                 console.log(insertPict+ 'The image has been saved to '+imgpathandname+' !');
+    //                 console.log(TAG_insertPict+ 'The image has been saved to '+imgpathandname+' !');
     //                 res.send(result) ;
     //             } 
     //         });          
