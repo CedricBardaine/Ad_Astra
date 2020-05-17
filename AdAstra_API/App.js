@@ -52,6 +52,8 @@ const {insert_UserStar , getMdp_UserStar , delete_UserStar} = require('./actions
 const {insert_Music , delete_Music} = require('./actions/Music') ; 
 // Table : Picture
 const {insert_Picture} = require('./actions/Picture') ; 
+// Table : Video
+const {insert_Video} = require('./actions/Video') ; 
 
 const port = 5000;
 
@@ -150,6 +152,7 @@ app.post('/insert_Music', insert_Music);
 app.post('/delete_Music', delete_Music); 
 
 app.post('/insert_Picture', insert_Picture);
+app.post('/insert_Video', insert_Video);
 
 
 // app.get('/edit/:id', editPlayerPage);

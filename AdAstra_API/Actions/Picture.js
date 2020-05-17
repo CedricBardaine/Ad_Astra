@@ -1,5 +1,4 @@
 const paths = require('../utils');
-const mediaPath = "../Medias/";
 
 const fs = require('fs');
 const formidable = require('formidable');
@@ -10,6 +9,7 @@ module.exports = {
     /**
     * Insert picture in the directory of picts and insert the correpsonding row in table 
     * Method with the "formidable" library. 
+    * TODO: verify file type 
     */
     insert_Picture: (req, res) => {
         const TAG_insertPict = "insertPicture: "
@@ -19,7 +19,7 @@ module.exports = {
         // // let xblock = req.body.xblock; // DEFAULT : FALSE
         
         var form = new formidable.IncomingForm();
-        form.uploadDir = mediaPath + paths.pathArtistPicts;
+        form.uploadDir = paths.mediasPath + paths.pathArtistPicts;
         
         let errorFieldCount = 1 ; 
         
@@ -50,7 +50,7 @@ module.exports = {
                         // fs.rename(file.path, form.uploadDir + "/" + "9999.jpg", function( error ) {});
                         let fileType = file.type.split("/")[1];
                         imagePathAndName = imagePathAndName +"."+fileType ; 
-                        fs.rename(file.path, imagePathAndName, function( error ) {});
+                        fs.rename(file.path, imagePathAndName, function( error ){} );
                     });
                     
                     form.parse(req, (err, fields, files) => {
@@ -92,7 +92,7 @@ module.exports = {
     //             return res.status(500).send(err); 
     //         }
     
-    //         let imgpathandname = mediaPath+paths.pathArtistPicts+result.insertId+'.jpg' ; 
+    //         let imgpathandname = paths.mediasPath+paths.pathArtistPicts+result.insertId+'.jpg' ; 
     //         fs.appendFile(imgpathandname, pict, (err) => {
     //             if (err) throw err;
     //             else {
