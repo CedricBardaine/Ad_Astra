@@ -60,8 +60,10 @@ const {insert_Audio} = require('./actions/Audio') ;
 const {insert_Publication} = require('./actions/Publication') ; 
 // Table : Reply
 const {insert_Reply, delete_Reply} = require('./actions/Reply') ; 
-// Table : Reply
+// Table : Following
 const {insert_Following, delete_Following} = require('./actions/Following') ; 
+// Table : Liking
+const {insert_Liking, delete_Liking} = require('./actions/Liking') ; 
 
 const port = 5000;
 
@@ -170,6 +172,9 @@ app.post('/delete_Reply', delete_Reply);
 
 app.get('/insert_Following', insert_Following);
 app.delete('/delete_Following', delete_Following);
+
+app.get('/insert_Liking', insert_Liking);
+app.delete('/delete_Liking', delete_Liking);
 
 
 // app.get('/edit/:id', editPlayerPage);
