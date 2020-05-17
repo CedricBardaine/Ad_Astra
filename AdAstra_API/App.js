@@ -56,6 +56,8 @@ const {insert_Picture} = require('./actions/Picture') ;
 const {insert_Video} = require('./actions/Video') ; 
 // Table : Audio
 const {insert_Audio} = require('./actions/Audio') ; 
+// Table : Publication
+const {insert_Publication} = require('./actions/Publication') ; 
 
 const port = 5000;
 
@@ -157,6 +159,7 @@ app.post('/insert_Picture', insert_Picture);
 app.post('/insert_Video', insert_Video);
 app.post('/insert_Audio', insert_Audio);
 
+app.post('/insert_Publication', insert_Publication);
 
 // app.get('/edit/:id', editPlayerPage);
 // app.post('/edit/:id', editPlayer);
