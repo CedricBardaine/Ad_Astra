@@ -1,0 +1,1 @@
+This folder must be on a server to store medias for Ad Astra users. 

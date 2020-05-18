@@ -250,7 +250,8 @@ CREATE TABLE `Audio` (
 CREATE TABLE `Publication` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
   `kind` TEXT, -- AUDIO ||VIDEO || PICTURE
-  `nbLikes` INT,
+  `content` TEXT, 
+  `nbLikes` INT DEFAULT 0,
   `id_userStar` INT,
   `id_picture` INT,
   `id_video` INT,
@@ -265,7 +266,7 @@ CREATE TABLE `Publication` (
 
 CREATE TABLE `Reply` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
-  `text` TEXT,
+  `content` TEXT,
   `id_publication` INT,
   `id_userStar` INT,
   `xblock` BOOLEAN DEFAULT FALSE,

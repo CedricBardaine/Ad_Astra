@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import {PATHS} from '../../globals';
+
 interface Artist {
   id: number;
   name: string;
@@ -28,6 +30,8 @@ export class PageArtistComponent implements OnInit {
     idsHeadMusics:null,
     idsHeadPhotos:null
   } ; 
+
+  mediaspath = PATHS.ADASTRA_MEDIAS_PATH;
   
   constructor(
     private route: ActivatedRoute,

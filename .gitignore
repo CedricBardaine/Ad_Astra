@@ -1,0 +1,5 @@
+# keep structure in Medias folder
+/AdAstra_Medias/*/*
+
+# ignore all including the structure
+/AdAstra_Medias

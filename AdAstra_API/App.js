@@ -50,6 +50,20 @@ const {insert_UserStar_Musical_style , delete_UserStar_Musical_style} = require(
 const {insert_UserStar , getMdp_UserStar , delete_UserStar} = require('./actions/UserStar') ; 
 // Table : Music
 const {insert_Music , delete_Music} = require('./actions/Music') ; 
+// Table : Picture
+const {insert_Picture} = require('./actions/Picture') ; 
+// Table : Video
+const {insert_Video} = require('./actions/Video') ; 
+// Table : Audio
+const {insert_Audio} = require('./actions/Audio') ; 
+// Table : Publication
+const {insert_Publication} = require('./actions/Publication') ; 
+// Table : Reply
+const {insert_Reply, delete_Reply} = require('./actions/Reply') ; 
+// Table : Following
+const {insert_Following, delete_Following} = require('./actions/Following') ; 
+// Table : Liking
+const {insert_Liking, delete_Liking} = require('./actions/Liking') ; 
 
 const port = 5000;
 
@@ -146,6 +160,21 @@ app.get('/testGetMdps' , getMdp_UserStar); // FIXME: FM7 delete before prod !!!
 
 app.post('/insert_Music', insert_Music); 
 app.post('/delete_Music', delete_Music); 
+
+app.post('/insert_Picture', insert_Picture);
+app.post('/insert_Video', insert_Video);
+app.post('/insert_Audio', insert_Audio);
+
+app.post('/insert_Publication', insert_Publication);
+
+app.post('/insert_Reply', insert_Reply);
+app.post('/delete_Reply', delete_Reply);
+
+app.get('/insert_Following', insert_Following);
+app.delete('/delete_Following', delete_Following);
+
+app.get('/insert_Liking', insert_Liking);
+app.delete('/delete_Liking', delete_Liking);
 
 
 // app.get('/edit/:id', editPlayerPage);
