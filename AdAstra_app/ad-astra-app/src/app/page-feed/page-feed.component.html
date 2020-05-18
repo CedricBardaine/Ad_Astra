@@ -1,0 +1,49 @@
+<aa-header-loggedOut></aa-header-loggedOut>
+
+<h3>Découvrir</h3>
+
+<form action="">
+    <input class="tmp_customSearchText" type="text" placeholder="Rechercher un artiste, un professionnel ou un mot-clé...">
+    <br>
+    <!-- <select name="" id="" placeholder="Genre musical">
+        <option value=""></option>
+        <option value=""></option>
+    </select>
+    <select name="" id="" value="Type de personne">
+        <option value=""></option>
+        <option value=""></option>
+    </select> -->
+    <div class="dropdown">
+        <button class="dropbtn">Genre musical</button>
+        <div class="dropdown-content">
+          <a href="">1</a>
+          <a href="">2</a>
+        </div>
+      </div>
+    <div class="dropdown">
+        <button class="dropbtn">Type de personne</button>
+        <div class="dropdown-content">
+          <a href="">1</a>
+          <a href="">2</a>
+        </div>
+      </div>
+</form>
+
+<div class="publications">
+    <div class="publication" *ngFor="let pub of thePublications">
+      <app-publication 
+      [id]="pub.id"
+      [kind]="pub.kind"
+      [content]="pub.content"
+      [id_userStar]="pub.id_userStar"
+      [id_medias]="pub.id_medias"
+      [profilPict_userStar]="pub.profilPict_userStar"
+      [name_userStar]="pub.name_userStar"
+      ></app-publication>
+    </div>
+</div>
+
+<div *ngIf="!errorFetching ;else errorfetch"> 
+  <button (click)="loadMorePublications()">+</button>
+</div>
+<ng-template #errorfetch>Il n'y a plus de publication pour aujourd'hui.</ng-template>

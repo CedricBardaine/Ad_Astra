@@ -57,7 +57,7 @@ const {insert_Video} = require('./actions/Video') ;
 // Table : Audio
 const {insert_Audio} = require('./actions/Audio') ; 
 // Table : Publication
-const {insert_Publication} = require('./actions/Publication') ; 
+const {insert_Publication, get_10_last_Publications} = require('./actions/Publication') ; 
 // Table : Reply
 const {insert_Reply, delete_Reply} = require('./actions/Reply') ; 
 // Table : Following
@@ -166,6 +166,7 @@ app.post('/insert_Video', insert_Video);
 app.post('/insert_Audio', insert_Audio);
 
 app.post('/insert_Publication', insert_Publication);
+app.get('/get_10_pubblications', get_10_last_Publications); 
 
 app.post('/insert_Reply', insert_Reply);
 app.post('/delete_Reply', delete_Reply);
