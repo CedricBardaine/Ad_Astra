@@ -23,6 +23,7 @@ import { ButtonRegisterComponent } from './style-components/button-register/butt
 import { HeaderLoggedInComponent } from './style-components/header-logged-in/header-logged-in.component';
 import { PageFeedComponent } from './page-feed/page-feed.component';
 import { PublicationComponent } from './publication/publication.component';
+import { PageLoginComponent } from './page-login/page-login.component';
 
 
 const appRoutes: Routes = [
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
   { path: 'artist/:id', component: PageArtistComponent },
   { path: 'contact', component: PageContactComponent },
   { path: 'feed', component: PageFeedComponent },
+  { path: 'connect', component: PageLoginComponent },
   
   { path: '', component: FormRegisterComponent },
   { path: '**', component: Page404Component },
@@ -51,6 +53,7 @@ const appRoutes: Routes = [
     PageContactComponent,
     PageFeedComponent,
     PublicationComponent,
+    PageLoginComponent,
   ],
   imports: [
     BrowserModule,
