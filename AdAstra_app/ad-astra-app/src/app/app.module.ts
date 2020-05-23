@@ -21,6 +21,8 @@ import { ButtonComponent } from './style-components/button/button.component';
 import { HeaderComponent } from './style-components/header-home/header-home.component';
 import { ButtonRegisterComponent } from './style-components/button-register/button-register.component';
 import { HeaderLoggedInComponent } from './style-components/header-logged-in/header-logged-in.component';
+import { PageFeedComponent } from './page-feed/page-feed.component';
+import { PublicationComponent } from './publication/publication.component';
 
 
 const appRoutes: Routes = [
@@ -29,6 +31,7 @@ const appRoutes: Routes = [
   { path: 'artist', component: PageArtistComponent },
   { path: 'artist/:id', component: PageArtistComponent },
   { path: 'contact', component: PageContactComponent },
+  { path: 'feed', component: PageFeedComponent },
   
   { path: '', component: FormRegisterComponent },
   { path: '**', component: Page404Component },
@@ -46,6 +49,8 @@ const appRoutes: Routes = [
     ButtonRegisterComponent,
     HeaderLoggedInComponent,
     PageContactComponent,
+    PageFeedComponent,
+    PublicationComponent,
   ],
   imports: [
     BrowserModule,
