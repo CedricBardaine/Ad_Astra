@@ -64,6 +64,8 @@ const {insert_Reply, delete_Reply} = require('./actions/Reply') ;
 const {insert_Following, delete_Following} = require('./actions/Following') ; 
 // Table : Liking
 const {insert_Liking, delete_Liking} = require('./actions/Liking') ; 
+// connection
+const {login} = require('./Actions/login'); 
 
 const port = 5000;
 
@@ -176,6 +178,8 @@ app.delete('/delete_Following', delete_Following);
 
 app.get('/insert_Liking', insert_Liking);
 app.delete('/delete_Liking', delete_Liking);
+
+app.post('/login', login); 
 
 
 // app.get('/edit/:id', editPlayerPage);
