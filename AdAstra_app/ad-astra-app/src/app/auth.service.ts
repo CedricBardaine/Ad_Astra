@@ -7,12 +7,15 @@ import {PATHS} from '../globals';
   providedIn: 'root'
 })
 export class AuthService {
-  // loginApiPoint = PATHS.API_ENDPOINT+"login";
-  loginApiPoint = "http://localhost:5000/login";
+  loginApiPoint:string = PATHS.API_ENDPOINT+"login" ;
 
   constructor(private http: HttpClient) { }
 
   loginUser(user) {
     return this.http.post<any>(this.loginApiPoint, user) ; 
+  }
+
+  loggedIn(): boolean {
+    return !! localStorage.getItem('token'); 
   }
 }

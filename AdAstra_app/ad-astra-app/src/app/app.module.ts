@@ -24,6 +24,8 @@ import { HeaderLoggedInComponent } from './style-components/header-logged-in/hea
 import { PageFeedComponent } from './page-feed/page-feed.component';
 import { PublicationComponent } from './publication/publication.component';
 import { PageLoginComponent } from './page-login/page-login.component';
+import { AuthGuard } from './auth.guard';
+import { AuthService } from './auth.service';
 
 
 const appRoutes: Routes = [
@@ -32,7 +34,7 @@ const appRoutes: Routes = [
   { path: 'artist', component: PageArtistComponent },
   { path: 'artist/:id', component: PageArtistComponent },
   { path: 'contact', component: PageContactComponent },
-  { path: 'feed', component: PageFeedComponent },
+  { path: 'feed', component: PageFeedComponent , canActivate: [AuthGuard] },
   { path: 'connect', component: PageLoginComponent },
   
   { path: '', component: FormRegisterComponent },
@@ -65,7 +67,7 @@ const appRoutes: Routes = [
       // {enableTracing: true} // FIXME: FM7 debugging purposes only
       ),
     ],
-    providers: [],
+    providers: [AuthService, AuthGuard],
     bootstrap: [AppComponent]
   })
   export class AppModule { }
