@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS }    from '@angular/common/http';
 
 // routing
 import { RouterModule , Routes } from '@angular/router';
@@ -26,6 +26,7 @@ import { PublicationComponent } from './publication/publication.component';
 import { PageLoginComponent } from './page-login/page-login.component';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
+import { TokenInterceptorService } from './token-interceptor.service';
 
 
 const appRoutes: Routes = [
@@ -67,7 +68,15 @@ const appRoutes: Routes = [
       // {enableTracing: true} // FIXME: FM7 debugging purposes only
       ),
     ],
-    providers: [AuthService, AuthGuard],
+    providers: [
+      AuthService, 
+      AuthGuard, 
+      {
+        provide: HTTP_INTERCEPTORS, 
+        useClass: TokenInterceptorService,
+        multi: true
+      }
+    ],
     bootstrap: [AppComponent]
   })
   export class AppModule { }
