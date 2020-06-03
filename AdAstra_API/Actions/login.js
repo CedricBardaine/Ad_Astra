@@ -55,5 +55,10 @@ module.exports = {
                 }
             }
         });
+    },
+
+    verifyLogged: (req , res) => {
+        console.log("verified : ",  req.userId) ; 
+        res.status(200).send("ok"); 
     }
 };

@@ -5,6 +5,8 @@ const mysql = require('mysql');
 const path = require('path');
 const cors = require('cors');
 
+const jwt = require('jsonwebtoken') ; 
+
 const app = express();
 
 
@@ -65,7 +67,7 @@ const {insert_Following, delete_Following} = require('./actions/Following') ;
 // Table : Liking
 const {insert_Liking, delete_Liking} = require('./actions/Liking') ; 
 // connection
-const {login} = require('./Actions/login'); 
+const {login, verifyLogged} = require('./Actions/login'); 
 
 const port = 5000;
 
@@ -179,8 +181,36 @@ app.delete('/delete_Following', delete_Following);
 app.get('/insert_Liking', insert_Liking);
 app.delete('/delete_Liking', delete_Liking);
 
-app.post('/login', login); 
-
+app.post('/login' , login); 
+function verifyToken(req, res, next) {
+    console.log("----- req.headers.authorization")
+    console.log(req.headers.authorization);
+    console.log("-----")
+    if (!req.headers.authorization) {
+        console.log("no header");
+        return res.status(401).send('Unauthorized request - no header');
+    }
+    let token = req.headers.authorization.split(' ')[1]
+    if (token === 'null') {
+        console.log("no tok");
+        return res.status(401).send('Unauthorized request - no token');
+    }
+    let payload ; 
+    try {
+        payload = jwt.verify(token, 'secret_etoile');
+    } catch (JsonWebTokenError) {
+        console.log("bad algorythme : "+ JsonWebTokenError);
+        return res.status(401).send('Unauthorized request - error token');
+    }
+    if (!payload) {
+        console.log("bad tok");
+        return res.status(401).send('Unauthorized request - bad token');
+    }
+    console.log("token ok");
+    req.userId = payload.subject ;
+    next();
+}
+app.post('/verifyLogged', verifyToken, verifyLogged )
 
 // app.get('/edit/:id', editPlayerPage);
 // app.post('/edit/:id', editPlayer);
@@ -191,3 +221,4 @@ app.post('/login', login);
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);
 });
+
