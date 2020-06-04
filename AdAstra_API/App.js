@@ -208,6 +208,7 @@ function verifyToken(req, res, next) {
     }
     console.log("token ok");
     req.userId = payload.subject ;
+    // TODO: verify if User exists 
     next();
 }
 app.post('/verifyLogged', verifyToken, verifyLogged )
