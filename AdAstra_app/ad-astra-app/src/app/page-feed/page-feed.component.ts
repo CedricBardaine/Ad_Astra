@@ -212,16 +212,27 @@ export class PageFeedComponent implements OnInit {
                       id_userStar: this.theNewPublication.id_userStar
                     }),
                     customeHttpOptions ).subscribe({
-                      next: data =>{console.log("data : ", data)},
-                      error: error => {console.log("error : ", error)}
+                      next: data =>{
+                        data = JSON.parse(data);
+                        console.log("data : ", data);
+                        if(data.affectedRows == 1) this.clearNewPublie(); 
+                      },
+                      error: error => {
+                        console.log("error : ", error);
+                        this.errorMsg = "Il y a eu un problème."
+                      }
                     });
                     break;
-                    
                     default:
                     break;
                   }
                 }
               }
+            }
+
+            clearNewPublie() {
+              this.theNewPublication.kind = "NONE";
+              this.theNewPublication.content = "";
             }
             
             loadMorePublications() {
