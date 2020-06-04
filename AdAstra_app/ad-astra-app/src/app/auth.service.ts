@@ -10,9 +10,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
+/**
+ * for diverse explanations : https://www.youtube.com/watch?v=I18jDMPHEjU&list=PLC3y8-rFHvwg2RBz6UplKTGIXREj9dV0G&index=20 
+ */
 export class AuthService {
   loginApiPoint:string = PATHS.API_ENDPOINT+"login" ;
   verifyApiPoint:string = PATHS.API_ENDPOINT+"verifyLogged" ;
+  getUserIdApiPoint:string = PATHS.API_ENDPOINT+"getLoggedUserId" ;
   
   httpOptions = {
     headers: new HttpHeaders({
@@ -49,5 +53,12 @@ export class AuthService {
     //   )
     }
     
+    /**
+     * Similar to verifyLoggedIn(). 
+     */
+    getLoggedUserId() {
+      return this.http.get<any>(this.getUserIdApiPoint, this.httpOptions) }
+    
     getToken() { return localStorage.getItem('token'); }
+    getHttpOptions() { return this.httpOptions }
   }

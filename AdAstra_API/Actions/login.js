@@ -18,19 +18,19 @@ module.exports = {
         
         db.query(query, (err, result) => {
             console.log(result) ; 
-
+            
             if (err) {
                 return res.status(500).send(err); 
             }
             else {
-
+                
                 /* the email doesn't match any UserStar */
                 if (result == [] || result == null || result.length == 0 ) {
                     ret.loginStatus = "notok";
                     res.status(401).send(ret); 
                 }
                 else {
-
+                    
                     resFromDecryptedQuerry = JSON.parse( JSON.stringify(result) )[0] ;
                     
                     // delete the salt 
@@ -40,11 +40,11 @@ module.exports = {
                     if ( resFromDecryptedQuerry.pass == userPassword ) {
                         let payload = { subject: resFromDecryptedQuerry.id };
                         let token = jwt.sign(payload, 'secret_etoile');
-
+                        
                         ret.loginStatus = "ok";
                         ret.idUser = resFromDecryptedQuerry.id ; 
                         ret.token = token ; 
-
+                        
                         res.status(200).send(ret) ; 
                     }
                     else {
@@ -56,9 +56,13 @@ module.exports = {
             }
         });
     },
-
+    
     verifyLogged: (req , res) => {
         console.log("verified : ",  req.userId) ; 
         res.status(200).send("ok"); 
+    },
+    getLoggedUserId: (req , res) => {
+        console.log("get : ",  req.userId) ; 
+        res.status(200).send(req.userId+""); // '+""' is necessary to explicitely make it String, if missing, the status code take the value. 
     }
 };
