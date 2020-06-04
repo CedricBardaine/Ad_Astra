@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS }    from '@angular/common/http';
 
 // routing
 import { RouterModule , Routes } from '@angular/router';
@@ -23,6 +23,11 @@ import { ButtonRegisterComponent } from './style-components/button-register/butt
 import { HeaderLoggedInComponent } from './style-components/header-logged-in/header-logged-in.component';
 import { PageFeedComponent } from './page-feed/page-feed.component';
 import { PublicationComponent } from './publication/publication.component';
+import { PageLoginComponent } from './page-login/page-login.component';
+import { AuthGuard } from './auth.guard';
+import { AuthService } from './auth.service';
+import { TokenInterceptorService } from './token-interceptor.service';
+import { HeaderLoggedInOrOutComponent } from './style-components/header-logged-in-or-out/header-logged-in-or-out.component';
 
 
 const appRoutes: Routes = [
@@ -31,7 +36,8 @@ const appRoutes: Routes = [
   { path: 'artist', component: PageArtistComponent },
   { path: 'artist/:id', component: PageArtistComponent },
   { path: 'contact', component: PageContactComponent },
-  { path: 'feed', component: PageFeedComponent },
+  { path: 'feed', component: PageFeedComponent , canActivate: [AuthGuard] },
+  { path: 'connect', component: PageLoginComponent },
   
   { path: '', component: FormRegisterComponent },
   { path: '**', component: Page404Component },
@@ -51,6 +57,8 @@ const appRoutes: Routes = [
     PageContactComponent,
     PageFeedComponent,
     PublicationComponent,
+    PageLoginComponent,
+    HeaderLoggedInOrOutComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +70,15 @@ const appRoutes: Routes = [
       // {enableTracing: true} // FIXME: FM7 debugging purposes only
       ),
     ],
-    providers: [],
+    providers: [
+      AuthService, 
+      AuthGuard, 
+      {
+        provide: HTTP_INTERCEPTORS, 
+        useClass: TokenInterceptorService,
+        multi: true
+      }
+    ],
     bootstrap: [AppComponent]
   })
   export class AppModule { }

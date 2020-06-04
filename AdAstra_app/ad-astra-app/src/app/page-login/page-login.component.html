@@ -1,0 +1,16 @@
+<app-header-logged-in-or-out></app-header-logged-in-or-out>
+
+<h3>Ravi de vous revoir, 👋</h3>
+
+<label class="fieldLabel" for="idField_email">Email</label> <br>
+<input class="field" [(ngModel)]="theEmail" type="email" id="idField_email" name="idField_email" required> <br>
+<br>
+<label class="fieldLabel" for="idField_password">Mot de passe</label> <br>
+<input class="field" [(ngModel)]="thePassword" type="password" id="idField_password" name="idField_password" required> <br>
+<a class="passwordForgotten" href="" [routerLink]="['/404']">Mot de passe oublié</a>
+<br>
+
+
+<aa-button-register btnText="Se connecter" btnHasRouterLink="false" (click)="loginUser()"></aa-button-register>
+
+<a class="passwordForgotten" href="" [routerLink]="['/register']">Pas encore de compte ? inscrivez-vous</a>

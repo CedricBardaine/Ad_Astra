@@ -15,6 +15,9 @@ export class ButtonRegisterComponent implements OnInit {
   isSecondary: boolean = false;
   @Input('btnText') public btnText: string;
   @Input('btnLink') public btnLink: string;
+
+  @Input('btnHasRouterLink') public btnHasRouterLink: boolean;
+
   constructor() {}
 
   ngOnInit(): void {}
