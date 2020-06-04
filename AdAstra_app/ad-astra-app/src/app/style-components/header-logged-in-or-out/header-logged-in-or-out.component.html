@@ -1,0 +1,6 @@
+<div *ngIf="auth.loggedIn()">
+    <aa-header-loggedIn></aa-header-loggedIn>
+</div>
+<div *ngIf="!auth.loggedIn()">
+    <aa-header-loggedOut></aa-header-loggedOut>
+</div>

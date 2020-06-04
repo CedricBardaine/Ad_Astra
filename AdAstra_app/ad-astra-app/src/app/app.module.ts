@@ -27,6 +27,7 @@ import { PageLoginComponent } from './page-login/page-login.component';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { HeaderLoggedInOrOutComponent } from './style-components/header-logged-in-or-out/header-logged-in-or-out.component';
 
 
 const appRoutes: Routes = [
@@ -57,6 +58,7 @@ const appRoutes: Routes = [
     PageFeedComponent,
     PublicationComponent,
     PageLoginComponent,
+    HeaderLoggedInOrOutComponent,
   ],
   imports: [
     BrowserModule,
