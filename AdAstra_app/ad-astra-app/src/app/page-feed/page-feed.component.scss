@@ -60,14 +60,24 @@ font: Regular 16px/24px Montserrat
 // ##################################################################################################
 // ##################################################################################################
 // ##################################################################################################
-.tmp_customSearchText {
+.tmp_customSearchText { //FIXME: Flo? can you make it nice for the eyes ?
     top: 247px;
     left: 568px;
     width: 930px;
     height: 51px;
+    color: white;
     background: #18213E 0% 0% no-repeat padding-box;
     border-radius: 10px;
     opacity: 1;
+}
+
+.btnActSelected {
+    background-color: red;
+}
+
+.pubArtistPict {
+    border-radius: 50%;
+    max-height: 10rem;
 }
 
 

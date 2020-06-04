@@ -53,7 +53,7 @@ const {insert_UserStar , getMdp_UserStar , delete_UserStar} = require('./actions
 // Table : Music
 const {insert_Music , delete_Music} = require('./actions/Music') ; 
 // Table : Picture
-const {insert_Picture} = require('./actions/Picture') ; 
+const {insert_Picture ,  insert_Picture2,/* insert_Picture3, */ insert_Picture4} = require('./actions/Picture') ; 
 // Table : Video
 const {insert_Video} = require('./actions/Video') ; 
 // Table : Audio
@@ -67,7 +67,7 @@ const {insert_Following, delete_Following} = require('./actions/Following') ;
 // Table : Liking
 const {insert_Liking, delete_Liking} = require('./actions/Liking') ; 
 // connection
-const {login, verifyLogged} = require('./Actions/login'); 
+const {login, verifyLogged, getLoggedUserId} = require('./Actions/login'); 
 
 const port = 5000;
 
@@ -91,9 +91,15 @@ global.db = db;
 
 // configure middleware
 app.set('port', process.env.port || port); 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json()); // parse form data client
-// app.use(fileUpload()); // configure fileupload
+//////////////// default //////////////
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json()); // parse form data client
+// // app.use(fileUpload()); // configure fileupload
+//////////////// default //////////////
+//////////////// for Formidable lib ////////////// To process multipart data seperatly
+app.use(bodyParser.json())
+   .use(bodyParser.urlencoded({extended: true}));
+//////////////// for Formidable lib //////////////
 
 
 // for cross origin to enable request from localhost 
@@ -166,10 +172,13 @@ app.post('/insert_Music', insert_Music);
 app.post('/delete_Music', delete_Music); 
 
 app.post('/insert_Picture', insert_Picture);
+app.post('/insert_Picture2', insert_Picture2);
+// app.post('/insert_Picture3', insert_Picture3);
+app.post('/insert_Picture4', insert_Picture4);
 app.post('/insert_Video', insert_Video);
 app.post('/insert_Audio', insert_Audio);
 
-app.post('/insert_Publication', insert_Publication);
+app.post('/insert_Publication', insert_Publication); //TODO: secure with verifyToken
 app.get('/get_10_pubblications', get_10_last_Publications); 
 
 app.post('/insert_Reply', insert_Reply);
@@ -211,7 +220,8 @@ function verifyToken(req, res, next) {
     // TODO: verify if User exists 
     next();
 }
-app.post('/verifyLogged', verifyToken, verifyLogged )
+app.post('/verifyLogged', verifyToken, verifyLogged);
+app.get('/getLoggedUserId', verifyToken, getLoggedUserId);
 
 // app.get('/edit/:id', editPlayerPage);
 // app.post('/edit/:id', editPlayer);
