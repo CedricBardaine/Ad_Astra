@@ -1,4 +1,5 @@
 import { Component, OnInit, HostBinding, Renderer2 } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
 	selector: 'aa-header-loggedIn',
@@ -8,11 +9,14 @@ import { Component, OnInit, HostBinding, Renderer2 } from '@angular/core';
 export class HeaderLoggedInComponent implements OnInit {
 	@HostBinding('class.header__logged--in') readonly rootClass = true;
 	isOpen: boolean = false;
-	constructor() {}
+	constructor(private auth: AuthService) {}
 
 	ngOnInit(): void {}
 
 	handleNotification() {
 		this.isOpen = !this.isOpen;
 	}
+
+	logout() { this.auth.logOutUser(); }
+
 }

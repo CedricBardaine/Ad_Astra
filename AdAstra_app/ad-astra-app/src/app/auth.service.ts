@@ -30,6 +30,10 @@ export class AuthService {
   loggedIn(): boolean {
     return !! localStorage.getItem('token'); 
   }
+
+  logOutUser() {
+    localStorage.removeItem('token'); 
+  }
   
   /**
    * Calling a fct in the API,
