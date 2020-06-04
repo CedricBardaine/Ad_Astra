@@ -4,11 +4,14 @@ const paths = require('../utils');
 module.exports = {
     
     insert_Publication: (req, res) => {
+        let TAG_insertPub = "insert_Publication: ";
+        console.log(TAG_insertPub, "start");
+        console.log(TAG_insertPub, req.body);
         // let id = req.body.id; 
         let kind = req.body.kind; 
         let content = req.body.content; 
         let id_userStar = req.body.id_userStar; 
-        let id_media = req.body.id_media; 
+        let id_media = req.body.id_media; // sent back at the creation of the file with the Formidable lib
         // let xblock = req.body.xblock; // DEFAULT : FALSE
         
         let query = "";
@@ -19,8 +22,12 @@ module.exports = {
         query = "INSERT INTO `Publication` (kind, content, id_userStar, id_video) VALUES ('" + kind +"', '"+ content +"', '"+ id_userStar +"', '"+ id_media + "')";
         else if ( kind == "AUDIO" )
         query = "INSERT INTO `Publication` (kind, content, id_userStar, id_audio) VALUES ('" + kind +"', '"+ content +"', '"+ id_userStar +"', '"+ id_media + "')";
+        else if ( kind == "NONE") 
+        query = "INSERT INTO `Publication` (content, id_userStar) VALUES ('" + content +"', '"+ id_userStar + "')";
         else 
         return res.status(400).send("error, bad specification for media : "+kind); 
+        
+        console.log(TAG_insertPub, "sending query : "+ query);
         
         db.query(query, (err, result) => {
             if (err) 
@@ -46,8 +53,10 @@ module.exports = {
         db.query(query, (err, result) => {
             if(err) 
             return res.status(500).send(err);
-            else 
-            res.send(result); 
+            else {
+                // console.log(result);
+                res.send(result); 
+            }
         });
     }
     
