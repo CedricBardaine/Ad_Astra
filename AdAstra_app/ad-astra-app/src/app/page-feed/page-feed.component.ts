@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import {PATHS} from '../../globals';
+import { AuthService } from '../auth.service';
 
 interface Publication {
   id: number;
@@ -43,10 +44,14 @@ export class PageFeedComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    private auth: AuthService
     ) {}
   
   ngOnInit() {
-    this.loadMorePublications() ;
+    this.auth.verifyLoggedIn().subscribe(
+      (res) => this.loadMorePublications() 
+    );
+    
   }
 
   loadMorePublications() {

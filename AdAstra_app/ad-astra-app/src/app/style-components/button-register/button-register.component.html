@@ -1,3 +1,11 @@
-<button routerLink="{{ btnLink }}">
-	{{ btnText }}
-</button>
+<div *ngIf="btnHasRouterLink == 'true'">
+	<button routerLink="{{ btnLink }}">
+		{{ btnText }}
+	</button>
+</div>
+
+<div *ngIf="btnHasRouterLink == 'false'">
+	<button>
+		{{ btnText }}
+	</button>
+</div>
