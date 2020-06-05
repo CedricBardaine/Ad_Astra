@@ -86,7 +86,7 @@ export class PageFeedComponent implements OnInit {
         
         /**
         * Specify wich media (or if no media) will be attached to the publication.
-        * Depending on {@link this.theNewPublication.kind} value, the component won't post the same request in {@link PageFeedComponent.sendNewPubli()}.
+        * Depending on {@link this.theNewPublication.kind} value, the component won't post the same request in {@link PageFeedComponent.sendNewPubli}.
         * @param mediaType the param of the fonction in the HTML that indicates wich button as been selected. 
         */
         selectMedia(mediaType: string) {
@@ -253,7 +253,7 @@ export class PageFeedComponent implements OnInit {
             }
             
             /**
-            * Call {@link PageFeedComponent.fetch10Publications()} to fetch 10 publication from API. 
+            * Call {@link PageFeedComponent.fetch10Publications} to fetch 10 publication from API. 
             * Add them to the Publications List. 
             */
             loadMorePublications() {

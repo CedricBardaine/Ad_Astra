@@ -68,7 +68,7 @@ export class AuthService {
   }
   
   /**
-  * Similar to {@link AuthService.verifyLoggedIn()}. 
+  * Similar to {@link AuthService.verifyLoggedIn}. 
   * @return the id of the user loged. Return a 401 if the client isn't loged.
   */
   getLoggedUserId() { 

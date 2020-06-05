@@ -19,7 +19,7 @@ export class PageLoginComponent implements OnInit {
   }
   
   /**
-   * Get values from form fields and pass it to {@link AuthService.loginUser()}.
+   * Get values from form fields and pass it to {@link AuthService.loginUse}.
    * If connected, navigates to home. 
    */
   loginUser() {
