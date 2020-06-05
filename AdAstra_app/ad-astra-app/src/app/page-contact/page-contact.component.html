@@ -1,9 +1,11 @@
 <app-header-logged-in-or-out></app-header-logged-in-or-out>
 
-<h1 class="contactPageTitle">Ici la tour de contrôle, veuillez décrire votre situation</h1>
+<h1 class="contactPageTitle">
+  Ici la tour de contrôle, veuillez décrire votre situation
+</h1>
 <small>Tous les champs sont obligatoires</small>
-<br>
-<br>
+<br />
+<br />
 
 <label class="contactPageLabel" for="inputNom">Nom complet</label><br>
 <input [(ngModel)]="name" type="text" name="Nom" id="inputNom">
@@ -20,18 +22,18 @@
     <input  class="contactPageRadioBtn" type="radio" name="Statut" id="inputStatutArtiste" value="artiste" (change)="isPro=false" >
     <label class="contactPageLabel" for="inputStatutArtiste">Un artiste</label>
 </div>
-<br>
+<br />
 
 <label class="contactPageLabel" for="inputMessage">Votre message</label><br>
 <input [(ngModel)]="message" class="contactPageTextarea" type="textarea" name="Message" id="inputMessage">
 <br>
 
 <div class="contactPageImage">
-    <img src="../../assets/picts/sunyu-kim-NNkmhogy6NM-unsplash.png" alt="">
+  <img src="../../assets/picts/sunyu-kim-NNkmhogy6NM-unsplash.png" alt="" />
 </div>
 
 <div>
-    <aa-button btnText="Envoyer" (click)='onSubmitContactForm() ; $event.stopPropagation()'></aa-button> 
+    <aa-btn btnText="Envoyer" (click)='onSubmitContactForm() ; $event.stopPropagation()'></aa-btn> 
     <!-- //FIXME: un clic, et on change de page... du coup impossibe de binder une fct :(  -->
     <button type="submit" (click)='onSubmitContactForm()'>test</button>
     <p>{{stateInfo}}</p>

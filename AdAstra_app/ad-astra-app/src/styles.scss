@@ -2,50 +2,82 @@
 @import "shared/shared";
 
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
 
-	body {
-		color: $white;
-		font-family: $fontStack;
-		width: 100%;
-		overflow-x: hidden;
-		height: 100vh;
-		margin: 0;
-		padding: 0;
-		font-size: $f-body;
-		background: $primary linear-gradient(180deg, #0a133000 0%, #000000d5 100%)
-			0% 0% no-repeat padding-box;
+  body {
+    color: var(--white);
+    font-family: var(--fontStack);
+    width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: var(--f-body);
+    background: var(--primary)
+      linear-gradient(180deg, #0a133000 0%, #000000d5 100%) 0% 0% no-repeat
+      padding-box;
 
-		.wrapper {
-			margin: 0 auto;
-			width: $wrapperWidth;
+    .aa-wrapper {
+      margin: 0 auto;
+      width: var(--wrapperWidth);
 
-			@include md {
-				width: $wrapperWidthMobile;
-			}
-		}
+      @include md {
+        width: var(--wrapperWidthMobile);
+      }
+    }
 
-		.postWrapper {
-			margin: auto;
-			width: $postWrapperWidth;
+    .aa-postWrapper {
+      margin: auto;
+      width: var(--postWrapperWidth);
 
-			@include md {
-				width: $wrapperWidthMobile;
-			}
-		}
+      @include md {
+        width: var(--wrapperWidthMobile);
+      }
+    }
 
-		.is-fullWidth {
-			width: 100vw;
-			position: relative;
-			left: 50%;
-			right: 50%;
-			margin-left: -50vw;
-			margin-right: -50vw;
-		}
-		input,
-		textarea,
-		button {
-			font-family: inherit;
-		}
-	}
+    .-fullWidth {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+
+    .-primary {
+      color: var(--primary);
+    }
+    .-secondary {
+      color: var(--secondary);
+    }
+    .-accent {
+      color: var(--accent);
+    }
+
+    &.-no-scroll {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    input,
+    textarea,
+    button {
+      font-family: inherit;
+    }
+  }
+}
+
+// ANIMATIONS
+[data-aos] {
+  body[data-aos-easing="aa-easing"] &,
+  &[data-aos][data-aos-easing="aa-easing"] {
+    transition-timing-function: cubic-bezier(0.44, 0.15, 0.2, 1);
+  }
+}
+
+@for $i from 0 through 40 {
+  $interval: 0.15;
+  [data-reveal-group="#{$i}"] {
+    transition-delay: #{$interval * $i}s !important;
+  }
 }

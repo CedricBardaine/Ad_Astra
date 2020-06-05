@@ -1,23 +1,37 @@
-import { Component, OnInit, HostBinding, Input } from '@angular/core';
+import { Component, OnInit, HostBinding, Input } from "@angular/core";
 
 @Component({
-  selector: 'aa-button-register',
-  templateUrl: './button-register.component.html',
-  styleUrls: ['./button-register.component.scss'],
+  selector: "aa-btn-register",
+  templateUrl: "./button-register.component.html",
+  styleUrls: ["./button-register.component.scss"],
 })
 export class ButtonRegisterComponent implements OnInit {
-  @HostBinding('class.btn__register') readonly rootClass = true;
-  @HostBinding('class.btn__register--red')
+  @HostBinding("class.aa-btn-register") readonly rootClass = true;
+  @HostBinding("class.-red")
   @Input()
   isRed: boolean = false;
-  @HostBinding('class.btn__register--secondary')
+  @HostBinding("class.-secondary")
   @Input()
   isSecondary: boolean = false;
+  @HostBinding("class.-small")
+  @Input()
+  isSmall: boolean = false;
+  @HostBinding("class.-sign")
+  @Input()
+  isConnect: boolean = false;
+  @HostBinding("class.-large")
+  @Input()
+  isLarge: boolean = false;
+  @Input("btnText") public btnText: string;
+  @Input("btnLink") public btnLink: string;
+
+  /*
+  < < < < < < < HEAD
   @Input('btnText') public btnText: string;
   @Input('btnLink') public btnLink: string;
 
   @Input('btnHasRouterLink') public btnHasRouterLink: boolean;
-
+  */
   constructor() {}
 
   ngOnInit(): void {}

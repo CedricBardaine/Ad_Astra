@@ -1,31 +1,39 @@
 /****************************/
+/******** BREAKPOINTS********/
+/****************************/
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+/****************************/
 /****** MEDIA QUERIES *******/
 /****************************/
 
 // small devices
 @mixin sm {
-	@media (max-width: #{$screen-sm}) {
-		@content;
-	}
+  @media (max-width: #{$screen-sm}) {
+    @content;
+  }
 }
 
 // medium devices
 @mixin md {
-	@media (max-width: #{$screen-md}) {
-		@content;
-	}
+  @media (max-width: #{$screen-md}) {
+    @content;
+  }
 }
 
 // large devices
 @mixin lg {
-	@media (max-width: #{$screen-lg}) {
-		@content;
-	}
+  @media (max-width: #{$screen-lg}) {
+    @content;
+  }
 }
 
 // extra large devices
 @mixin xl {
-	@media (max-width: #{$screen-xl}) {
-		@content;
-	}
+  @media (max-width: #{$screen-xl}) {
+    @content;
+  }
 }

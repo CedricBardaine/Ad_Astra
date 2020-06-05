@@ -1,0 +1,64 @@
+@import "../../../shared/shared";
+
+.aa-price-card {
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  padding: 32px 32px 32px 38px;
+  width: 280px;
+  height: 325px;
+  border-radius: var(--radius);
+  &-upper {
+    display: flex;
+    flex-direction: column;
+    .aa-price-card-number {
+      display: flex;
+      align-items: baseline;
+      .number {
+        font-size: 72px;
+        font-weight: 600;
+      }
+      .timing {
+        display: inline-block;
+        margin-left: 16px;
+        font-size: 28px;
+        font-weight: 600;
+      }
+    }
+    .aa-price-card-legend {
+      .-legend {
+        font-size: var(--f-label);
+      }
+    }
+  }
+  &-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .item-dot {
+        width: 10px;
+        min-width: 10px;
+        height: 10px;
+        min-height: 10px;
+        border-radius: 50%;
+        background: var(--primary);
+        margin-top: 3px;
+      }
+      .item-text {
+        font-size: var(--f-body);
+        line-height: calc(var(--f-body) * 1.5);
+        font-weight: 600;
+        display: inline-block;
+        margin-left: 10px;
+      }
+    }
+  }
+}

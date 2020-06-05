@@ -1,3 +1,11 @@
-<button routerLink="{{ btnLink }}">
-	{{ btnText }}
+<button
+  class="aa-btn"
+  [ngClass]="{
+    '-secondary': isSecondary,
+    '-large': isLarge,
+    '-disabled': isDisabled
+  }"
+  routerLink="{{ btnLink }}"
+>
+  <span [attr.data-text]="btnText">{{ btnText }}</span>
 </button>

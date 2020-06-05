@@ -1,0 +1,86 @@
+@import "../../../shared/shared";
+
+.aa-music-player {
+  z-index: 100;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  left: 0;
+  width: 100vw !important;
+  box-shadow: var(--shadowOnPrimary);
+
+  &-illustration,
+  &-illustrationEmpty {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--radius);
+    position: absolute;
+    left: 115px;
+    bottom: 35px;
+  }
+
+  &-illustrationEmpty {
+    background: var(--white-opacity25);
+  }
+
+  &-background {
+    border-radius: 20px 20px 0px 0px;
+    background: var(--secondary);
+
+    height: 85px;
+    width: 100%;
+  }
+
+  &-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 295px;
+  }
+
+  &-infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-title {
+    align-self: center;
+    margin-bottom: 13px;
+  }
+
+  &-controls {
+    display: flex;
+    align-items: center;
+    img {
+      transition: all var(--duration) var(--ease);
+    }
+    img:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+    .aa-play {
+      margin: 0 21px;
+    }
+  }
+
+  &-progress {
+    margin-left: 80px;
+    position: relative;
+    height: 6px;
+    border-radius: var(--radius);
+    width: 70%;
+    background: var(--white-opacity25);
+    display: flex;
+
+    .aa-inner {
+      height: 100%;
+      border-radius: var(--radius);
+      background-color: var(--accent);
+    }
+  }
+
+  &-time {
+    margin-left: 32px;
+  }
+}

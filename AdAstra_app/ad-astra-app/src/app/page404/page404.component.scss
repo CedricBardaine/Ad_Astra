@@ -1,0 +1,24 @@
+.-page404 {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  .container {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    margin-top: -12rem;
+    .title {
+      margin-bottom: 80px;
+      max-width: 65%;
+    }
+  }
+
+  .aa-content-background {
+    position: fixed;
+    z-index: 1;
+    top: 150px;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+}

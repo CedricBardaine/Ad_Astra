@@ -1,52 +1,44 @@
 @import "../../../shared/shared";
 
-:host {
-	button {
-		padding: 6px 15px;
-		color: $white;
-		font-size: $f-cta;
-		background: $accent;
-		font-weight: bold;
-		border: 2px solid $accent;
-		border-radius: $radiusButton;
-		transition: all $duration $ease;
-		color: $white;
-		&:hover {
-			background-color: $accentHover;
-			border-color: $accentHover;
-			cursor: pointer;
-		}
-	}
+.aa-btn {
+  padding: 6px 15px;
+  color: var(--white);
+  font-size: var(--f-cta);
+  background: var(--accent);
+  font-weight: 600;
+  border: 2px solid var(--accent);
+  border-radius: var(--radiusButton);
+  transition: all var(--duration) var(--ease);
+  color: var(--white);
+  &:hover {
+    background-color: var(--accentHover);
+    border-color: var(--accentHover);
+    cursor: pointer;
+  }
 
-	&.btn--secondary {
-		button {
-			background: transparent;
-			border-color: $white;
-			&:hover {
-				background-color: $white;
-				color: $primary;
-			}
-		}
-	}
+  &.-secondary {
+    background: transparent;
+    border-color: var(--white);
+    &:hover {
+      background-color: var(--white);
+      color: var(--primary);
+    }
+  }
 
-	&.btn--large {
-		button {
-			padding: 11px 51px;
-			border-radius: 50px;
-			font-size: $f-cta--large;
-		}
-	}
+  &.-large {
+    padding: 11px 51px;
+    border-radius: 50px;
+    font-size: var(--f-cta--large);
+  }
 
-	&.btn--disabled {
-		button {
-			border-color: darken($color: $white, $amount: 60%);
-			color: darken($color: $white, $amount: 60%);
-			&:hover {
-				cursor: not-allowed;
-				border-color: darken($color: $white, $amount: 60%);
-				color: darken($color: $white, $amount: 60%);
-				background: transparent;
-			}
-		}
-	}
+  &.-disabled {
+    border-color: var(--white-darken);
+    color: var(--white-darken);
+    &:hover {
+      cursor: not-allowed;
+      border-color: var(--white-darken);
+      color: var(--white-darken);
+      background: transparent;
+    }
+  }
 }
