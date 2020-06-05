@@ -5,6 +5,9 @@ import { AuthService } from './auth.service';
 @Injectable({
   providedIn: 'root'
 })
+/**
+ * Prevents the client from navigating to a Component if he is not logged, by redirecting him.
+ */
 export class AuthGuard implements CanActivate {
 
   constructor(

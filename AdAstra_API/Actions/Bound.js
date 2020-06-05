@@ -1,4 +1,7 @@
 module.exports = {
+    /**
+     * Link an Artist with a Pro. 
+     */
     insert_Bound: (req, res) => {
         // let id = req.body.id; 
         let id_pro = req.body.id_pro; 

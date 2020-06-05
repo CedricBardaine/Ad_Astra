@@ -3,3 +3,6 @@
 
 # ignore all including the structure
 /AdAstra_Medias
+
+# ignore the front app Documentation files
+/AdAstra_app/Documentation/*
