@@ -27,13 +27,17 @@ export class PageContactComponent implements OnInit {
   
   /**
   * @version 1.0 change this.isPro according to the parameter.
-  * @deprecated directly change value in html.
+  * @deprecated now, directly change the value in html.
   */
   setPro(isPro:boolean) {
     isPro ? this.isPro = true : this.isPro = false ; 
   }
   
-  buildMail() : string {
+  /**
+   * Create an email with the values from the fields of the form in the html.
+   * @return an email ready to be sent. 
+   */
+  buildMail(): string {
     let ret:string;
     
     let statut:string; 
@@ -51,6 +55,10 @@ export class PageContactComponent implements OnInit {
     return ret ; 
   }
   
+  /**
+   * Send the email with the SmtpJS lib. It requires, amongst others, the {@link PageContactComponent.buildMail} fonction.
+   * @see [SmtpJS](https://www.smtpjs.com/)
+   */
   onSubmitContactForm() {
     console.log("Submitting mail... 🌞");
     
@@ -89,6 +97,9 @@ export class PageContactComponent implements OnInit {
     }
   }
   
+  /**
+   * Clears the form fields.
+   */
   clearFields() {
     this.name = null ; 
     this.subject = null ; 

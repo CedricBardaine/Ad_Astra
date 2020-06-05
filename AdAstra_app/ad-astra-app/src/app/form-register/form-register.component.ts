@@ -213,10 +213,10 @@ export class FormRegisterComponent implements OnInit {
   }
   
   /**
-  * @return true if the values of the form (both part1 and 2) are correct 
-  * and good to be inserted in DB. 
   * //TODO: verif names length
   * //TODO: verif if at least one checkboxe by categories is checked
+  * @return true if the values of the form (both part1 and 2) are correct 
+  * and good to be inserted in DB. 
   */
   customFormValidation() {
     let ret:boolean = false; 
@@ -224,14 +224,14 @@ export class FormRegisterComponent implements OnInit {
     
     if (this.theNewUser.infos.nom && this.theNewUser.infos.prenom) {
       ret = true;
-
+      
       if ( this.validateEmail(this.theNewUser.infos.email) ) {
         ret = true;
         
         if ( this.theNewUser.infos.mdp.toString() == this.confirmPassWord.toString() ) {
           ret = true;
         }
-
+        
         else {
           ret = false; 
           this.errorInRegisterForm = "Attention, les mots de passes ne correspondent pas"
@@ -250,6 +250,11 @@ export class FormRegisterComponent implements OnInit {
     
     return ret; 
   }
+  /**
+  * Verify if the pattern corresponds to an email. 
+  * @param email the String to verify
+  * @return true if it can be an email.
+  */
   validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ ;
     return re.test(String(email).toLowerCase());

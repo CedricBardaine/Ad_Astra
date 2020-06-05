@@ -18,6 +18,10 @@ export class PageLoginComponent implements OnInit {
   ngOnInit() {
   }
   
+  /**
+   * Get values from form fields and pass it to {@link AuthService.loginUser()}.
+   * If connected, navigates to home. 
+   */
   loginUser() {
     let loginingUser = {
       email: this.theEmail,

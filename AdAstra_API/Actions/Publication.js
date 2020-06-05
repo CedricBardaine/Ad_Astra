@@ -2,7 +2,10 @@ const paths = require('../utils');
 
 
 module.exports = {
-    
+    /**
+     * Insert a new Publication in the BDD. 
+     * The behavior is decided by the req.body.kind. If 'NONE' it inserts only a text Publication with no media. 
+     */
     insert_Publication: (req, res) => {
         let TAG_insertPub = "insert_Publication: ";
         console.log(TAG_insertPub, "start");
@@ -38,6 +41,10 @@ module.exports = {
         
     },
     
+    /**
+     * Returns the 10 last Publications in the DB. 
+     * You can cumulate the fetch by incrementing the req.query.start 1 by 1.
+     */
     get_10_last_Publications: (req, res) => {
         const TAG_get_10_l_P = "get_10_last_Publications: ";
         console.log(TAG_get_10_l_P+"fetching 10 publications...")

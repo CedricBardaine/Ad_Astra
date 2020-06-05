@@ -84,6 +84,11 @@ export class PageFeedComponent implements OnInit {
           });
         }
         
+        /**
+        * Specify wich media (or if no media) will be attached to the publication.
+        * Depending on {@link this.theNewPublication.kind} value, the component won't post the same request in {@link PageFeedComponent.sendNewPubli()}.
+        * @param mediaType the param of the fonction in the HTML that indicates wich button as been selected. 
+        */
         selectMedia(mediaType: string) {
           switch (mediaType) {
             case "music":
@@ -116,6 +121,11 @@ export class PageFeedComponent implements OnInit {
           }
         }
         
+        /**
+        * Retrieve the file selected by the client with the buttons Music, Audio or Video.
+        * Once retrieved, set it to the class attribut {@link PageFeedComponent.theFileToUpload}.
+        * @param e the event from where the file is retrieved.
+        */
         onFileChange(e) {
           // let fileList: FileList = event.target.files;
           // console.log(fileList.length); 
@@ -129,6 +139,10 @@ export class PageFeedComponent implements OnInit {
           this.uploadForm.get('pict').setValue(e.target.files[0]);
         }
         
+        /**
+        * Send the Publication to the DB.
+        * @version 0.1.0 only send a Publication without media.  
+        */
         sendNewPubli() {
           let customeHttpOptions = {
             headers: new HttpHeaders({
@@ -229,12 +243,19 @@ export class PageFeedComponent implements OnInit {
                 }
               }
             }
-
+            
+            /**
+            * Reset the new Publication form.
+            */
             clearNewPublie() {
               this.theNewPublication.kind = "NONE";
               this.theNewPublication.content = "";
             }
             
+            /**
+            * Call {@link PageFeedComponent.fetch10Publications()} to fetch 10 publication from API. 
+            * Add them to the Publications List. 
+            */
             loadMorePublications() {
               let sizeBefore = this.thePublications.length ; 
               this.fetch10Publications<TruePublication[]>().then( (fetched) => {

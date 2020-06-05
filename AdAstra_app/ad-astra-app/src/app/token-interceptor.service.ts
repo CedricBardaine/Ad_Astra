@@ -7,6 +7,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+/**
+ * Set to the Authorization header to the headers of a HttpRequest, so the API will be able to verifyToken(). 
+ */
 export class TokenInterceptorService implements HttpInterceptor {
 
   constructor(private injector: Injector) { }

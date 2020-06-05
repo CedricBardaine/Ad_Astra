@@ -19,6 +19,10 @@ interface Artist {
   templateUrl: './page-artist.component.html',
   styleUrls: ['./page-artist.component.scss']
 })
+/**
+ * Display the page of an Artist.
+ * TODO: if the User is logged, and access it's page, routerLink to another component specific to allow editing.
+ */
 export class PageArtistComponent implements OnInit {
   artist: Artist = {
     id:null,
@@ -66,6 +70,11 @@ export class PageArtistComponent implements OnInit {
       // this.artist.id = this.artist.id.destination.destination._value.id ; 
     }
     
+    /**
+     * Fetch data from Artist in the DB.
+     * @param fetechId the id of the Artist to fetch.
+     * @return a JSON corresponding to the `Artist` interface.
+     */
     fetchUserInfos<T>(fetechId: number): Promise<T> {
       return fetch("http://localhost:5000/get_infos_Artist?id="+fetechId)
       .then(response => {
