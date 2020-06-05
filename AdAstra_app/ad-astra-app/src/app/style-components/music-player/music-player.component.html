@@ -1,0 +1,47 @@
+<div class="aa-music-player" *ngIf="!isHidden">
+  <img
+    class="aa-music-player-illustration"
+    src="{{ imageSrc }}"
+    *ngIf="imageSrc; else templateEmpty"
+  />
+  <ng-template #templateEmpty>
+    <div class="aa-music-player-illustrationEmpty"></div>
+  </ng-template>
+  <div class="aa-music-player-background">
+    <div class="aa-music-player-container">
+      <div class="aa-music-player-infos">
+        <p class="aa-music-player-title" *ngIf="songTitle">{{ songTitle }}</p>
+        <div class="aa-music-player-controls">
+          <img
+            class="aa-previous"
+            src="../../../assets/icons/previous.svg"
+            alt="Previous Icon"
+            (click)="previous()"
+          />
+          <img
+            class="aa-play"
+            src="{{ playBtn }}"
+            alt="Play/Pause Icon"
+            (click)="playOrPauseSong()"
+            aaPlayButton
+          />
+          <img
+            class="aa-next"
+            src="../../../assets/icons/next.svg"
+            alt="Next Icon"
+            (click)="next()"
+          />
+        </div>
+      </div>
+      <div class="aa-music-player-progress">
+        <div class="aa-inner" [style.width.%]="fillbar"></div>
+      </div>
+      <p class="aa-music-player-time" *ngIf="duration; else templateTimeEmpty">
+        {{ currentTime }} / {{ duration }}
+      </p>
+      <ng-template #templateTimeEmpty>
+        <p class="aa-music-player-time">-- / --</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

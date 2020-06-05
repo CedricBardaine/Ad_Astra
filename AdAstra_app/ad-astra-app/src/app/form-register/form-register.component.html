@@ -1,0 +1,517 @@
+<app-header-logged-in-or-out></app-header-logged-in-or-out>
+
+<div [ngSwitch]="theFormState">
+  <div *ngSwitchCase="1">
+    Nous allons vous accompagner dans le développement de votre projet musical,
+    ça vous tente ?
+    <br /><button (click)="theFormState = 2">Oui</button> <br /><button
+      (click)="theFormState = -1"
+    >
+      Non
+    </button>
+  </div>
+  <div *ngSwitchCase="-1">
+    Vous êtes vraiment un maître Jedi. Que la force soit avec vous. Notre
+    mission s’arrête ici.
+    <!-- TODO: #TD207 insérez une animation d’une fusée qui part au loin puis disparaît -->
+  </div>
+
+  <div *ngSwitchCase="2">
+    Bon, reprenons les bases alors. Possédez-vous un projet musical ?
+    <br /><button (click)="theFormState = 3">Oui</button> <br /><button
+      (click)="theFormState = -2"
+    >
+      Non
+    </button>
+  </div>
+  <div *ngSwitchCase="-2">
+    Vous êtes une petite étoile perdue dans l’univers d’Ad Astra. Nos
+    astronautes ne peuvent rien pour vous, mais revenez nous voir dans quelques
+    années lumière si vous vous lancez dans un projet musical !
+    <!-- TODO: #TD207 -->
+  </div>
+
+  <div *ngSwitchCase="3">
+    <!-- Les passagers doivent avoir un certain âge pour pouvoir monter à bord de notre fusée, avez-vous 16 ans ou plus ? -->
+    Les passagers doivent avoir un certain âge pour pouvoir monter à bord de
+    notre fusée, quelle est votre date de naissance ? <br />
+    <input type="date" [(ngModel)]="theNewUser.infos.date" />
+    <div *ngIf="theNewUser.infos.date">
+      <br /><button (click)="birthDateValidation()">Valider</button>
+    </div>
+  </div>
+  <div *ngSwitchCase="-3">
+    Vous êtes une petite étoile perdue dans l’univers d’Ad Astra. Nos
+    astronautes ne peuvent rien pour vous, mais revenez nous voir dans quelques
+    années lumière si vous vous lancez dans un projet musical !
+    <!-- TODO: #TD207 -->
+  </div>
+
+  <div *ngSwitchCase="4">
+    Notre station spatiale ne capte pour l’instant que les ondes françaises,
+    habitez-vous en France ?
+    <br /><button (click)="theFormState = 5">Oui</button> <br /><button
+      (click)="theFormState = -4"
+    >
+      Non
+    </button>
+  </div>
+  <div *ngSwitchCase="-4">
+    Allô ? Allô… ? [Fin du signal]
+    <!-- TODO: #TD207 -->
+  </div>
+
+  <div *ngSwitchCase="5">
+    <!-- <div *ngSwitchCase="theFormState === '5' || theFormState === '6' || theFormState === '7' || theFormState === '8'"> -->
+    <ng-container *ngTemplateOutlet="talents"></ng-container>
+  </div>
+
+  <div *ngSwitchCase="6">
+    <ng-container *ngTemplateOutlet="talents"></ng-container>
+    <ng-container *ngTemplateOutlet="galaxies"></ng-container>
+  </div>
+
+  <div *ngSwitchCase="7">
+    <ng-container *ngTemplateOutlet="talents"></ng-container>
+    <ng-container *ngTemplateOutlet="galaxies"></ng-container>
+    <ng-container *ngTemplateOutlet="services"></ng-container>
+  </div>
+
+  <div *ngSwitchCase="8">
+    <ng-container *ngTemplateOutlet="talents"></ng-container>
+    <ng-container *ngTemplateOutlet="galaxies"></ng-container>
+    <ng-container *ngTemplateOutlet="services"></ng-container>
+    <ng-container *ngTemplateOutlet="relations"></ng-container>
+  </div>
+
+  <div *ngSwitchCase="9">
+    [icon d'Ad Astra]
+    <h2>Bienvenue à bord</h2>
+    Nous espérons que votre embarquement s'est bien déroulé. Nous sommes heureux
+    de vous acceuillir.
+    <br />
+    <button>Voir mon profil</button>
+  </div>
+
+  <div *ngSwitchDefault>ERREUR NO FORM CORRESPONDING</div>
+
+  <!-- FIXME: lorsqu'on clique plusieurs fois sur une meme checkbox, elles n'ont vont plus visuellement s'actualiser, cliquer sur une case d'un autre form l'actualise 🤔 -->
+
+  <ng-template #talents>
+    <!-- Q5 -->
+    Future étoile que vous êtes, quel talent vous permettra-t-il de briller dans
+    la galaxie ?
+    <br />
+    <input
+      type="checkbox"
+      [checked]="theNewUser.talents.compositeur"
+      id="CKB_Compositeur"
+      (click)="
+        theFormState = 6;
+        theNewUser.talents.compositeur = !theNewUser.talents.compositeur
+      "
+    />
+    <label for="CKB_Compositeur">Compositeur</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.talents.parolier"
+      id="CKB_Parolier"
+      (click)="
+        theFormState = 6;
+        theNewUser.talents.parolier = !theNewUser.talents.parolier
+      "
+    />
+    <label for="CKB_Parolier">Parolier</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.talents.arrangeur"
+      id="CKB_Arrangeur"
+      (click)="
+        theFormState = 6;
+        theNewUser.talents.arrangeur = !theNewUser.talents.arrangeur
+      "
+    />
+    <label for="CKB_Arrangeur">Arrangeur</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.talents.auteurDeChansons"
+      id="CKB_Auteur"
+      (click)="
+        theFormState = 6;
+        theNewUser.talents.auteurDeChansons = !theNewUser.talents
+          .auteurDeChansons
+      "
+    />
+    <label for="CKB_Auteur">Auteur de chansons</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.talents.chanteur"
+      id="CKB_Chanteur"
+      (click)="
+        theFormState = 6;
+        theNewUser.talents.chanteur = !theNewUser.talents.chanteur
+      "
+    />
+    <label for="CKB_Chanteur">Chanteur</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.talents.musicienDeScene"
+      id="CKB_MusicienDeScene"
+      (click)="
+        theFormState = 6;
+        theNewUser.talents.musicienDeScene = !theNewUser.talents.musicienDeScene
+      "
+    />
+    <label for="CKB_MusicienDeScene">Musicien de scène</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.talents.musicienDeStudio"
+      id="CKB_MusicienDeStudio"
+      (click)="
+        theFormState = 6;
+        theNewUser.talents.musicienDeStudio = !theNewUser.talents
+          .musicienDeStudio
+      "
+    />
+    <label for="CKB_MusicienDeStudio">Musicien de studio</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.talents.dj"
+      id="CKB_DJ"
+      (click)="theFormState = 6; theNewUser.talents.dj = !theNewUser.talents.dj"
+    />
+    <label for="CKB_DJ">DJ</label> <br />
+  </ng-template>
+
+  <ng-template #galaxies>
+    <!-- Q6 -->
+    Dans quelle(s) galaxie(s) musicale(s) vous trouvez-vous ?
+    <br />
+    <input
+      type="checkbox"
+      [checked]="theNewUser.genres.blues"
+      id="CKB_Blues"
+      (click)="
+        theFormState = 7; theNewUser.genres.blues = !theNewUser.genres.blues
+      "
+    />
+    <label for="CKB_Blues">Blues</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.genres.funk"
+      id="CKB_Funk"
+      (click)="
+        theFormState = 7; theNewUser.genres.funk = !theNewUser.genres.funk
+      "
+    />
+    <label for="CKB_Funk">Funk</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.genres.jazz"
+      id="CKB_Jazz"
+      (click)="
+        theFormState = 7; theNewUser.genres.jazz = !theNewUser.genres.jazz
+      "
+    />
+    <label for="CKB_Jazz">Jazz</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.genres.metal"
+      id="CKB_Metal"
+      (click)="
+        theFormState = 7; theNewUser.genres.metal = !theNewUser.genres.metal
+      "
+    />
+    <label for="CKB_Metal">Metal</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.genres.pop"
+      id="CKB_Pop"
+      (click)="theFormState = 7; theNewUser.genres.pop = !theNewUser.genres.pop"
+    />
+    <label for="CKB_Pop">Pop</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.genres.punk"
+      id="CKB_Punk"
+      (click)="
+        theFormState = 7; theNewUser.genres.punk = !theNewUser.genres.punk
+      "
+    />
+    <label for="CKB_Punk">Punk</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.genres.rap"
+      id="CKB_Rap"
+      (click)="theFormState = 7; theNewUser.genres.rap = !theNewUser.genres.rap"
+    />
+    <label for="CKB_Rap">Rap</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.genres.rockNRoll"
+      id="CKB_RockNRoll"
+      (click)="
+        theFormState = 7;
+        theNewUser.genres.rockNRoll = !theNewUser.genres.rockNRoll
+      "
+    />
+    <label for="CKB_RockNRoll">Rock'n'roll</label> <br />
+  </ng-template>
+
+  <ng-template #services>
+    <!-- Q7 -->
+    Êtes-vous prêt pour un grand voyage vers les étoiles ? Nous sommes les
+    astronautes de votre fusée, à votre service. De quoi auriez-vous besoin ?
+    <br />
+    <input
+      type="checkbox"
+      [checked]="theNewUser.services.aideManagement"
+      id="CKB_Aide"
+      (click)="
+        theFormState = 8;
+        theNewUser.services.aideManagement = !theNewUser.services.aideManagement
+      "
+    />
+    <label for="CKB_Aide">Aide au management de votre projet musical</label>
+    <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.services.gestionDroits"
+      id="CKB_Gestion"
+      (click)="
+        theFormState = 8;
+        theNewUser.services.gestionDroits = !theNewUser.services.gestionDroits
+      "
+    />
+    <label for="CKB_Gestion">Gestion de votre droit d’auteur</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.services.obtenirVisibilite"
+      id="CKB_Visible"
+      (click)="
+        theFormState = 8;
+        theNewUser.services.obtenirVisibilite = !theNewUser.services
+          .obtenirVisibilite
+      "
+    />
+    <label for="CKB_Visible">Obtenir de la visibilité en tant qu’artiste</label>
+    <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.services.devenirIntermittent"
+      id="CKB_Deve"
+      (click)="
+        theFormState = 8;
+        theNewUser.services.devenirIntermittent = !theNewUser.services
+          .devenirIntermittent
+      "
+    />
+    <label for="CKB_Deve">Devenir intermittent du spectacle</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.services.mieuxConnaitre"
+      id="CKB_Mieux"
+      (click)="
+        theFormState = 8;
+        theNewUser.services.mieuxConnaitre = !theNewUser.services.mieuxConnaitre
+      "
+    />
+    <label for="CKB_Mieux">Mieux connaître l’industrie de la musique</label>
+    <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.services.chercherSubvention"
+      id="CKB_Chercher"
+      (click)="
+        theFormState = 8;
+        theNewUser.services.chercherSubvention = !theNewUser.services
+          .chercherSubvention
+      "
+    />
+    <label for="CKB_Chercher">Chercher des subventions</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.services.faireReseau"
+      id="CKB_Reseau"
+      (click)="
+        theFormState = 8;
+        theNewUser.services.faireReseau = !theNewUser.services.faireReseau
+      "
+    />
+    <label for="CKB_Reseau">Se faire du réseau</label> <br />
+  </ng-template>
+
+  <ng-template #relations>
+    <!-- Q7 -->
+    Déjà en orbite autour de la terre ? C’est le moment de faire de nouvelles
+    rencontres ! Sur Ad Astra, vous allez pouvoir entrer en relation avec des
+    professionnels du monde de la musique. Qui souhaitez-vous rencontrer ?
+    <br />
+    <input
+      type="checkbox"
+      [checked]="theNewUser.relationsVoulues.managers"
+      id="CKB_Managers"
+      (click)="
+        theStep2 = true;
+        theNewUser.relationsVoulues.managers = !theNewUser.relationsVoulues
+          .managers
+      "
+    />
+    <label for="CKB_Managers">Managers</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.relationsVoulues.tourneurs"
+      id="CKB_Tourneurs"
+      (click)="
+        theStep2 = true;
+        theNewUser.relationsVoulues.tourneurs = !theNewUser.relationsVoulues
+          .tourneurs
+      "
+    />
+    <label for="CKB_Tourneurs">Tourneurs</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.relationsVoulues.labels"
+      id="CKB_Labels"
+      (click)="
+        theStep2 = true;
+        theNewUser.relationsVoulues.labels = !theNewUser.relationsVoulues.labels
+      "
+    />
+    <label for="CKB_Labels">Labels</label> <br />
+
+    <input
+      type="checkbox"
+      [checked]="theNewUser.relationsVoulues.editeurs"
+      id="CKB_Editers"
+      (click)="
+        theStep2 = true;
+        theNewUser.relationsVoulues.editeurs = !theNewUser.relationsVoulues
+          .editeurs
+      "
+    />
+    <label for="CKB_Editers">Editeurs</label> <br />
+  </ng-template>
+
+  <br />
+  <!-- <form (ngSubmit)="onSubmit()" #form="ngForm" *ngIf="theStep2"> -->
+  <form (ngSubmit)="onSubmit()" *ngIf="theStep2">
+    Nous aurions besoin de quelques informations supplémentaires pour vous
+    accueillir à bord
+
+    <br />
+    <label for="idTxtNom">Nom *</label> <br />
+    <input
+      [(ngModel)]="theNewUser.infos.nom"
+      type="text"
+      id="idTxtNom"
+      name="idTxtNom"
+      required
+    />
+    <br />
+
+    <br />
+    <label for="idTxtPrenom">Prénom *</label> <br />
+    <input
+      [(ngModel)]="theNewUser.infos.prenom"
+      type="text"
+      id="idTxtPrenom"
+      name="idTxtPrenom"
+      required
+    />
+    <br />
+
+    <br />
+    <label for="idTxtNomArtist">Nom d'artiste (si vous en possédez un)</label>
+    <br />
+    <input
+      [(ngModel)]="theNewUser.infos.nomArtiste"
+      type="text"
+      id="idTxtNomArtist"
+      name="idTxtNomArtist"
+    />
+    <br />
+
+    <br />
+    <label for="idTxtEmail">Email *</label> <br />
+    <input
+      [(ngModel)]="theNewUser.infos.email"
+      type="email"
+      id="idTxtEmail"
+      name="idTxtEmail"
+      required
+    />
+    <br />
+
+    <br />
+    <label for="idTxtMotDePasse">Mot de passe *</label> <br />
+    <input
+      [(ngModel)]="theNewUser.infos.mdp"
+      type="password"
+      id="idTxtMotDePasse"
+      name="idTxtMotDePasse"
+      required
+    />
+    <br />
+
+    <br />
+    <label for="idTxtConfirmMotDePasse">Confirmation du mot de passe *</label>
+    <br />
+    <input
+      [(ngModel)]="confirmPassWord"
+      type="password"
+      id="idTxtConfirmMotDePasse"
+      name="idTxtConfirmMotDePasse"
+      required
+    />
+    <br />
+
+    <!-- <button type="submit" [disabled]="!form.form.valid"> -->
+    <button type="submit">
+      Décollage
+    </button>
+    <!-- FIXME: et si l'utilisateur décoche tout avant d'envoyer ? hum hum ? -->
+    <button (click)="theFormState = 1; theStep2 = false">
+      Etape précédente
+    </button>
+
+    <div>
+      <p>{{ errorInRegisterForm }}</p>
+    </div>
+  </form>
+</div>
+
+<br /><br /><br />
+<hr />
+<small>Variables de dev...</small><br /><br />
+<small>debugLabel : {{ debugLabel }}</small
+><br /><br />
+<small>theFormState : {{ theFormState }}</small
+><br /><br />
+<small>theNewUser : {{ theNewUser | json }}</small
+><br /><br />
+<small>theNewUser.infos.date : {{ theNewUser.infos.date }}</small
+><br /><br />
+<!-- FIXME: FM7 delete before prod -->

@@ -1,0 +1,10 @@
+<button
+  class="aa-btn-noLink"
+  [ngClass]="{
+    '-secondary': isSecondary,
+    '-large': isLarge,
+    '-disabled': isDisabled
+  }"
+>
+  <span [attr.data-text]="btnText">{{ btnText }}</span>
+</button>

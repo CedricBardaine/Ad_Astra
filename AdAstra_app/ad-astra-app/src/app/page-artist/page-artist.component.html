@@ -1,0 +1,65 @@
+<app-header-logged-in-or-out></app-header-logged-in-or-out>
+
+<p>artist  : {{ artist.id }}</p>
+<p>pict  : 
+	<!-- <img src="../../assets/AdAstra_Medias/{{artist.pict}}"  alt="" style="max-width: 10rem;">  -->
+	<img src="{{mediaspath}}/{{artist.pict}}"  alt="" style="max-width: 10rem;"> 
+	<small style="font-size: xx-small;">{{artist.pict}}</small> 
+</p>
+<p>name : {{ artist.name }}</p>
+<p>nbFollowers : {{ artist.nbFollowers }}</p>
+<p>nbFollowing : {{ artist.nbFollowing }}</p>
+<p>bio : {{ artist.bio }}</p>
+<p>idsHeadMusics : {{ artist.idsHeadMusics }}</p>
+<p>idsHeadPhotos : {{ artist.idsHeadPhotos }}</p>
+
+<hr />
+
+<!-- 
+<div class="wrapper content">
+	<h1 class="is-uppercase is-centered">Ad Astra UI Kit</h1>
+	<section class="buttons">
+		<h2>Buttons</h2>
+		<div class="buttons__container">
+			<aa-btn class="mt-1" btnText="Primary button" btnLink="/"></aa-btn>
+			<aa-button
+				class="mt-1"
+				btnText="Large button"
+				btnLink="/"
+				isLarge="true"
+			></aa-button>
+			<aa-button
+				class="mt-1"
+				btnText="Secondary button"
+				btnLink="/"
+				isSecondary="true"
+			></aa-button>
+			<aa-button
+				class="mt-1"
+				btnText="secondary button disabled"
+				btnLink="/"
+				isDisabled="true"
+				isSecondary="true"
+			></aa-button>
+		</div>
+	</section>
+	<section class="buttons__register">
+		<h2>Buttons register / Buttons home</h2>
+		<div class="buttons__container">
+			<aa-button-register
+				btnText="Primary button"
+				btnLink="/"
+			></aa-button-register>
+			<aa-button-register
+				btnText="Secondary button"
+				btnLink="/"
+				isSecondary="true"
+			></aa-button-register>
+			<aa-button-register
+				btnText="Secondary red button"
+				btnLink="/"
+				isRed="true"
+			></aa-button-register>
+		</div>
+	</section>
+</div> -->

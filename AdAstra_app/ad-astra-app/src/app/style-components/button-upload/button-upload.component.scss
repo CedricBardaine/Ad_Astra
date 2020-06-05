@@ -1,0 +1,58 @@
+@import "../../../shared/shared";
+
+.aa-btn-upload {
+  background-color: var(--accent);
+  box-shadow: 0px 0px 16px var(--accent);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  flex-direction: column;
+  border: none;
+  padding: 1.6rem;
+  transition: all var(--duration) var(--ease);
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--accentHover);
+    .aa-btn-upload-logo-complete {
+      animation: rocketAnimation 2s var(--ease) forwards;
+    }
+  }
+
+  &-logo {
+    width: 4.2rem;
+  }
+  &-text {
+    font-size: var(--f-cta--large);
+    font-weight: 600;
+    display: block;
+    margin-top: 0.8rem;
+  }
+
+  @keyframes rocketAnimation {
+    0% {
+      transform: rotate(49deg 18px 17px);
+    }
+    25% {
+      transform: rotate(0deg) translateX(6px);
+    }
+    50% {
+      transform: translateY(-45px) translateX(6px);
+    }
+    60% {
+      transform: translateY(30px) translateX(6px);
+    }
+    70% {
+      opacity: 0;
+    }
+    90% {
+      transform: translateY(0px) translateX(6px);
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(49deg 18px 17px);
+    }
+  }
+}

@@ -1,0 +1,44 @@
+<header class="aa-header">
+  <a class="aa-header-logo -left" routerlink="/">
+    <img
+      class="aa-header-logo-image"
+      src="../../assets/icons/Logo_Inverted.svg"
+      alt="Logo Ad Astra"
+      routerLink="/"
+    />
+    <p class="aa-header-logo-text">Ad Astra</p>
+  </a>
+
+  <!-- DESKTOP MENU -->
+  <div class="aa-header-menu -right">
+    <div class="aa-header-menu-links-container">
+      <a
+        class="aa-header-menu-link"
+        data-text="Qui sommes nous ?"
+        routerLink="/about"
+        >Qui sommes nous ?</a
+      >
+      <a class="aa-header-menu-link" data-text="Contact" routerLink="/contact"
+        >Contact</a
+      >
+    </div>
+    <aa-btn-register
+      btnText="Se connecter"
+      btnLink="/connect"
+      isSecondary="true"
+      isSmall="true"
+      isConnect="true"
+    ></aa-btn-register>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div
+    class="aa-header-menu-mobile -right"
+    [ngClass]="isBurgerClicked ? '-opened' : '-closed'"
+    (click)="burgerClick()"
+  >
+    <span class="line-1"></span>
+    <span class="line-2"></span>
+    <span class="line-3"></span>
+  </div>
+</header>

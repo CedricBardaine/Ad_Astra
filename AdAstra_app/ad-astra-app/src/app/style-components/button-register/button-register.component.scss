@@ -1,0 +1,82 @@
+@import "../../../shared/shared";
+
+.aa-btn-register {
+  padding: 12px 56px;
+  color: var(--primary);
+  font-size: var(--f-cta);
+  background: var(--white);
+  font-weight: 600;
+  border: 2px solid var(--white);
+  border-radius: 6px;
+  transition: color var(--duration) var(--ease),
+    background-color var(--duration) var(--ease);
+  &:hover {
+    background: var(--white-darken);
+    border-color: var(--white-darken);
+    color: var(--primary);
+    cursor: pointer;
+  }
+
+  &-container {
+    overflow: hidden;
+  }
+
+  &.-secondary {
+    color: var(--white);
+    background: transparent;
+    &:hover {
+      background: var(--white);
+      color: var(--primary);
+    }
+  }
+
+  &.-red {
+    background: transparent;
+    color: var(--accent);
+    border-color: var(--accent);
+    &:hover {
+      background-color: var(--accent);
+      color: var(--white);
+    }
+  }
+
+  &.-small {
+    padding: 12px 32px;
+  }
+
+  &.-large {
+    width: 400px;
+  }
+
+  &.-sign {
+    overflow: hidden;
+    position: relative;
+    will-change: transform;
+    span {
+      position: relative;
+      display: inline-block;
+      will-change: transform;
+      transform: translateZ(0);
+      transition: transform 0.5s var(--ease);
+      &:after {
+        content: attr(data-text);
+        display: block;
+        position: absolute;
+        top: 150%;
+        left: 0;
+        transform: skewY(7deg);
+        transform-origin: left center;
+        transition: transform 0.4s;
+      }
+    }
+
+    &:hover {
+      span {
+        transform: translateY(-150%) translateZ(0);
+        &:after {
+          transform: skewY(0);
+        }
+      }
+    }
+  }
+}

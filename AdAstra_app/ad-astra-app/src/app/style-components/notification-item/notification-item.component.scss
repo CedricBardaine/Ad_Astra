@@ -1,0 +1,64 @@
+@import "../../../shared/shared";
+
+.aa-notification-item {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  align-items: center;
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  transition: all var(--duration) var(--ease);
+  &:hover {
+    background-color: var(--primary);
+  }
+
+  &-icon-container {
+    background-color: var(--accent);
+    width: 4.1rem;
+    height: 4.1rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-icon {
+    width: 2.1rem;
+    height: 2.1rem;
+    &.icon-like {
+      background: url("../../../assets/icons/heart_filled.svg") center center
+        no-repeat;
+    }
+    &.icon-comment {
+      background: url("../../../assets/icons/comment_filled.svg") center center
+        no-repeat;
+    }
+    &.icon-follow {
+      background: url("../../../assets/icons/follow_filled.svg") center center
+        no-repeat;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+  }
+  &-name {
+    font-weight: 600;
+  }
+  &-time {
+    font-size: var(--f-label);
+    font-style: italic;
+    display: block;
+    margin-top: 0.8rem;
+  }
+  &-new {
+    width: 0.9rem;
+    height: 0.9rem;
+    background: var(--accent);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 1.6rem;
+    transform: translateY(-50%);
+  }
+}

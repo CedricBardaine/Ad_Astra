@@ -1,0 +1,66 @@
+<app-header-logged-in-or-out></app-header-logged-in-or-out>
+
+<h3>Mon Feed</h3>
+
+<div id="div_AddPublie"> 
+  <img class="pubArtistPict" src="{{mediapath}}artist_profilPicts/{{profilPict_userStar}}.jpg"  alt="">
+  <input [(ngModel)]="theNewPublication.content" class="tmp_customSearchText" type="textarea" placeholder="Connexion établie, vous pouvez nous partager vos pensées ...">
+  <div id="div_SelectMedia">
+    <button id='btn_mediaIsMusic' [ngClass]="{btnActSelected: btnMusicSelected}" (click)='selectMedia("music") ; uploaderMusic.click()'>Mu</button>
+    <button id='btn_mediaIsVid' [ngClass]="{btnActSelected: btnVidSelected}" (click)='selectMedia("vid") ; uploaderVid.click()'>Vi</button>
+    <button id='btn_mediaIsPict' [ngClass]="{btnActSelected: btnPictSelected}" (click)='selectMedia("pict") ; uploaderPict.click()'>Pi</button>
+    <button id='btn_mediaIsNone' (click)='selectMedia("none")'>None</button>
+    <input #uploaderMusic type="file" (change)="onFileChange($event)" hidden="hidden" accept="audio/*" /> 
+    <input #uploaderVid type="file" (change)="onFileChange($event)" hidden="hidden" accept="video/*" /> 
+    <input #uploaderPict type="file" (change)="onFileChange($event)" hidden="hidden" accept="image/*" /> 
+  </div>
+  <button type="submit" (click)="sendNewPubli()">Publier</button> {{theFileToUpload.name}}
+  <div id="div_errorMsg">{{errorMsg}}</div>
+</div>
+<br><br>
+
+<form action="">
+  <input class="tmp_customSearchText" type="text" placeholder="Rechercher un artiste, un professionnel ou un mot-clé...">
+  <br>
+  <!-- <select name="" id="" placeholder="Genre musical">
+    <option value=""></option>
+    <option value=""></option>
+  </select>
+  <select name="" id="" value="Type de personne">
+    <option value=""></option>
+    <option value=""></option>
+  </select> -->
+  <div class="dropdown">
+    <button class="dropbtn">Genre musical</button>
+    <div class="dropdown-content">
+      <a href="">1</a>
+      <a href="">2</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Type de personne</button>
+    <div class="dropdown-content">
+      <a href="">1</a>
+      <a href="">2</a>
+    </div>
+  </div>
+</form>
+
+<div class="publications">
+  <div class="publication" *ngFor="let pub of thePublications">
+    <app-publication 
+    [id]="pub.id"
+    [kind]="pub.kind"
+    [content]="pub.content"
+    [id_userStar]="pub.id_userStar"
+    [id_medias]="pub.id_medias"
+    [profilPict_userStar]="pub.profilPict_userStar"
+    [name_userStar]="pub.name_userStar"
+    ></app-publication>
+  </div>
+</div>
+
+<div *ngIf="!errorFetching ;else errorfetch"> 
+  <button (click)="loadMorePublications()">+</button>
+</div>
+<ng-template #errorfetch>Il n'y a plus de publication pour aujourd'hui.</ng-template>

@@ -1,0 +1,76 @@
+<header class="aa-header">
+  <a class="aa-header-logo -left" routerlink="/">
+    <img
+      class="aa-header-logo-image"
+      src="../../assets/icons/Logo_Inverted.svg"
+      alt="Logo Ad Astra"
+    />
+    <p class="aa-header-logo-text">Ad Astra</p>
+  </a>
+
+  <!-- DESKTOP MENU -->
+  <div class="aa-header-menu -right">
+    <a
+      class="aa-header-menu-link"
+      routerLink="/"
+      routerLinkActive="aa-header-menu-link -active"
+      >Accueil</a
+    >
+    <a
+      class="aa-header-menu-link"
+      routerLink="/feed"
+      routerLinkActive="aa-header-menu-link -active"
+      >Découvrir</a
+    >
+    <a
+      class="aa-header-menu-link"
+      routerLink="/artist"
+      routerLinkActive="aa-header-menu-link -active"
+      >Mon Profil</a
+    >
+    <a
+      class="aa-header-menu-link -notification"
+      routerlink="#"
+      (click)="handleNotification()"
+    >
+      <img src="../../assets/icons/bell.svg" alt="Bell Icon" />
+    </a>
+    <div
+      class="aa-header-notifications-container mt-5"
+      [ngClass]="isOpen ? '-opened' : '-closed'"
+    >
+      <aa-notification-item
+        postLink="/"
+        personName="Jeremy Ford"
+        time="Il y a 3 heures"
+        isLike="true"
+        isNew="true"
+      ></aa-notification-item>
+      <aa-notification-item
+        postLink="/"
+        personName="Doris Hughes"
+        time="Il y a 7 heures"
+        isComment="true"
+      ></aa-notification-item>
+      <aa-notification-item
+        postLink="/"
+        personName="Aaron Matthews"
+        time="Il y a 10 heures"
+        isFollow="true"
+        isNew="true"
+      ></aa-notification-item>
+      <aa-btn btnText="Charger plus" btnLink="#"></aa-btn>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div
+    class="aa-header-menu-mobile -right"
+    [ngClass]="isBurgerClicked ? '-opened' : '-closed'"
+    (click)="burgerClick()"
+  >
+    <span class="line-1"></span>
+    <span class="line-2"></span>
+    <span class="line-3"></span>
+  </div>
+</header>
