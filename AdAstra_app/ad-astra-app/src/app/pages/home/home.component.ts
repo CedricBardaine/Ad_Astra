@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
 	selector: 'aa-home',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-	constructor() {}
+	isConnected: boolean = false ;
+	constructor(private auth: AuthService) {}
 
 	ngOnInit(): void {}
 }

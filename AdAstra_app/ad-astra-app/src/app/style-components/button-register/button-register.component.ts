@@ -24,6 +24,7 @@ export class ButtonRegisterComponent implements OnInit {
   isLarge: boolean = false;
   @Input("btnText") public btnText: string;
   @Input("btnLink") public btnLink: string;
+  @Input('btnHasRouterLink') public btnHasRouterLink;
 
   /*
   < < < < < < < HEAD
@@ -34,5 +35,10 @@ export class ButtonRegisterComponent implements OnInit {
   */
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void { 
+    // the btnHasRouterLink attribut is to explicitly aks to prevents the button to redirect,
+    // it may be useful for button that executes a fonction
+    if (this.btnHasRouterLink == undefined || this.btnHasRouterLink  == null)
+      this.btnHasRouterLink = 'true' ; 
+  }
 }

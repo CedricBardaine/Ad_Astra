@@ -1,4 +1,5 @@
-<button
+<div *ngIf="btnHasRouterLink == 'true'">
+  <button 
   class="aa-btn-register"
   [ngClass]="{
     '-small': isSmall,
@@ -8,23 +9,58 @@
     '-large': isLarge
   }"
   routerLink="{{ btnLink }}"
->
+  >
   <div class="aa-btn-register-container">
     <span [attr.data-text]="btnText">{{ btnText }}</span>
   </div>
 </button>
-
-<!-- 
-< < < < < < < HEAD
-<div *ngIf="btnHasRouterLink == 'true'">
-	<button routerLink="{{ btnLink }}">
-		{{ btnText }}
-	</button>
 </div>
 
 <div *ngIf="btnHasRouterLink == 'false'">
-	<button>
-		{{ btnText }}
-	</button>
+  <button 
+  class="aa-btn-register"
+  [ngClass]="{
+    '-small': isSmall,
+    '-sign': isConnect,
+    '-red': isRed,
+    '-secondary': isSecondary,
+    '-large': isLarge
+  }"
+  >
+  <div class="aa-btn-register-container">
+    <span [attr.data-text]="btnText">{{ btnText }}</span>
+  </div>
+</button>
 </div>
-= = = = = = = -->
+
+<!-- 
+<button 
+class="aa-btn-register"
+[ngClass]="{
+  '-small': isSmall,
+  '-sign': isConnect,
+  '-red': isRed,
+  '-secondary': isSecondary,
+  '-large': isLarge
+}"
+routerLink="{{ btnLink }}"
+>
+<div class="aa-btn-register-container">
+  <span [attr.data-text]="btnText">{{ btnText }}</span>
+</div>
+</button> -->
+
+<!-- 
+  < < < < < < < HEAD
+  <div *ngIf="btnHasRouterLink == 'true'">
+    <button routerLink="{{ btnLink }}">
+      {{ btnText }}
+    </button>
+  </div>
+  
+  <div *ngIf="btnHasRouterLink == 'false'">
+    <button>
+      {{ btnText }}
+    </button>
+  </div>
+  = = = = = = = -->
