@@ -1,11 +1,11 @@
 <app-header-logged-in-or-out></app-header-logged-in-or-out>
-<main class="aa-content -home">
+<main class="aa-view -home">
   <section class="aa-hero">
     <div class="aa-hero-container">
       <div class="aa-hero-body">
         <div class="aa-hero-text -left">
-          <h1 class="h1 -title" data-aos="fade-up">
-            Bienvenue sur Ad Astra
+          <h1 class="-title1" data-aos="fade-up">
+            Propulsez votre carrière musicale<br />vers de nouveaux horizons.
           </h1>
           <p
             class="-subtitle -bounded"
@@ -17,7 +17,7 @@
           </p>
           <aa-btn-register
             btnLink="/register"
-            btnText="Embarquez à bord"
+            btnText="Commencer l'essai gratuit"
             isConnect="true"
             isLarge="true"
             data-aos="fade-up"
@@ -33,14 +33,10 @@
             data-reveal-group="3"
           ></aa-btn-register>
         </div>
-        <div
-          class="aa-hero-image -right"
-          data-aos="zoom-in"
-          data-reveal-group="8"
-        >
+        <div class="aa-hero-image -right">
           <img
             class="img-hero"
-            src="../../../assets/img/concert-love.jpg"
+            src="../../../assets/img/imageHome.png"
             alt="home hero image"
           />
         </div>
@@ -57,10 +53,31 @@
       </div>
     </div>
   </section>
+  <section class="aa-artists">
+    <div class="aa-artists-container">
+      <h2 class="-title1 -centered" data-aos="fade-up">
+        Les artistes, au <span class="-red">coeur</span> de <br />notre
+        application
+      </h2>
+      <aa-home-artists-card
+        isBook="true"
+        data-reveal-group="2"
+      ></aa-home-artists-card>
+      <aa-home-artists-card
+        isArrow="true"
+        data-reveal-group="3"
+      ></aa-home-artists-card>
+      <aa-home-artists-card
+        isHand="true"
+        data-reveal-group="4"
+      ></aa-home-artists-card>
+    </div>
+  </section>
   <section class="aa-pricing">
     <div class="aa-pricing-container">
-      <h2 class="title2 -centered">
-        Une formule unique<br />répondant à tous vos besoins
+      <h2 class="-title1 -centered" data-aos="fade-up" data-reveal-group="0">
+        Une formule <span class="-red">unique</span><br />répondant à tous vos
+        besoins
       </h2>
       <div class="aa-pricing-body">
         <div class="aa-pricing-body-image -left" data-aos="zoom-in">
@@ -74,16 +91,81 @@
       </div>
     </div>
   </section>
-  <section class="aa-copyright">
-    <div class="aa-copyright-body">
-      <p class="aa-copyright-body-text">
-        Fait avec
-        <span class="heart"
-          ><img
-            src="../../../assets/img/heart-ios.png"
-            alt="heart icon" /></span
-        >par la team Ad Astra
-      </p>
+  <section class="aa-professionals">
+    <div class="aa-professionals-container">
+      <h2
+        class="-title1 -centered"
+        data-aos="fade-up"
+        data-reveal-group="0"
+        data-aos="fade-up"
+        data-reveal-group="0"
+      >
+        Pour les professionnels, une<br />
+        opportunité <span class="-red">incomparable</span>
+      </h2>
+      <div class="aa-professionals-cards-container">
+        <aa-home-professionals-card
+          isPlanet="true"
+          data-reveal-group="2"
+        ></aa-home-professionals-card>
+        <aa-home-professionals-card
+          isCheck="true"
+          data-reveal-group="3"
+        ></aa-home-professionals-card>
+      </div>
+    </div>
+  </section>
+  <section class="aa-testimonials">
+    <div class="aa-testimonials-container">
+      <h2 class="-title1 -centered" data-aos="fade-up" data-reveal-group="0">
+        Des artistes ravis de<br />
+        leur <span class="-red">expérience</span>
+      </h2>
+      <aa-testimonials></aa-testimonials>
+    </div>
+  </section>
+  <section class="aa-partners">
+    <div class="aa-partners-container">
+      <h2 class="-title1 -centered" data-aos="fade-up" data-reveal-group="0">
+        Ils nous font<br />
+        <span class="-red">confiance</span>
+      </h2>
+      <div class="aa-partners-logos">
+        <img
+          src="../../../assets/img/logo1-trust.png"
+          alt="Logo 1"
+          data-aos="fade-up"
+          data-reveal-group="3"
+        />
+        <img
+          src="../../../assets/img/logo2-trust.png"
+          alt="Logo 2"
+          data-aos="fade-up"
+          data-reveal-group="4"
+        />
+        <img
+          src="../../../assets/img/logo3-trust.png"
+          alt="Logo 3"
+          data-aos="fade-up"
+          data-reveal-group="5"
+        />
+      </div>
+    </div>
+  </section>
+  <section class="aa-join">
+    <div class="aa-join-container">
+      <h2 class="-title1 -centered" data-aos="fade-up" data-reveal-group="6">
+        <span class="-red">Rejoignez</span> la mission
+      </h2>
+      <aa-btn-register
+        btnLink="/register"
+        btnText="Commencer l'essai gratuit"
+        isConnect="true"
+        isLarge="true"
+        data-aos="fade-up"
+        data-reveal-group="2"
+      ></aa-btn-register>
     </div>
   </section>
 </main>
+<aa-footer></aa-footer>

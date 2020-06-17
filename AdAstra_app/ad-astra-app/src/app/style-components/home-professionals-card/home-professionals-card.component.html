@@ -1,0 +1,24 @@
+<div
+  class="aa-professional-card"
+  [ngClass]="{
+    '-central': isPlanet,
+    '-checked': isCheck
+  }"
+  data-aos="zoom-in"
+>
+  <div class="aa-professional-card-container">
+    <div
+      class="icon"
+      [ngClass]="{
+        'icon-planet': isPlanet,
+        'icon-check': isCheck
+      }"
+    ></div>
+    <h4 class="legend -central" *ngIf="isPlanet">
+      Une centralisation des artistes
+    </h4>
+    <h4 class="legend -checked" *ngIf="isCheck">
+      Des artistes de qualité et fiables
+    </h4>
+  </div>
+</div>
