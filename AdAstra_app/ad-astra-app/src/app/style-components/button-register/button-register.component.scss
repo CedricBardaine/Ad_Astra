@@ -2,18 +2,18 @@
 
 .aa-btn-register {
   padding: 12px 56px;
-  color: var(--primary);
+  color: var(--white);
   font-size: var(--f-cta);
-  background: var(--white);
+  background: var(--accent);
   font-weight: 600;
-  border: 2px solid var(--white);
+  border: 2px solid var(--accent);
   border-radius: 6px;
   transition: color var(--duration) var(--ease),
     background-color var(--duration) var(--ease);
   &:hover {
-    background: var(--white-darken);
-    border-color: var(--white-darken);
-    color: var(--primary);
+    background: var(--accentHover);
+    border-color: var(--accentHover);
+    color: var(--white);
     cursor: pointer;
   }
 
@@ -24,6 +24,7 @@
   &.-secondary {
     color: var(--white);
     background: transparent;
+    border-color: var(--white);
     &:hover {
       background: var(--white);
       color: var(--primary);
@@ -52,6 +53,7 @@
     overflow: hidden;
     position: relative;
     will-change: transform;
+
     span {
       position: relative;
       display: inline-block;

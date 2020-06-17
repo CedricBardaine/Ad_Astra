@@ -8,7 +8,8 @@ h4 {
   margin: 0;
 }
 
-h1 {
+h1,
+.-title1 {
   font-size: var(--f-h1);
   font-weight: 600;
   line-height: calc(var(--f-h1) * 1.5);
@@ -24,7 +25,8 @@ h1 {
   }
 }
 
-h2 {
+h2,
+.-title2 {
   font-size: var(--f-h2);
   font-weight: 600;
   line-height: calc(var(--f-h2) * 1.5);
@@ -40,7 +42,8 @@ h2 {
   }
 }
 
-h3 {
+h3,
+.-title3 {
   font-size: var(--f-h3);
   font-weight: 600;
   line-height: calc(var(--f-h3) * 1.5);
@@ -69,7 +72,8 @@ h3 {
   }
 }
 
-h4 {
+h4,
+.-title4 {
   font-size: var(--f-h4);
   font-weight: 600;
   line-height: calc(var(--f-h4) * 1.5);
@@ -119,6 +123,7 @@ p {
 .-subtitle {
   font-size: var(--f-h4);
   font-weight: 600;
+  line-height: calc(var(--f-h4 * 1.5));
 
   @include md {
     font-size: var(--f-h4--tablet);
@@ -129,4 +134,8 @@ p {
     font-size: var(--f-h4--mobile);
     line-height: calc(var(--f-h4--mobile) * 1.5);
   }
+}
+
+.-red {
+  color: var(--accent) !important;
 }

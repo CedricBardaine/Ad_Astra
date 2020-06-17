@@ -1,0 +1,4 @@
+<svg id="arrow-left-right-line" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+  <path id="Path_56" data-name="Path 56" d="M0,0H56V56H0Z" fill="none"/>
+  <path id="Path_57" data-name="Path 57" d="M39.25,28.13,53,41.04,39.25,53.95l-3.928-3.688,7.044-6.617-36.589,0V38.432H42.367l-7.044-6.614L39.25,28.13ZM16.75,2.05l3.928,3.688-7.044,6.614H50.222v5.216H13.633l7.044,6.614L16.75,27.87,3,14.96,16.75,2.05Z" fill="#fafafa"/>
+</svg>
