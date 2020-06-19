@@ -7,8 +7,11 @@ import { AuthService } from '../../auth.service'
   styleUrls: ['./header-logged-in-or-out.component.scss']
 })
 export class HeaderLoggedInOrOutComponent implements OnInit {
+  logged: boolean ;
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService) {
+    this.logged = this.auth.loggedIn() ; 
+   }
 
   ngOnInit() {
   }

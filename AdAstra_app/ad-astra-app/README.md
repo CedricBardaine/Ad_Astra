@@ -35,3 +35,11 @@ The front app of Ad Astra uses the [TypeDoc](https://typedoc.org) library to gen
 ### Generate the doc
 
 Run `npx typedoc --options .\typedoc.json` in the app directory.
+
+## Deploy
+
+The deployment is made to Netlify.
+
+The command `ng add @netlify-builder/deploy` allows to **install** AND/OR configure Netlify, asking after the set up the **ID of the site** & the **personal access token**. 
+
+Once configured, the command `ng run ad-astra-app:deploy` builds the front app to the default directory and deploy it to Netlify. 
