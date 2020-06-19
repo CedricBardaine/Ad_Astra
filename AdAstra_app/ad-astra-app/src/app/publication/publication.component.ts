@@ -32,12 +32,15 @@ export class PublicationComponent implements OnInit {
   }
 
   /**
-   * TODO: create likePublication()
+   * // TODO: create likePublication()
    * @param idpubli id of the publication to like by the userStar 
    */
-  likePublication(idpubli: number) { console.log("todo") }
+  likePublication(idpubli: number) { 
+
+    console.log("todo") 
+  }
   /**
-   * TODO: create sharePublication()
+   * // TODO: create sharePublication()
    * Allow to copy the link to the publication (certainly return a page were a unique publication is displayed with it's replies bellow)
    * @param idpubli id of the publication to like by the userStar 
    */

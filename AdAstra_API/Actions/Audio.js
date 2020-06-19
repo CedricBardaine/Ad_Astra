@@ -9,8 +9,8 @@ module.exports = {
     /**
     * Insert Audio in the directory of picts and insert the correpsonding row in table 
     * Method with the "formidable" library. 
-    * TODO: verify file type 
-    * TODO: change wait methode to let the upload. Make it synchronous ? 
+    * // TODO: verify file type 
+    * // TODO: change wait methode to let the upload. Make it synchronous ? 
     */
     insert_Audio: (req, res) => {
         const TAG_insertAudio = "insertAudio: "

@@ -21,7 +21,7 @@ interface Artist {
 })
 /**
  * Display the page of an Artist.
- * TODO: if the User is logged, and access it's page, routerLink to another component specific to allow editing.
+ * // TODO: if the User is logged, and access it's page, routerLink to another component specific to allow editing.
  */
 export class PageArtistComponent implements OnInit {
   artist: Artist = {

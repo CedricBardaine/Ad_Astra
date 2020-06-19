@@ -21,6 +21,7 @@ module.exports = {
         let sel = "etoile";
         password += sel; 
 
+        // FIXME : hash the passphrase like ' UNHEX(SHA2('My secret passphrase',512)) '
         let query = "INSERT INTO `UserStar` (firstname, lastname, birth, mail, password, sign_in_date, photo, name_spotify, name_deezer, name_youtube, name_bandcamp, id_profession, id_country) VALUES ('"+
         firstname+"', '"+lastname+"', '"+birth+"', '"+mail+"', AES_ENCRYPT('"+password+"', 'Astron@ute_1_3_6_13') , '"+sign_in_date+"', '"+photo+"', '"+name_spotify+"', '"+name_deezer+"', '"+name_youtube+"', '"+name_bandcamp+"', '"+id_profession+"', '"+id_country+ "')";
         db.query(query, (err, result) => {
