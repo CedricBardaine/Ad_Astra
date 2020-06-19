@@ -1,11 +1,14 @@
 @import "../../../shared/shared";
 .-home {
+  display: flex;
+  flex-direction: column;
   .aa-hero {
     height: 100vh;
     display: flex;
     justify-content: center;
+    padding-top: 150px;
     &-container {
-      max-width: 95%;
+      max-width: 90%;
       display: flex;
       flex-direction: column;
       align-content: center;
@@ -22,12 +25,12 @@
         display: flex;
         flex-direction: column;
 
-        .-title1 {
-          margin-bottom: 56px;
+        .-title {
+          margin-bottom: 24px;
         }
         .-subtitle.-bounded {
           width: 80%;
-          margin-bottom: 56px;
+          margin-bottom: 24px;
 
           @include sm {
             width: 100%;
@@ -46,7 +49,9 @@
       }
       .-right {
         .img-hero {
-          max-height: calc(100vh - 112px);
+          width: 525px;
+          height: auto;
+          border-radius: var(--radius);
         }
         @include sm {
           display: none;
@@ -60,7 +65,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: -100px;
+      padding-top: 150px;
+
       &-logo {
         margin-bottom: 8px;
         animation: upAndDown 2s var(--ease) infinite;
@@ -80,89 +86,20 @@
           transform: translateY(0px);
         }
       }
-
-      @include sm {
-        margin-top: 80px;
-      }
     }
 
     @include sm {
       padding-top: 60px;
     }
   }
-
-  .aa-artists {
-    height: calc(100vh - 112px);
-    margin-top: 218px;
-    &-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      width: 100%;
-      height: 100%;
-
-      .-book {
-        position: absolute;
-        left: 200px;
-        top: 70px;
-        @include sm {
-          position: relative;
-          top: unset;
-          left: unset;
-          margin-top: 32px;
-        }
-      }
-      .-accompagnement {
-        position: absolute;
-        right: 200px;
-        top: 70px;
-
-        @include sm {
-          position: relative;
-          top: unset;
-          right: unset;
-        }
-      }
-      .-relation {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-
-        @include sm {
-          position: relative;
-          bottom: unset;
-          left: unset;
-          transform: unset;
-        }
-      }
-
-      @include sm {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        .aa-artist-card {
-          margin-bottom: 32px;
-        }
-      }
-    }
-
-    @include sm {
-      margin-top: 0px;
-      height: unset;
-    }
-  }
-
   .aa-pricing {
     height: 100vh;
     display: flex;
     justify-content: center;
-    margin-top: 200px;
+    margin-top: -150px;
     &-container {
       width: 85%;
-      .-title1 {
+      .title2 {
         margin-bottom: 114px;
 
         @include sm {
@@ -197,90 +134,17 @@
         justify-content: center;
       }
     }
-
-    @include sm {
-      margin-top: 50px;
-    }
   }
-
-  .aa-professionals {
+  .aa-copyright {
     display: flex;
     justify-content: center;
-    height: 100vh;
-    &-container {
-      width: 60%;
-      .-title1 {
-        margin-bottom: 128px;
-        @include sm {
-          margin-bottom: 50px;
-        }
-      }
+    margin-bottom: 16px;
 
-      @include sm {
-        width: unset;
-      }
-    }
-
-    &-cards-container {
-      display: flex;
-      justify-content: space-between;
-
-      .-checked {
-        margin-top: 230px;
-        @include sm {
-          margin-top: 32px;
-        }
-      }
-
-      @include sm {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-  }
-
-  .aa-testimonials  {
-    display: flex;
-    justify-content: center;
-    margin-top: 246px;
-    height: 100vh;
-  }
-
-  .aa-partners {
-    margin-top: 236px;
-    .-title1 {
-      margin-bottom: 64px;
-    }
-    &-logos {
-      display: flex;
-      max-width: 75%;
-      justify-content: space-between;
-      margin: 0 auto;
-      flex-wrap: wrap;
-
-      @include sm {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        img {
-          margin-bottom: 32px;
-        }
-      }
-    }
-  }
-
-  .aa-join {
-    margin-top: 195px;
-    display: flex;
-    justify-content: center;
-    .-title1 {
-      margin-bottom: 64px;
-    }
-
-    .aa-btn-register {
-      text-align: center;
+    .heart img {
+      width: 16px;
+      height: auto;
+      display: inline-block;
+      margin: 0 5px;
     }
   }
 }

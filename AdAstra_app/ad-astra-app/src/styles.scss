@@ -76,7 +76,7 @@ html {
 }
 
 @for $i from 0 through 40 {
-  $interval: 0.1;
+  $interval: 0.15;
   [data-reveal-group="#{$i}"] {
     transition-delay: #{$interval * $i}s !important;
   }

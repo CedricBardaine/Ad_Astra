@@ -4,8 +4,8 @@ import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
-import { FormsModule, ReactiveFormsModule } from "@angular/forms"; // <-- NgModel lives here
-import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { HttpClientModule, HTTP_INTERCEPTORS }    from '@angular/common/http';
 
 // routing
 import { RouterModule, Routes } from "@angular/router";
@@ -16,49 +16,46 @@ import { Page404Component } from "./page404/page404.component";
 import { PageArtistComponent } from "./page-artist/page-artist.component";
 import { PageContactComponent } from "./page-contact/page-contact.component";
 import { HomeComponent } from "./pages/home/home.component";
-import { PageFeedComponent } from "./page-feed/page-feed.component";
-import { PageLoginComponent } from "./page-login/page-login.component";
+import { PageFeedComponent } from './page-feed/page-feed.component';
+import { PageLoginComponent } from './page-login/page-login.component';
 
 // divers
-import { PublicationComponent } from "./publication/publication.component";
-import { HeaderLoggedInOrOutComponent } from "./style-components/header-logged-in-or-out/header-logged-in-or-out.component";
-import { AuthGuard } from "./auth.guard";
-import { AuthService } from "./auth.service";
-import { TokenInterceptorService } from "./token-interceptor.service";
+import { PublicationComponent } from './publication/publication.component';
+import { HeaderLoggedInOrOutComponent } from './style-components/header-logged-in-or-out/header-logged-in-or-out.component';
+import { AuthGuard } from './auth.guard';
+import { AuthService } from './auth.service';
+import { TokenInterceptorService } from './token-interceptor.service';
 
 // styles compoents from F
 import { UiKitComponent } from "./pages/uikit/ui-kit.component";
-import { ButtonComponent } from "./style-components/button/button.component";
-import { HeaderComponent } from "./style-components/header-home/header-home.component";
-import { ButtonRegisterComponent } from "./style-components/button-register/button-register.component";
-import { HeaderLoggedInComponent } from "./style-components/header-logged-in/header-logged-in.component";
+import { ButtonComponent } from './style-components/button/button.component';
+import { HeaderComponent } from './style-components/header-home/header-home.component';
+import { ButtonRegisterComponent } from './style-components/button-register/button-register.component';
+import { HeaderLoggedInComponent } from './style-components/header-logged-in/header-logged-in.component';
 import { BlocPhotosComponent } from "./style-components/bloc-photos/bloc-photos.component";
 import { ButtonUploadComponent } from "./style-components/button-upload/button-upload.component";
 import { NotificationItemComponent } from "./style-components/notification-item/notification-item.component";
 import { PriceCardComponent } from "./style-components/price-card/price-card.component";
 import { BlocSimilarArtistsComponent } from "./style-components/bloc-similar-artists/bloc-similar-artists.component";
 import { MusicPlayerComponent } from "./style-components/music-player/music-player.component";
-import { ButtonNoLinkComponent } from "./style-components/button-no-link/button-no-link.component";
-import { FooterComponent } from "./style-components/footer/footer.component";
-import { CursorComponent } from './style-components/cursor/cursor.component';
-import { HomeArtistsCardComponent } from './style-components/home-artists-card/home-artists-card.component';
-import { HomeProfessionalsCardComponent } from './style-components/home-professionals-card/home-professionals-card.component';
-import { TestimonialsComponent } from './style-components/testimonials/testimonials.component';
+import { ButtonNoLinkComponent } from './style-components/button-no-link/button-no-link.component';
+
 
 const appRoutes: Routes = [
-  { path: "register", component: FormRegisterComponent },
-  { path: "404", component: Page404Component },
-  { path: "artist", component: PageArtistComponent },
-  { path: "artist/:id", component: PageArtistComponent },
-  { path: "contact", component: PageContactComponent },
-  { path: "feed", component: PageFeedComponent, canActivate: [AuthGuard] },
-  { path: "connect", component: PageLoginComponent },
+  { path: 'register', component: FormRegisterComponent },
+  { path: '404', component: Page404Component },
+  { path: 'artist', component: PageArtistComponent },
+  { path: 'artist/:id', component: PageArtistComponent },
+  { path: 'contact', component: PageContactComponent },
+  { path: 'feed', component: PageFeedComponent , canActivate: [AuthGuard] },
+  { path: 'connect', component: PageLoginComponent },
   { path: "home", component: HomeComponent },
   { path: "uikit", component: UiKitComponent },
+  
+  { path: '', component: HomeComponent },
+  { path: '**', component: Page404Component },
+]
 
-  { path: "", component: HomeComponent },
-  { path: "**", component: Page404Component },
-];
 
 @NgModule({
   declarations: [
@@ -84,11 +81,6 @@ const appRoutes: Routes = [
     BlocSimilarArtistsComponent,
     MusicPlayerComponent,
     ButtonNoLinkComponent,
-    FooterComponent,
-    CursorComponent,
-    HomeArtistsCardComponent,
-    HomeProfessionalsCardComponent,
-    TestimonialsComponent,
   ],
   imports: [
     BrowserModule,
@@ -99,17 +91,17 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes
       // {enableTracing: true} // FIXME: FM7 debugging purposes only
-    ),
-  ],
-  providers: [
-    AuthService,
-    AuthGuard,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptorService,
-      multi: true,
-    },
-  ],
-  bootstrap: [AppComponent],
-})
-export class AppModule {}
+      ),
+    ],
+    providers: [
+      AuthService, 
+      AuthGuard, 
+      {
+        provide: HTTP_INTERCEPTORS, 
+        useClass: TokenInterceptorService,
+        multi: true
+      }
+    ],
+    bootstrap: [AppComponent]
+  })
+  export class AppModule { }
