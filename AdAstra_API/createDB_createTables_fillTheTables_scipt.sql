@@ -118,7 +118,7 @@ CREATE TABLE UserStar (
         lastname VARCHAR(50) NOT NULL, 
         birth DATE NOT NULL,
         mail VARCHAR(100) NOT NULL,
-        password BLOB NOT NULL, /* TODO: encrypt it !! */
+        password BLOB NOT NULL,
         sign_in_date DATE NOT NULL, 
         photo INT DEFAULT 0, /* to invoke in app the default profil pict */
         bio TEXT,

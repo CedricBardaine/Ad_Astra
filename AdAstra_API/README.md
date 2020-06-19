@@ -1,4 +1,5 @@
-# What :
+# What
+
 This is the CRUD API of Ad-Astra. 🌟
 
 # Create init and fill at least a little the DB
@@ -24,7 +25,7 @@ sql-mode=""
 
 # Set up
 
-# 1. Make sur to have the *adastra* database. 
+1. Make sur to have the *adastra* database. 
 2. `npm init`
 
 # Run 
