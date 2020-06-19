@@ -54,6 +54,9 @@ export class PageFeedComponent implements OnInit {
   theFileToUpload: any[] = [''];
   errorMsg:string;
   uploadForm: FormGroup ;
+
+  mediapath = PATHS.ADASTRA_MEDIAS_PATH ; 
+  profilPict_userStar:number = 0; // default to prevent errors 'does not exist on type' 
   
   thePublications:Publication[] = new Array ; 
   

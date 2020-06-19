@@ -14,7 +14,7 @@
     <input #uploaderVid type="file" (change)="onFileChange($event)" hidden="hidden" accept="video/*" /> 
     <input #uploaderPict type="file" (change)="onFileChange($event)" hidden="hidden" accept="image/*" /> 
   </div>
-  <button type="submit" (click)="sendNewPubli()">Publier</button> {{theFileToUpload.name}}
+  <button type="submit" (click)="sendNewPubli()">Publier</button> 
   <div id="div_errorMsg">{{errorMsg}}</div>
 </div>
 <br><br>
