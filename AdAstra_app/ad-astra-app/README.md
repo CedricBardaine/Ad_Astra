@@ -38,8 +38,10 @@ Run `npx typedoc --options .\typedoc.json` in the app directory.
 
 ## Deploy
 
-The deployment is made to Netlify.
+The deployment is made to Netlify.  
+ [![Netlify Status](https://api.netlify.com/api/v1/badges/2806f8b0-474f-4601-b26b-9aaa708ef60f/deploy-status)](https://app.netlify.com/sites/ad-astra/deploys)
 
-The command `ng add @netlify-builder/deploy` allows to **install** AND/OR configure Netlify, asking after the set up the **ID of the site** & the **personal access token**. 
+The command `ng add @netlify-builder/deploy` allows to **install** AND/OR configure Netlify, asking after the set up the **ID of the site** & the **personal access token**.  
+⚠️ Doing that will store the token in \angular.json. DO NOT EVER PUSH this token, or you will have to delete it on Netlify asap. ⚠️
 
-Once configured, the command `ng run ad-astra-app:deploy` builds the front app to the default directory and deploy it to Netlify. 
+Once configured, the command `ng run ad-astra-app:deploy` builds the front app to the default directory and deploys it to Netlify. 
