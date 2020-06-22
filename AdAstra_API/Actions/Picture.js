@@ -14,54 +14,61 @@ module.exports = {
     * Insert picture in the directory of picts and insert the correpsonding row in table 
     * Method with the "formidable" library. 
     * // TODO: verify file type 
-    * // TODO: change wait methode to let the upload. Make it synchronous ? 
-    * NOTE IMPORTANT : Cette version fonctionne (avec Postman sûr), mais seulement lorsqu'on redémare Nodemon, ou qu'on attend bien avant chaque requête.  En fait, le code qui rename le file passe parfois avant la requete MySQL :(
+    * WORKING!! well, only one pict after another... 
         */
         insert_Picture: (req, res) => {
+            // Global tag for console formating
             const theTAG =fileTAG+ "insertPicture : "
             
-            // // let id = req.body.id; 
-            let id_userStar;
-            // // let xblock = req.body.xblock; // DEFAULT : FALSE
             
+            // get the multipart form data
             var form = new formidable.IncomingForm();
             form.uploadDir = paths.mediasPath + paths.pathArtistPicts;
             
-            let errorFieldCount = 1 ; 
+            
+            let id_userStar;
             
             let thePictId ; 
-            // let imagePathAndName = form.uploadDir + result.insertId;
             let theFile ; 
             let imagePathAndName ; 
-            let iNbFile = 0 ; 
-            renamed_successfully = false ; 
+
+            let errorFieldCount = 1 ; 
+            let renamed_successfully = false ; 
+            let picturesSaved = [] ; 
             
+
             form.on('error', function (err) {
                 console.log(theTAG+  "error : "+err);
                 res.writeHead(200, {'content-type': 'text/plain'});
                 res.end('error:\n\n'+util.inspect(err));
             })
-            .on('aborted', function (err) { console.log(theTAG+  "user aborted upload : "+err); })
+            .on('aborted', function (err) { 
+                console.log(theTAG+  "user aborted upload : "+err); 
+            })
             .on('field', (fieldName, fieldValue) => {
                 if (fieldName != "id_userStar") console.log(theTAG+  "Error ! Wrong form field sent ! n°"+ (errorFieldCount++) );
                 else {
-                    console.log(theTAG+  fieldName + " : "+ fieldValue);
+                    console.log(theTAG+  fieldName + " = "+ fieldValue);
+
                     id_userStar = fieldValue ; 
                     
                     let query = "INSERT INTO `Picture` (id_userStar) VALUES ('" +
                     id_userStar +"')";
                     db.query(query, (err, result) => {
-                        if (err) { return res.status(500).send(err); }
+                        if (err) { 
+                            return res.status(500).send(err); 
+                        }
                         thePictId = result.insertId ; 
-                        console.log(theTAG+  "setted thepictid :"+ thePictId);
+                        console.log(theTAG+  "set thepictid :"+ thePictId);
                         
                         try {
-                            console.log(theTAG+  "in  rename1"); 
+                            console.log(theTAG+  "rename in db query callback..."); 
                             let fileType = theFile.type.split("/")[1];
-                            console.log(theTAG+  "saving file... "+thePictId +"."+fileType);
+                            console.log(theTAG+  "renaming uploaded file '"+ thePictId +"."+fileType+"'");
                             imagePathAndName = form.uploadDir +  thePictId  +"."+fileType ; 
                             fs.renameSync(theFile.path, imagePathAndName);
                             
+                            picturesSaved.push(thePictId);
                             console.log(theTAG+  "renamed picture to : "+imagePathAndName);
                             renamed_successfully = true ; 
                         } catch (TypeError) {
@@ -71,22 +78,22 @@ module.exports = {
                 }
             })
             .on('file', function (field, file) {
-                console.log(theTAG+ "save file somewhere"); 
+                console.log(theTAG+ "parsing in 'on('file')' method"); 
                 theFile = file ;  
                 
-                if (thePictId != undefined) {
-                    console.log(theTAG+  "in  rename2"); 
+                if (!renamed_successfully  &&  thePictId != undefined) {
+                    console.log(theTAG+  "rename in the 'on('file')' method..."); 
                     let fileType = theFile.type.split("/")[1];
-                    console.log(theTAG+  "saving file... "+thePictId +"."+fileType);
+                    console.log(theTAG+  "renaming uploaded file '"+ thePictId +"."+fileType+"'");
                     imagePathAndName = form.uploadDir +  thePictId  +"."+fileType ; 
                     fs.renameSync(theFile.path, imagePathAndName);
                     
+                    picturesSaved.push(thePictId);
                     console.log(theTAG+  "renamed picture to : "+imagePathAndName);
                 }
-                
-                res.send("Saved new pict : "+ thePictId) ;
             });
             
+
             form.parse(req, (err, fields, files) => {   
                 nbFileUploaded = Object.keys(files).length ; 
                 console.log (theTAG+  "uploaded : "+nbFileUploaded+ " file(s)");
@@ -95,16 +102,13 @@ module.exports = {
                 if(!err) res.status(200); 
                 else res.status(500) ;
                 // res.writeHead(200, { 'content-type': 'application/json' });
-                
                 // console.log(theTAG+  JSON.stringify({ err, fields, files }, null, 2));
                 
-                
-                
-                
+                // NB: even if it doesn't show the id of the pict, it has surely worked, it's caused when the renaming   ?(in the db query callback was too slow)?  (not 100% sur). 
+                res.send("Saved new pict(s) : "+ JSON.stringify(picturesSaved) ) ;
             });
             
             
-            console.log()
             console.log()
             return ;
             // res.end("Value has been inserted.") ; 
