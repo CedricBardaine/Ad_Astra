@@ -32,3 +32,9 @@ sql-mode=""
 
 1. Run Wamp or a counterpart for database. 
 2. `nodemon app.js`
+
+# ⚠️ NEVER push the password for AES encryption ⚠️
+
+The file `./pass.txt` 
+* must contains the password used in `./Actions/UserStar.js`
+* must **never** be pushed to git. 
