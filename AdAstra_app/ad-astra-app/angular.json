@@ -126,7 +126,7 @@
           "builder": "@netlify-builder/deploy:deploy",
           "options": {
             "outputPath": "dist/ad-astra-app",
-            "netlifyToken": "3d12590a1f0b20d873a803ee9720063077d56134fe8764f22a247a8d8ceaccbd",
+            "netlifyToken": "",
             "siteId": "2806f8b0-474f-4601-b26b-9aaa708ef60f"
           }
         }
