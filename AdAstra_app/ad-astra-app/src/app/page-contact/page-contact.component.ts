@@ -50,7 +50,7 @@ export class PageContactComponent implements OnInit {
     + "<b>Statut : </b>"+ statut +"<br>"
     + "<b>Message : </b> <br>"
     + this.message
-    + "<b>Fin du message.</b> <br>"
+    + "<br><b>Fin du message.</b> <br>"
     
     return ret ; 
   }
@@ -75,7 +75,7 @@ export class PageContactComponent implements OnInit {
             Email.send({
               Host : 'smtp.elasticemail.com',
               Username : 'cedricbardaine@gmail.com',
-              Password : '75B710162487EE78F2AC96C41EA93093BC49',
+              Password : '7D42AB7568FE15973ACA2CCD7EC717CFEAFB',
               To : 'cedricbardaine@gmail.com',
               From : `cedricbardaine@gmail.com`,
               Subject : this.subject,
