@@ -166,7 +166,7 @@ app.post('/delete_UserStar_Musical_style', delete_UserStar_Musical_style);
 
 app.post('/insert_UserStar', insert_UserStar); 
 app.post('/delete_UserStar', delete_UserStar); 
-app.get('/testGetMdps' , getMdp_UserStar); // FIXME: FM7 delete before prod !!! 
+// app.get('/testGetMdps' , getMdp_UserStar); // MUST be commented before prod !!! 
 
 app.post('/insert_Music', insert_Music); 
 app.post('/delete_Music', delete_Music); 

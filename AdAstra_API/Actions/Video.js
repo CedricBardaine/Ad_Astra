@@ -10,7 +10,7 @@ module.exports = {
     * Insert a video in the directory of vids and insert the correpsonding row in table 
     * Method with the "formidable" library. 
     * // TODO: verify file type
-    * // TODO: change wait methode to let the upload. Make it synchronous ? 
+    * // TODO: change wait methode to let the upload. Make it synchronous ? (do like in Picture.js)
     */
     insert_Video: (req, res) => {
         const TAG_insertVid = "insertVideo: "

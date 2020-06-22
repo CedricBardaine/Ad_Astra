@@ -7,6 +7,10 @@
 <br />
 <br />
 
+<div class="contactPageImage">
+  <img src="../../assets/picts/sunyu-kim-NNkmhogy6NM-unsplash.png" alt="" />
+</div>
+
 <label class="contactPageLabel" for="inputNom">Nom complet</label><br>
 <input [(ngModel)]="name" type="text" name="Nom" id="inputNom">
 <br>
@@ -28,16 +32,14 @@
 <input [(ngModel)]="message" class="contactPageTextarea" type="textarea" name="Message" id="inputMessage">
 <br>
 
-<div class="contactPageImage">
-  <img src="../../assets/picts/sunyu-kim-NNkmhogy6NM-unsplash.png" alt="" />
-</div>
+
 
 <div>
-    <aa-btn btnText="Envoyer" (click)='onSubmitContactForm() ; $event.stopPropagation()'></aa-btn> 
-    <!-- //FIXME: un clic, et on change de page... du coup impossibe de binder une fct :(  -->
-    <button type="submit" (click)='onSubmitContactForm()'>test</button>
+    <aa-btn-noLink btnText="Envoyer" (click)='onSubmitContactForm()'></aa-btn-noLink> 
     <p>{{stateInfo}}</p>
 </div>
+<br>
+<br>
 
 <!-- <hr>
 <h1>Mail content : </h1>

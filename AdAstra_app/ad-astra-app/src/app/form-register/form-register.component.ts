@@ -72,7 +72,7 @@ export interface NewUser {
   styleUrls: ['./form-register.component.scss']
 })
 export class FormRegisterComponent implements OnInit {
-  debugLabel = "" ; // FIXME: FM7 delete before prod
+  debugLabel = "" ; 
   theFormState: FORMSTATE ; 
   theStep2 = false ;
   confirmPassWord = "";
