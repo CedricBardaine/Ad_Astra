@@ -73,6 +73,10 @@
         }
       }
     }
+
+    @include sm {
+      margin-left: 0px;
+    }
   }
 
   &-right {

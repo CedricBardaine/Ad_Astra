@@ -47,6 +47,10 @@
 
   &.-large {
     width: 400px;
+
+    @include sm {
+      width: 100%;
+    }
   }
 
   &.-sign {
