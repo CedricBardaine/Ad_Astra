@@ -396,31 +396,144 @@ INSERT INTO Need (id , name) VALUES
 
 -- Fill tables : for additional exemples
 
-INSERT INTO UserStar 
-(id, firstname, lastname, birth, mail, bio, name_spotify, id_profession, id_country) 
-VALUES
-(778, 'Jean', 'Jacques', '1985-02-27', 'JJBoomer@gmail.com', 'Bonjour, je fais de la musique jolie.', 'JBoom', 1, 1)
+-- INSERT INTO UserStar 
+-- (id, firstname, lastname, birth, mail, bio, name_spotify, id_profession, id_country) 
+-- VALUES
+-- (778, 'Jean', 'Jacques', '1985-02-27', 'JJBoomer@gmail.com', 'Bonjour, je fais de la musique jolie.', 'JBoom', 1, 1)
+-- ;
+-- INSERT INTO UserStar 
+-- (id, firstname, lastname, birth, mail, photo, bio, name_spotify, id_profession, id_country) 
+-- VALUES
+-- (779, 'Christophe', 'Marée', '1975-10-16', 'ilestou@gmail.com', 42, 'Ça fait mal de vivre sans toi.', 'ChristTop', 1, 1)
+-- ;
+
+-- INSERT INTO Artist
+-- (id, id_userStar, artist_name, suscribed, checked)
+-- VALUES
+-- (778, 778, 'JeanJ', true, false),
+-- (779, 779, 'Christophe Marée', true, true)
+-- ; 
+
+INSERT INTO UserStar (id, firstname, lastname, birth, mail, photo, bio, name_spotify, id_profession, id_country) VALUES
+(778, 'Jean', 'Jacques', '1985-02-27', 'JJBoomer@gmail.com', 0,'Bonjour, je fais de la musique.', 'JBoom', 1, 1),
+(779, 'Timy', 'Lieuron', '2003-02-14', 'Timyy@gmail.com', 2,'À fond.', 'Timae', 1, 1),
+(780, 'Alexandre', 'Toure', '1985-02-17', 'Allxe@gmail.com', 1,'', 'xEx', 1, 1),
+(781, 'Chritian', 'Clavien', '1995-01-01', 'clavC@gmail.com', 3,'', '', 1, 1)
 ;
-INSERT INTO UserStar 
-(id, firstname, lastname, birth, mail, photo, bio, name_spotify, id_profession, id_country) 
-VALUES
-(779, 'Christophe', 'Marée', '1975-10-16', 'ilestou@gmail.com', 1, 'Ça fait mal de vivre sans toi.', 'ChristTop', 1, 1)
+INSERT INTO Artist (id, id_userStar, artist_name, suscribed, checked) VALUES
+(778, 778, 'JeanJ', false, false),
+(779, 779, 'Timae', true, true),
+(780, 780, 'xEx', false, false),
+(781, 781, 'Clav', false, true)
 ;
 
-INSERT INTO Artist
-(id, id_userStar, artist_name, suscribed, checked)
-VALUES
-(778, 778, 'JeanJ', true, false),
-(779, 779, 'Christophe Marée', true, true)
-; 
-
-INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES ("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor.",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor.",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",778,777,"PICTURE");
-INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES ("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor.",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam",777,777,"PICTURE");
-INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES ("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus.",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor.",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor.",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor.",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus.",778,777,"PICTURE");
-INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES ("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus.",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",778,777,"PICTURE");
-INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES ("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor.",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus.",777,777,"PICTURE");
-INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES ("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus.",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus.",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing",777,777,"PICTURE");
-INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES ("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus.",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus.",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor.",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",777,777,"PICTURE");
-INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES ("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",779,777,"PICTURE");
-INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES ("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut",777,777,"PICTURE");
-INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES ("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",779,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",778,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus.",777,777,"PICTURE"),("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",779,777,"PICTURE");
+INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES 
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor.",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor.",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",778,777,"PICTURE");
+INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES 
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor.",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam",780,777,"PICTURE");
+INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES 
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus.",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor.",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor.",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor.",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus.",778,777,"PICTURE");
+INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES 
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus.",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",778,777,"PICTURE");
+INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES 
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor.",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus.",780,777,"PICTURE");
+INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES 
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus.",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus.",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing",780,777,"PICTURE");
+INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES 
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus.",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus.",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor.",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed",780,777,"PICTURE");
+INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES 
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",779,777,"PICTURE");
+INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES 
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut",780,777,"PICTURE");
+INSERT INTO `Publication` (`content`,`id_userStar`,`id_picture`,`kind`) VALUES 
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et",779,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu",778,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus.",780,777,"PICTURE"),
+("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna",779,777,"PICTURE");
