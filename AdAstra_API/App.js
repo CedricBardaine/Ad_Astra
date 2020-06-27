@@ -192,30 +192,31 @@ app.delete('/delete_Liking', delete_Liking);
 
 app.post('/login' , login); 
 function verifyToken(req, res, next) {
-    console.log("----- req.headers.authorization")
-    console.log(req.headers.authorization);
-    console.log("-----")
+    const fctTAG = 'verifyToken : '; 
+    console.log("fctTAG : ----- req.headers.authorization")
+    console.log(fctTAG + req.headers.authorization);
+    console.log("fctTAG : -----")
     if (!req.headers.authorization) {
-        console.log("no header");
+        console.log("fctTAG : no header");
         return res.status(401).send('Unauthorized request - no header');
     }
     let token = req.headers.authorization.split(' ')[1]
     if (token === 'null') {
-        console.log("no tok");
+        console.log("fctTAG : no tok");
         return res.status(401).send('Unauthorized request - no token');
     }
     let payload ; 
     try {
         payload = jwt.verify(token, 'secret_etoile');
     } catch (JsonWebTokenError) {
-        console.log("bad algorythme : "+ JsonWebTokenError);
+        console.log("fctTAG : bad algorythme : "+ JsonWebTokenError);
         return res.status(401).send('Unauthorized request - error token');
     }
     if (!payload) {
-        console.log("bad tok");
+        console.log("fctTAG : bad tok");
         return res.status(401).send('Unauthorized request - bad token');
     }
-    console.log("token ok");
+    console.log("fctTAG : token ok : ", payload);
     req.userId = payload.subject ;
     // TODO: verify if User exists 
     next();

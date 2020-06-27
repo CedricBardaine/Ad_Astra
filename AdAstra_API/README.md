@@ -1,8 +1,8 @@
-# What
+# Ad Astra's API
 
 This is the CRUD API of Ad-Astra. 🌟
 
-# Create init and fill at least a little the DB
+## Create init and fill at least a little the DB
 
 [script.sql](./createDB_createTables_fillTheTables_scipt.sql) 
 
@@ -23,17 +23,17 @@ sql-mode=""
 ;sql-mode="STRICT_ALL_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_ZERO_DATE,NO_ZERO_IN_DATE,NO_AUTO_CREATE_USER"
 ```
 
-# Set up
+## Set up
 
 1. Make sur to have the *adastra* database. 
 2. `npm init`
 
-# Run 
+## Run 
 
 1. Run Wamp or a counterpart for database. 
 2. `nodemon app.js`
 
-# ⚠️ NEVER push the password for AES encryption ⚠️
+## ⚠️ NEVER push the password for AES encryption ⚠️
 
 The file `./pass.txt` 
 * must contains the password used in `./Actions/UserStar.js`
