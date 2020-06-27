@@ -297,6 +297,35 @@ CREATE TABLE `UserStar_Following_UserStar` (
 
 
 
+
+-- Create triggers
+
+DROP TRIGGER IF EXISTS before_insert_UserStar_birth;
+DELIMITER |
+CREATE TRIGGER before_insert_UserStar_birth BEFORE INSERT
+ON adastra.userstar FOR EACH ROW
+BEGIN
+        IF  TIMESTAMPDIFF(YEAR, NEW.birth, NOW()) < 16  THEN
+                SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "ERROR: new user must be 16 years old or more." ;
+        END IF;
+END |
+DELIMITER ;
+
+DROP TRIGGER IF EXISTS before_update_Artist_suscribeduntil;
+DELIMITER |
+CREATE TRIGGER before_update_Artist_suscribeduntil BEFORE UPDATE
+ON adastra.artist FOR EACH ROW
+BEGIN
+        IF  TIMESTAMPDIFF(SECOND, NEW.suscribed_until, OLD.suscribed_until) >= 0  THEN
+                SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "ERROR: renewal can't be already passed." ;
+        END IF;
+END |
+DELIMITER ;
+
+
+
+
+
 -- Fill tables : for PKs and FKs
 
 USE adastra;

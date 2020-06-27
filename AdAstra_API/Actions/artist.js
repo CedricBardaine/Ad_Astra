@@ -1,7 +1,12 @@
 const paths = require('../utils');
 
+const jwt = require('jsonwebtoken') ; 
+
+fileTAG = 'Artist : '; 
+
 module.exports = {
     insert_Artist: (req, res) => {
+        fctTAG = fileTAG+ 'insert_Artist : '; 
         // let id = req.body.id; 
         let id_userStar = req.body.id_userStar; 
         let artist_name = req.body.artist_name; 
@@ -17,6 +22,10 @@ module.exports = {
             if (err) {
                 return res.status(500).send(err); 
             }
+            let payload = { subject: result.insertId };
+            let token = jwt.sign(payload, 'secret_etoile');
+            result['token'] = token;
+            console.log(fctTAG+  payload, ' : ', result['token']) 
             res.send(result) ; 
         });
     },
@@ -35,6 +44,8 @@ module.exports = {
     },
     
     get_Artist_infos: (req, res) => {
+        fctTAG = fileTAG+ 'get_Artist_infos : '; 
+
         let lid = req.query.id ; 
 
         if (lid != null) {
@@ -64,11 +75,11 @@ module.exports = {
                 result = JSON.parse( JSON.stringify(result) )[0] ;
 
                 if (result == null ) { 
-                    console.error("error ! the Artist might not exists");
+                    console.error(fctTAG+  "error ! the Artist might not exists");
                     return res.status(204).send(err); 
                 }
                 
-                console.log(result);
+                console.log(fctTAG+  result);
 
                 ret.id = result.id ; 
                 ret.name = result.artist_name;

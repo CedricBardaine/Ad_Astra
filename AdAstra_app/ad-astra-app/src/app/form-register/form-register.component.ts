@@ -1,5 +1,6 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../auth.service';
 
 enum FORMSTATE {
   question_1 = 1,
@@ -81,7 +82,7 @@ export class FormRegisterComponent implements OnInit {
   theNewUser: NewUser ;
   
   // injects dependencies
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private auth: AuthService) {
     // this.theFormState = FORMSTATE.question_1;
   }
   
@@ -198,6 +199,8 @@ export class FormRegisterComponent implements OnInit {
                   this.debugLabel = "Nouveau user enregistré ! " + JSON.stringify(dataArtist) ; 
                   this.theStep2 = false ; 
                   this.theFormState = 9 ; 
+                  console.log(returnOfToArtist.insertId , returnOfToArtist.token); 
+                  this.auth.setToken(returnOfToArtist.token);
                 }
               });
             }

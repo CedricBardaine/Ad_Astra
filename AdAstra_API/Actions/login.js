@@ -1,5 +1,8 @@
 const jwt = require('jsonwebtoken') ; 
 
+const fs = require('fs');
+const key_str = fs.readFileSync('./pass.txt', 'utf8') ; 
+
 module.exports = {
     
     login: (req, res) => {
@@ -12,7 +15,8 @@ module.exports = {
             token: null
         }
         
-        let query =  "SELECT id, CAST( aes_decrypt(password , 'Astron@ute_1_3_6_13') AS CHAR(50) ) AS pass "+
+        // let query =  "SELECT id, CAST( aes_decrypt(password , 'Astron@ute_1_3_6_13') AS CHAR(50) ) AS pass "+
+        let query =  "SELECT id, CAST( aes_decrypt(password , SHA2('"+key_str+"',512)) AS CHAR(50) ) AS pass "+
         "FROM adastra.userstar "+
         "WHERE mail='"+userEmail+"'" ; 
         
