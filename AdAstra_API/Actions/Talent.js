@@ -14,6 +14,7 @@ module.exports = {
         });
     },
 
+    // FIXME: get the Authorization header & verify it's an admin token ?
     delete_Talent: (req, res) => {
         let lid = req.body.id;
 
