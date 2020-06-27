@@ -76,6 +76,19 @@ export class AuthService {
   }
   
   /**
+  * Permits to .then() this function to assure getting the id of the logged user and process.
+  * @return the id of the user loged. Return a 401 if the client isn't loged.
+  */
+  async getLoggedUserIdNow(): Promise<number> { 
+    let ret:number = null ; 
+    await this.http.get<any>(this.getUserIdApiPoint, this.httpOptions).toPromise().then(res => {
+      ret = res ; 
+      console.log('id returned');
+    }) ;
+    return ret ; 
+  }
+  
+  /**
   * @return the encrypted JWT.
   */
   getToken() { return localStorage.getItem('token'); }
@@ -83,4 +96,10 @@ export class AuthService {
   * @return the HttpHeaders with the Authorization header. 
   */
   getHttpOptions() { return this.httpOptions }
+  
+  /**
+  * Set the token manually, it must be already encrypted coming from the API. 
+  * @param aToken the token to set to LocalStorage.
+  */
+  setToken(aToken) { localStorage.setItem('token', aToken); }
 }

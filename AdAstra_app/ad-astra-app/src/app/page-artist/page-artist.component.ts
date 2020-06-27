@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import {PATHS} from '../../globals';
+import { AuthService } from '../auth.service';
 
 interface Artist {
   id: number;
@@ -20,9 +21,9 @@ interface Artist {
   styleUrls: ['./page-artist.component.scss']
 })
 /**
- * Display the page of an Artist.
- * // TODO: if the User is logged, and access it's page, routerLink to another component specific to allow editing.
- */
+* Display the page of an Artist.
+* // TODO: if the User is logged, and access it's page, routerLink to another component specific to allow editing.
+*/
 export class PageArtistComponent implements OnInit {
   artist: Artist = {
     id:null,
@@ -34,28 +35,34 @@ export class PageArtistComponent implements OnInit {
     idsHeadMusics:null,
     idsHeadPhotos:null
   } ; 
-
+  
   mediaspath = PATHS.ADASTRA_MEDIAS_PATH;
   
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    private auth: AuthService
     ) {}
     
     ngOnInit() {
       this.artist.id = +this.route.snapshot.paramMap.get('id');
-      
-      this.fetchUserInfos<Artist>(this.artist.id)
-      .then((fetched) => {
-        console.log(fetched)
-        this.artist.id = fetched.id ; 
-        this.artist.name = fetched.name ; 
-        this.artist.pict = fetched.pict ; 
-        this.artist.bio = fetched.bio ; 
-      })
-      .catch(error => {
-        console.log("error while fetching the Artist infos ! ");
-      }) ;
+      if ( this.artist.id == 0 ) {
+        this.auth.getLoggedUserIdNow().then(res => {
+          this.artist.id = res ; 
+          
+          this.fetchUserInfos<Artist>(this.artist.id)
+          .then((fetched) => {
+            console.log(fetched)
+            this.artist.id = fetched.id ; 
+            this.artist.name = fetched.name ; 
+            this.artist.pict = fetched.pict ; 
+            this.artist.bio = fetched.bio ; 
+          })
+          .catch(error => {
+            console.log("error while fetching the Artist infos ! ");
+          }) ;
+        }) ; 
+      }
       
       
       
@@ -71,10 +78,10 @@ export class PageArtistComponent implements OnInit {
     }
     
     /**
-     * Fetch data from Artist in the DB.
-     * @param fetechId the id of the Artist to fetch.
-     * @return a JSON corresponding to the `Artist` interface.
-     */
+    * Fetch data from Artist in the DB.
+    * @param fetechId the id of the Artist to fetch.
+    * @return a JSON corresponding to the `Artist` interface.
+    */
     fetchUserInfos<T>(fetechId: number): Promise<T> {
       return fetch("http://localhost:5000/get_infos_Artist?id="+fetechId)
       .then(response => {
